@@ -26,9 +26,6 @@ public class Player : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         _direction = ctx.ReadValue<Vector2>();
-
-        Debug.Log($"Moving {_direction}");
-
     }
 
     public void OnInteract(InputAction.CallbackContext ctx)
@@ -44,5 +41,15 @@ public class Player : MonoBehaviour
     private void Update()
     {
         transform.Translate(_direction * speed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Hit enter");
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("Hit");
     }
 }

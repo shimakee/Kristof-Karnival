@@ -99,6 +99,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8cf6e904-e659-4665-809d-d07723c87a27",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad scheme;Default scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c63e6407-6485-4110-8382-dc6230225ee8",
                     "path": "<Keyboard>/e",
                     "interactions": "",
