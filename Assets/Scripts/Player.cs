@@ -10,11 +10,16 @@ public class Player : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
 
+    Animator _animator;
     Vector2 _direction;
     float speed = 1;
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();
+
+        if (_animator == null)
+            Debug.Log("no animator component found in children");
     }
 
     private void Start()
@@ -26,6 +31,8 @@ public class Player : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         _direction = ctx.ReadValue<Vector2>();
+        _animator.SetFloat("Direction", _direction.x);
+        _animator.SetFloat("Magnitude", _direction.magnitude);
     }
 
     public void OnInteract(InputAction.CallbackContext ctx)
