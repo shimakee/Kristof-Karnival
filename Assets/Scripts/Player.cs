@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     Movement _movement;
 
     Vector2 _direction = Vector2.zero;
-    Vector2 _desiredPosition;
 
     private void Awake()
     {
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _desiredPosition = _rb.position;
     }
 
     private void Update()
@@ -41,16 +39,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //_movement.AddForce2D(_rb, _direction, Time.deltaTime);
-        //_movement.AssignVelocity2D(_rb, _direction);
-        //_movement.MovePosition2D(_rb, _direction);
-        _movement.MoveTowards2D(_rb, _desiredPosition, Time.deltaTime);
+        _movement.MoveToDesiredPosition2D(_rb, Time.deltaTime);
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
         _direction = ctx.ReadValue<Vector2>();
-        Debug.Log($"direction: {_direction}");
 
         //TODO: move to separate animation handler
         _animator.SetFloat("Direction", _direction.x);
@@ -58,8 +52,8 @@ public class Player : MonoBehaviour
 
         if (ctx.started)
         {
-            _desiredPosition = _rb.position + _direction;
-            Debug.Log($"Desired position: {_desiredPosition}");
+            //_desiredPosition = _rb.position + _direction;
+            _movement.DesiredPosition = _rb.position + _direction;
         }
     }
 

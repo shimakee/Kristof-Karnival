@@ -6,7 +6,8 @@ using UnityEngine.InputSystem.UI;
 
 public class Movement
 {
-    public float Speed;
+    public float Speed { get; }
+    public Vector3 DesiredPosition { get; set; }
     public Movement(float speed)
     {
         Speed = speed;
@@ -39,5 +40,13 @@ public class Movement
     public void MoveTowards2D(Rigidbody2D rb, Vector2 destination, float deltaTime)
     {
         rb.position = Vector2.MoveTowards(rb.position, destination, Speed * deltaTime);
+    }
+
+    public void MoveToDesiredPosition2D(Rigidbody2D rb, float deltaTime)
+    {
+        if (DesiredPosition == null)
+            Debug.LogError("Desired position cannot be null.");
+
+        rb.position = Vector2.MoveTowards(rb.position, DesiredPosition, Speed * deltaTime);
     }
 }
