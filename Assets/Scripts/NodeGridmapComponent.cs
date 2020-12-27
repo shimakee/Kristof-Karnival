@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,7 +17,11 @@ public class NodeGridmapComponent : MonoBehaviour
     [Header("Tile details:")]
     [Range(0, 50)][SerializeField] float tileHeight = 0;
 
+    [SerializeField] bool isIsometric;
+    [SerializeField] bool allowDiagonalMoves;
+
     public Node[,] Map { get { return _map; } }
+
 
     Vector2 _mapSize;
     Node[,] _map;
@@ -44,29 +49,27 @@ public class NodeGridmapComponent : MonoBehaviour
     void OnDrawGizmos()
     {
         DrawTilesOnMap();
-
-        ////Path finding
-        //var pathFinding = new AstarPathfinding(new GridMap<Node>(_map));
-        //var start = _map[0, 0];
-        //var end = _map[10, 5];
-        //var path = pathFinding.FindPath(start, end);
-
-        //if(path != null)
-        //foreach (var item in path)
-        //{
-        //    Vector2 pos = ComputePosition(item.X, item.Y, (int)transform.position.z, _tileSize);
-
-        //    Gizmos.color = Color.cyan;
-        //    Gizmos.DrawCube(pos, _tileSize);
-        //}
-
-        //Gizmos.color = Color.green;
-        //Gizmos.DrawCube(ComputePosition(start.X, start.Y, (int)transform.position.z, _tileSize), _tileSize);
-        //Gizmos.color = Color.blue;
-        //Gizmos.DrawCube(ComputePosition(start.X, start.Y, (int)transform.position.z, _tileSize), _tileSize);
     }
 
+    #region Utility Methods
+    public void DrawTilesOnMap()
+    {
+        if (isIsometric)
+        {
+            DrawOnMap(ComputePositionForIsometric);
+        }
+        else
+        {
+            DrawOnMap(ComputePositionForCartesean);
+        }
+    }
+    public void CheckForObstacles()
+    {
+        CheckForObstacles(numberOfColumns, numberOfRows);
+    }
     
+
+    #endregion
 
     #region Core Methods
     Vector3 AdjustTileSize()
@@ -78,28 +81,28 @@ public class NodeGridmapComponent : MonoBehaviour
         return _tileSize;
     }
 
-    Vector3 ComputePosition(int x, int y, int z, Vector3 tilesize)
+    Vector3 ComputePositionForCartesean(Vector2 position, Vector3 tilesize)
     {
         float xOffset = tilesize.x / 2;
         float yOffset = tilesize.y / 2;
 
-        var xPos = transform.position.x + xOffset + (tilesize.x * x);
-        var yPos = transform.position.y + yOffset + (tilesize.y * y);
+        var xPos = transform.position.x + xOffset + (tilesize.x * position.x);
+        var yPos = transform.position.y + yOffset + (tilesize.y * position.y);
         var zPos = transform.position.z;
 
         Vector3 pos = new Vector3(xPos, yPos, zPos);
         return pos;
     }
 
-    Vector2 ComputePositionForIsometric(int x, int y, Vector3 tilesize)
+    Vector3 ComputePositionForIsometric(Vector2 position, Vector3 tilesize)
     {
         float xOffset = tilesize.x / 2;
         float yOffset = tilesize.y / 2;
 
         Vector2 vectorOffset = RevertFromIsometric(new Vector2(xOffset, yOffset));
 
-        var xPos = vectorOffset.x + (tilesize.x * x);
-        var yPos = vectorOffset.y + (tilesize.y * y);
+        var xPos = vectorOffset.x + (tilesize.x * position.x);
+        var yPos = vectorOffset.y + (tilesize.y * position.y);
 
 
         Vector2 origin = RevertFromIsometric(transform.position);
@@ -113,8 +116,17 @@ public class NodeGridmapComponent : MonoBehaviour
         {
             for (int y = 0; y < numberOfRows; y++)
             {
-                var pos = ComputePosition(x, y, (int)transform.position.z, _tileSize);
-                bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0));
+                Vector2 pos;
+                if (isIsometric)
+                {
+                    pos = ComputePositionForIsometric(new Vector2(x, y), _tileSize);
+                }
+                else
+                {
+                    pos = ComputePositionForCartesean(new Vector2(x, y), _tileSize);
+                }
+
+                bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
 
                 _map[x, y] = new Node(x, y, canPass);
             }
@@ -144,6 +156,10 @@ public class NodeGridmapComponent : MonoBehaviour
             for (int y = -1; y < 2; y++)
             {
                 if (x == 0 && y == 0)
+                    continue;
+
+                bool isMoveDiagonal = (x > 0 || x < 0) && (y > 0 || y < 0);
+                if (!allowDiagonalMoves && isMoveDiagonal)
                     continue;
 
                 int xCoordinate = current.x + x;
@@ -177,7 +193,8 @@ public class NodeGridmapComponent : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    public void DrawTilesOnMap()
+
+    void DrawOnMap(Func<Vector2, Vector3, Vector3> computation )
     {
         _mapSize = new Vector2(mapWidth, mapHeight);
         _map = new Node[numberOfColumns, numberOfRows];
@@ -188,8 +205,13 @@ public class NodeGridmapComponent : MonoBehaviour
             for (int y = 0; y < numberOfRows; y++)
             {
                 //var pos = ComputePosition(x, y, (int)transform.position.z, _tileSize);
-                var pos = ComputePositionForIsometric(x, y, _tileSize);
-                bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0));
+                //var pos = ComputePositionForIsometric(x, y, _tileSize);
+                //var pos = computation(new Vector2(x, y), _tileSize);
+                //bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
+                var node = _map[x, y];
+                Vector3 pos = (node != null ) ? new Vector3(node.x, node.y) : computation(new Vector2(x, y), _tileSize);
+                bool canPass = (node != null) ?  node.CanPass : !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
+
 
                 //Gizmos - can remove
                 if (canPass)
@@ -206,13 +228,6 @@ public class NodeGridmapComponent : MonoBehaviour
         }
     }
 
-    #endregion
-
-    #region Utility Methods
-    public void CheckForObstacles()
-    {
-        CheckForObstacles(numberOfColumns, numberOfRows);
-    }
     void CheckForObstacles(int numberOfColumns, int numberOfRows)
     {
         Debug.Log("Checking obstacles");
@@ -221,7 +236,7 @@ public class NodeGridmapComponent : MonoBehaviour
         {
             for (int y = 0; y < numberOfRows; y++)
             {
-                var pos = ComputePosition(x, y, (int)transform.position.z, _tileSize);
+                var pos = ComputePositionForCartesean(new Vector2(x, y), _tileSize);
                 bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0));
 
                 var node = _map[x, y];
@@ -233,4 +248,5 @@ public class NodeGridmapComponent : MonoBehaviour
     }
 
     #endregion
+
 }

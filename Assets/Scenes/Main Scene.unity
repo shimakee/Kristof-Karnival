@@ -2130,7 +2130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 5, z: -10}
+  m_LocalPosition: {x: 8.9, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2170,6 +2170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1912731904}
   - component: {fileID: 1912731903}
+  - component: {fileID: 1912731905}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -2204,6 +2205,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1912731905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912731902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34795a34ff9284947a8a44772ab4c003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapWidth: 18
+  numberOfColumns: 18
+  mapHeight: 10
+  numberOfRows: 10
+  tileHeight: 0
+  isIsometric: 0
+  allowDiagonalMoves: 1
 --- !u!1001 &5870572131220903020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2214,6 +2234,10 @@ PrefabInstance:
     - target: {fileID: 5870572130322782448, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_Name
       value: Tree stump
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870572130322782448, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5870572130322782450, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2259,6 +2283,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5870572131220005616, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
 --- !u!1001 &6409690579065419550
@@ -2268,6 +2296,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6409690579489314437, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.27
@@ -2316,6 +2348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign post
       objectReference: {fileID: 0}
+    - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
 --- !u!1001 &6733583448470177061
@@ -2335,11 +2371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.z
