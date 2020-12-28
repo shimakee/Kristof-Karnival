@@ -13,8 +13,8 @@ public class NodeGridmapComponent : MonoBehaviour
 
     //Another that just gets screen coordinates or world position and translates it to current grid on screen
     //therefore never needing more than a grid that fits the screen
-    [Header("Tilemap")]
-    [SerializeField] Tilemap tilemap;
+    //[Header("Tilemap")]
+    //[SerializeField] Tilemap tilemap;
 
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
@@ -27,36 +27,42 @@ public class NodeGridmapComponent : MonoBehaviour
     [Header("Tile details:")]
     [Range(0, 50)] [SerializeField] float tileHeight = 0;
 
+
     [SerializeField] bool isIsometric;
     [SerializeField] bool allowDiagonalMoves;
 
-    public Node[,] Map { get { return _map; } }
+    [Header("Mask To check collisions")]
+    [SerializeField] LayerMask[] layerMasks;
+
+    //public Node[,] Map { get { return _map; } }
     public Vector3 TilSize { get { return _tileSize; } }
 
 
     Vector2 _mapSize;
-    Node[,] _map;
+    public Node[,] Map;
     Vector3 _tileSize;
 
     private void Awake()
     {
         _mapSize = new Vector2(mapWidth, mapHeight);
-        _map = new Node[numberOfColumns, numberOfRows];
-        _tileSize = AdjustTileSize();
+        Map = new Node[numberOfColumns, numberOfRows];
         GenerateNodesOnMap(numberOfColumns, numberOfRows);
         EstablishNodeConnectionForAll(numberOfColumns, numberOfRows);
+        _tileSize = AdjustTileSize();
 
-        if (tilemap == null)
-            Debug.LogError("no tilemap attached");
+        //if (tilemap == null)
+        //    Debug.LogError("no tilemap attached");
 
     }
 
     private void Start()
     {
+        CheckForObstacles();
     }
 
     private void FixedUpdate()
     {
+        //CheckForObstacles();
     }
 
     void OnDrawGizmos()
@@ -176,9 +182,13 @@ public class NodeGridmapComponent : MonoBehaviour
                     pos = ComputePositionForCartesean(new Vector2(x, y), _tileSize);
                 }
 
-                bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
+                //bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
+                bool canPass = CanPass(pos, layerMasks);
 
-                _map[x, y] = new Node(x, y, canPass);
+                Map[x, y] = new Node(x, y, canPass);
+
+                //if(Map[x,y] != null)
+                //    Debug.Log($"Generated node for x {x} y{y}:");
             }
         }
     }
@@ -189,7 +199,7 @@ public class NodeGridmapComponent : MonoBehaviour
         {
             for (int y = 0; y < numberOfRows; y++)
             {
-                EstablishGridNodeConnection(_map[x, y]);
+                EstablishGridNodeConnection(Map[x, y]);
             }
         }
     }
@@ -220,8 +230,12 @@ public class NodeGridmapComponent : MonoBehaviour
                     continue;
 
                 Node neighbor = Map[xCoordinate, yCoordinate];
+
                 if (neighbor == null)
+                {
+                    Debug.Log("neighbor was null");
                     continue;
+                }
 
                 current.Neighbors.Add(neighbor);
             }
@@ -246,25 +260,22 @@ public class NodeGridmapComponent : MonoBehaviour
 
     void DrawOnMap(Func<Vector2, Vector3, Vector3> computation )
     {
-        _mapSize = new Vector2(mapWidth, mapHeight);
-        _map = new Node[numberOfColumns, numberOfRows];
-        _tileSize = AdjustTileSize();
-
         for (int x = 0; x < numberOfColumns; x++)
         {
             for (int y = 0; y < numberOfRows; y++)
             {
-                //var pos = ComputePosition(x, y, (int)transform.position.z, _tileSize);
-                //var pos = ComputePositionForIsometric(x, y, _tileSize);
-                //var pos = computation(new Vector2(x, y), _tileSize);
-                //bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
-                var node = _map[x, y];
-                Vector3 pos = (node != null ) ? new Vector3(node.x, node.y) : computation(new Vector2(x, y), _tileSize);
-                bool canPass = (node != null) ?  node.CanPass : !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
+                if (Map == null)
+                    return;
+
+                var node = Map[x, y];
+
+                Vector3 pos = computation(new Vector2(node.x, node.y), _tileSize);
+                //Vector3 pos = (node != null ) ? computation(new Vector2(node.x, node.y), _tileSize) : computation(new Vector2(x, y), _tileSize);
+                //bool canPass = (node != null) ?  node.CanPass : !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
 
 
                 //Gizmos - can remove
-                if (canPass)
+                if (node.CanPass)
                 {
                     Gizmos.color = Color.blue;
                     Gizmos.DrawWireCube(pos, new Vector3(_tileSize.x * .9f, _tileSize.y * .9f, _tileSize.z));
@@ -280,21 +291,44 @@ public class NodeGridmapComponent : MonoBehaviour
 
     void CheckForObstacles(int numberOfColumns, int numberOfRows)
     {
-        Debug.Log("Checking obstacles");
-
         for (int x = 0; x < numberOfColumns; x++)
         {
             for (int y = 0; y < numberOfRows; y++)
             {
-                var pos = ComputePositionForCartesean(new Vector2(x, y), _tileSize);
-                bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0));
+                Vector3 pos;
+                if(isIsometric)
+                    pos = ComputePositionForIsometric(new Vector2(x, y), _tileSize);
+                else
+                    pos = ComputePositionForCartesean(new Vector2(x, y), _tileSize);
 
-                var node = _map[x, y];
+                bool canPass = CanPass(pos, layerMasks);
+
+                var node = Map[x, y];
 
                 if (node != null)
                     node.CanPass = canPass;
+                else
+                    Debug.Log("node was null on obstacle check", this);
+
             }
         }
+    }
+
+    bool CanPass(Vector2 position, LayerMask[] layerMasks)
+    {
+        if (layerMasks == null)
+            return true;
+        if (layerMasks.Length <= 0)
+            return true;
+
+        foreach (var mask in layerMasks)
+        {
+            bool canPass = !Physics2D.BoxCast(position, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, Vector2.zero, 0, mask);
+            if (!canPass)
+                return false;
+        }
+
+        return true;
     }
 
     #endregion
