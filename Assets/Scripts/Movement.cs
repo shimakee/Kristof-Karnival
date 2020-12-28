@@ -10,17 +10,10 @@ public class Movement
 {
     public float Speed { get; set; }
     public Vector3 DesiredPosition { get; set; }
-    //public float HoldTime { get; set; }
-
-
-    //Vector2 _direction;
-    //float _pressTime;
-    //bool isHeld;
 
     public Movement(float speed)
     {
         Speed = speed;
-        //HoldTime = holdtime;
     }
 
     #region Public utility method
@@ -79,46 +72,6 @@ public class Movement
 
         return direction;
     }
-
-    //public void ProcessMovement2D(Rigidbody2D rb, float fixedDeltaTime)
-    //{
-    //    if (isHeld)
-    //        _pressTime += fixedDeltaTime;
-
-    //    if (_pressTime >= HoldTime)
-    //    {
-    //        _pressTime = 0;
-    //        Debug.Log($"Execute {_pressTime}");
-    //        DesiredPosition = rb.position + _direction;
-    //        Debug.Log($"Change desiredPosition {DesiredPosition}, direction {_direction}");
-    //    }
-
-    //    //Debug.Log($"moving {DesiredPosition}");
-    //    MoveTowards2D(rb, DesiredPosition, fixedDeltaTime);
-    //}
-
-    //public void ProcessMovementInput(InputAction.CallbackContext ctx)
-    //{
-    //    if (ctx.started)
-    //    {
-    //        isHeld = true;
-    //        Debug.Log($"started {isHeld}");
-    //    }
-
-    //    if (ctx.performed)
-    //    {
-    //        _direction = ctx.ReadValue<Vector2>().normalized;
-    //        _direction = RestrainDiagonalDirection(_direction);
-    //        Debug.Log($"performed {_direction}");
-
-    //    }
-
-    //    if (ctx.canceled)
-    //    {
-    //        isHeld = false;
-    //        Debug.Log($"cancelled {isHeld}");
-    //    }
-    //}
 
     #endregion
 

@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
             Debug.LogError("no rigidbody component attached");
         if (_animator == null)
             Debug.LogError("no animator component found in children");
+        if (gridMap == null)
+            Debug.LogError("no grid map attached.");
     }
 
     private void Start()
@@ -58,7 +60,6 @@ public class Player : MonoBehaviour
     {
         if (ctx.started)
         {
-            //var gridPos = gridMap.ScreenToGrid(_mousePosition);
             var gridPos = gridMap.WorldToGrid(_rb.position);
             Debug.Log($"grid pos: {gridPos}");
         }
@@ -121,12 +122,9 @@ public class Player : MonoBehaviour
         if (_movementInputPressedTime >= holdTime)
         {
             _movementInputPressedTime = 0;
-            Debug.Log($"Execute {_movementInputPressedTime}");
-            _movement.DesiredPosition = rb.position + direction; // convert to grid location
-            Debug.Log($"Change desiredPosition {_movement.DesiredPosition}, direction {direction}");
+            _movement.DesiredPosition = gridMap.ToNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
         }
 
-        //Debug.Log($"moving {DesiredPosition}");
         _movement.MoveTowards2D(_rb, _movement.DesiredPosition, fixedDeltaTime);
     }
     #endregion

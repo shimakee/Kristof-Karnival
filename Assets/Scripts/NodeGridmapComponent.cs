@@ -89,21 +89,33 @@ public class NodeGridmapComponent : MonoBehaviour
 
     public Vector2Int WorldToGrid(Vector3 position)
     {
-        Debug.Log($"position: {position}");
-
-        float xPosiition = Math.Abs(transform.position.x);
-        float yPosition = Math.Abs(transform.position.y);
-
-        Vector3 adjustedPosition = position - new Vector3(xPosiition, yPosition);
+        Vector3 adjustedPosition = position - transform.position;
 
         Debug.Log($"adjusted position: {adjustedPosition}");
-
-        int x = (int)(adjustedPosition.x / _tileSize.x);
-        int y = (int)(adjustedPosition.y / _tileSize.y);
-
-        Debug.Log($"x: {x}, y: {y}");
+        int x = Mathf.FloorToInt(adjustedPosition.x / _tileSize.x);
+        int y = Mathf.FloorToInt(adjustedPosition.y / _tileSize.y);
 
         return new Vector2Int(x, y);
+    }
+
+    public Vector2 GridToWord(Vector2Int position)
+    {
+        float xOffset = _tileSize.x / 2;
+        float yOffset = _tileSize.y / 2;
+        float x = (position.x * _tileSize.x) + xOffset;
+        float y = (position.y * _tileSize.y) + yOffset;
+
+        Vector3 adjustedPosition = new Vector3(x, y, 0) + transform.position;
+
+        return adjustedPosition;
+    }
+
+    public Vector2 ToNearestTilePosition(Vector2 position)
+    {
+        var gridPos = WorldToGrid(position);
+        var worldPos = GridToWord(gridPos);
+
+        return worldPos;
     }
 
     #endregion
