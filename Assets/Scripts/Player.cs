@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         if (ctx.started)
         {
             _hasMovementInput = true;
-            Debug.Log($"started {_hasMovementInput}");
+
         }
 
         if (ctx.performed)
@@ -122,10 +122,17 @@ public class Player : MonoBehaviour
         if (_movementInputPressedTime >= holdTime)
         {
             _movementInputPressedTime = 0;
-            _movement.DesiredPosition = gridMap.ToNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
+            RaycastHit2D hit = Physics2D.BoxCast(rb.position, gridMap.TilSize, 0, _movementDirection, 1f, LayerMask.GetMask("Tile Obstacles"));
+            if (!hit)
+                _movement.DesiredPosition = gridMap.ToNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
         }
+            _movement.MoveTowards2D(_rb, _movement.DesiredPosition, fixedDeltaTime);
+    }
 
-        _movement.MoveTowards2D(_rb, _movement.DesiredPosition, fixedDeltaTime);
+    private void OnDrawGizmos()
+    {
+        if(_rb != null && _movementDirection != null && gridMap != null)
+            Gizmos.DrawCube(_rb.position + _movementDirection, gridMap.TilSize/2);
     }
     #endregion
 }

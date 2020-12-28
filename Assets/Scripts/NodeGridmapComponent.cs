@@ -18,19 +18,20 @@ public class NodeGridmapComponent : MonoBehaviour
 
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
-    [Range(1, 50)][SerializeField] int numberOfColumns = 5;
+    [Range(1, 50)] [SerializeField] int numberOfColumns = 5;
     [Space(10)]
 
     [Range(1, 50)] [SerializeField] float mapHeight = 10;
-    [Range(1, 50)][SerializeField] int numberOfRows = 5; //use resolution as well?
+    [Range(1, 50)] [SerializeField] int numberOfRows = 5; //use resolution as well?
 
     [Header("Tile details:")]
-    [Range(0, 50)][SerializeField] float tileHeight = 0;
+    [Range(0, 50)] [SerializeField] float tileHeight = 0;
 
     [SerializeField] bool isIsometric;
     [SerializeField] bool allowDiagonalMoves;
 
     public Node[,] Map { get { return _map; } }
+    public Vector3 TilSize { get { return _tileSize; } }
 
 
     Vector2 _mapSize;
