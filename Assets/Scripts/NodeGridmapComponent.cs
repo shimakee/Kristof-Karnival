@@ -71,6 +71,16 @@ public class NodeGridmapComponent : MonoBehaviour
     }
 
     #region Utility Methods
+    public void ResetMap()
+    {
+        for (int x = 0; x < numberOfColumns; x++)
+        {
+            for (int y = 0; y < numberOfRows; y++)
+            {
+                Map[x, y].ClearNode();
+            }
+        }
+    }
     public void DrawTilesOnMap()
     {
         if (isIsometric)
@@ -98,7 +108,6 @@ public class NodeGridmapComponent : MonoBehaviour
     {
         Vector3 adjustedPosition = position - transform.position;
 
-        Debug.Log($"adjusted position: {adjustedPosition}");
         int x = Mathf.FloorToInt(adjustedPosition.x / _tileSize.x);
         int y = Mathf.FloorToInt(adjustedPosition.y / _tileSize.y);
 

@@ -2436,7 +2436,6 @@ GameObject:
   - component: {fileID: 133754161}
   - component: {fileID: 133754164}
   - component: {fileID: 133754163}
-  - component: {fileID: 133754162}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2458,26 +2457,6 @@ Transform:
   m_Father: {fileID: 1912731904}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &133754162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133754160}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34795a34ff9284947a8a44772ab4c003, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilemap: {fileID: 133754164}
-  mapWidth: 18
-  numberOfColumns: 18
-  mapHeight: 10
-  numberOfRows: 10
-  tileHeight: 0
-  isIsometric: 0
-  allowDiagonalMoves: 0
 --- !u!483693784 &133754163
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2692,6 +2671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1912731904}
   - component: {fileID: 1912731903}
+  - component: {fileID: 1912731905}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -2727,6 +2707,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1912731905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912731902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34795a34ff9284947a8a44772ab4c003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapWidth: 18
+  numberOfColumns: 18
+  mapHeight: 10
+  numberOfRows: 10
+  tileHeight: 0
+  isIsometric: 0
+  allowDiagonalMoves: 0
+  layerMasks:
+  - serializedVersion: 2
+    m_Bits: 2048
 --- !u!1001 &5870572131220903020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2805,11 +2807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.27
+      value: 6.46
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.54
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2967,7 +2969,7 @@ PrefabInstance:
     - target: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: gridMap
       value: 
-      objectReference: {fileID: 133754162}
+      objectReference: {fileID: 1912731905}
     - target: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: holdTime
       value: 0.5
