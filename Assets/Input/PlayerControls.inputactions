@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "d3ae6374-e88f-4122-8f49-5b901600361e",
                     "expectedControlType": "Vector2",
-                    "processors": "StickDeadzone",
+                    "processors": "",
                     "interactions": ""
                 },
                 {
@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "MouseMove",
+                    "type": "Value",
+                    "id": "6dfaa2b2-bb06-45f7-a6d5-25442d506717",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -36,7 +44,7 @@
                     "id": "0592e2d9-cad6-4563-b5d8-6e5658bd435d",
                     "path": "2DVector",
                     "interactions": "",
-                    "processors": "NormalizeVector2",
+                    "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": true,
@@ -91,7 +99,7 @@
                     "id": "ad27808f-e395-4e52-9d3f-99955becc412",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "Gamepad scheme;Default scheme",
                     "action": "Move",
                     "isComposite": false,
@@ -132,6 +140,17 @@
                 },
                 {
                     "name": "",
+                    "id": "24c1b51c-a472-4ab9-9b1e-9640b760ff70",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard and mouse scheme;Default scheme",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3a4724d3-1673-4cbb-882b-1506a0ec3792",
                     "path": "<Keyboard>/p",
                     "interactions": "",
@@ -149,6 +168,17 @@
                     "processors": "",
                     "groups": "Gamepad scheme;Default scheme",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0704ec59-83c4-4f5d-bbce-8176cd698f56",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and mouse scheme;Default scheme",
+                    "action": "MouseMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

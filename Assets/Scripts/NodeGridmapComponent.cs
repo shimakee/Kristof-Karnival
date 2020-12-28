@@ -3,9 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+
 
 public class NodeGridmapComponent : MonoBehaviour
 {
+    //TODO: create different verions
+    //One inherits or required tilemap component
+
+    //Another that just gets screen coordinates or world position and translates it to current grid on screen
+    //therefore never needing more than a grid that fits the screen
+    [Header("Tilemap")]
+    [SerializeField] Tilemap tilemap;
+
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
     [Range(1, 50)][SerializeField] int numberOfColumns = 5;
@@ -35,11 +45,13 @@ public class NodeGridmapComponent : MonoBehaviour
         GenerateNodesOnMap(numberOfColumns, numberOfRows);
         EstablishNodeConnectionForAll(numberOfColumns, numberOfRows);
 
+        if (tilemap == null)
+            Debug.LogError("no tilemap attached");
+
     }
 
     private void Start()
     {
-        
     }
 
     private void FixedUpdate()
@@ -67,7 +79,32 @@ public class NodeGridmapComponent : MonoBehaviour
     {
         CheckForObstacles(numberOfColumns, numberOfRows);
     }
-    
+    public Vector2Int ScreenToGrid(Vector2 position)
+    {
+        int x = (int) ((position.x / Screen.width) * numberOfColumns);
+        int y = (int)((position.y / Screen.height) * numberOfRows);
+
+        return new Vector2Int(x, y);
+    }
+
+    public Vector2Int WorldToGrid(Vector3 position)
+    {
+        Debug.Log($"position: {position}");
+
+        float xPosiition = Math.Abs(transform.position.x);
+        float yPosition = Math.Abs(transform.position.y);
+
+        Vector3 adjustedPosition = position - new Vector3(xPosiition, yPosition);
+
+        Debug.Log($"adjusted position: {adjustedPosition}");
+
+        int x = (int)(adjustedPosition.x / _tileSize.x);
+        int y = (int)(adjustedPosition.y / _tileSize.y);
+
+        Debug.Log($"x: {x}, y: {y}");
+
+        return new Vector2Int(x, y);
+    }
 
     #endregion
 
