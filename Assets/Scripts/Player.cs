@@ -16,15 +16,18 @@ public class Player : MonoBehaviour
     Animator _animator;
     Rigidbody2D _rb;
     Movement _movement;
+
     Vector2 _mousePosition;
 
-    Vector2 _direction;
+    Vector2 _movementDirection;
+    bool _hasMovementInput;
+    float _movementInputPressedTime;
 
     private void Awake()
     {
-        _animator = GetComponentInChildren<Animator>();
         _rb = GetComponent<Rigidbody2D>();
-        _movement = new Movement(speed, holdTime);
+        _animator = GetComponentInChildren<Animator>();
+        _movement = new Movement(speed);
 
         if (_rb == null)
             Debug.LogError("no rigidbody component attached");
@@ -43,78 +46,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //_movement.MoveToDesiredPosition2D(_rb, Time.deltaTime);
-        _movement.ProcessMovement2D(_rb, Time.fixedDeltaTime);
+        ProcessMovementUpdate(_rb, _movementDirection, Time.fixedDeltaTime);
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
-
-        _movement.ProcessMovementInput(ctx);
-
-        //_direction = ctx.ReadValue<Vector2>();
-        //Debug.Log($"@@@@@direction {_direction}");
-
-        //if (ctx.started)
-        //{
-        //    Debug.Log("===>started");
-        //    if (ctx.interaction is HoldInteraction)
-        //        Debug.Log("Hold interaction");
-
-        //    if (ctx.interaction is PressInteraction)
-        //        Debug.Log("Press interaction");
-
-
-
-        //}
-        //if (ctx.performed)
-        //{
-        //    Debug.Log("===>performed");
-
-        //    if (ctx.interaction is HoldInteraction)
-        //        Debug.Log($"Hold interaction {_direction}");
-
-        //    if (ctx.interaction is PressInteraction)
-        //        Debug.Log($"Press interaction {_direction}");
-
-        //}
-        //if (ctx.canceled)
-        //{
-        //    Debug.Log("===>cancelled");
-
-        //    if (ctx.interaction is HoldInteraction)
-        //        Debug.Log($"Hold interaction {_direction}");
-
-        //    if (ctx.interaction is PressInteraction)
-        //        Debug.Log($"Press interaction {_direction}");
-
-        //}
-
-        //if (ctx.interaction is HoldInteraction)
-        //{
-        //    Debug.Log("*****Hold interaction");
-
-        //    if (ctx.started)
-        //        Debug.Log($"started {_direction}");
-        //    if (ctx.performed)
-        //        Debug.Log($"performed {_direction}");
-        //    if (ctx.canceled)
-        //        Debug.Log($"cancelled {_direction}");
-
-        //}
-        //if (ctx.interaction is PressInteraction)
-        //{
-        //    Debug.Log("*****Press interaction");
-
-        //    if (ctx.started)
-        //        Debug.Log($"started {_direction}");
-        //    if (ctx.performed)
-        //        Debug.Log($"performed {_direction}");
-        //    if (ctx.canceled)
-        //        Debug.Log($"cancelled {_direction}");
-        //}
-
-
+        ProcessMoveInput(ctx);
     }
 
     public void OnInteract(InputAction.CallbackContext ctx)
@@ -149,4 +86,48 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Hit");
     }
+
+    #region MovementHandler
+    void ProcessMoveInput(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            _hasMovementInput = true;
+            Debug.Log($"started {_hasMovementInput}");
+        }
+
+        if (ctx.performed)
+        {
+            _movementDirection = ctx.ReadValue<Vector2>().normalized;
+            _movementDirection = _movement.RestrainDiagonalDirection(_movementDirection);
+            Debug.Log($"performed {_movementDirection}");
+
+        }
+
+        if (ctx.canceled)
+        {
+            _hasMovementInput = false;
+            Debug.Log($"cancelled {_hasMovementInput}");
+        }
+
+        
+    }
+
+    void ProcessMovementUpdate(Rigidbody2D rb, Vector2 direction, float fixedDeltaTime)
+    {
+        if (_hasMovementInput)
+            _movementInputPressedTime += fixedDeltaTime;
+
+        if (_movementInputPressedTime >= holdTime)
+        {
+            _movementInputPressedTime = 0;
+            Debug.Log($"Execute {_movementInputPressedTime}");
+            _movement.DesiredPosition = rb.position + direction; // convert to grid location
+            Debug.Log($"Change desiredPosition {_movement.DesiredPosition}, direction {direction}");
+        }
+
+        //Debug.Log($"moving {DesiredPosition}");
+        _movement.MoveTowards2D(_rb, _movement.DesiredPosition, fixedDeltaTime);
+    }
+    #endregion
 }

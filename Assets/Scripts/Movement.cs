@@ -10,17 +10,17 @@ public class Movement
 {
     public float Speed { get; set; }
     public Vector3 DesiredPosition { get; set; }
-    public float HoldTime { get; set; }
+    //public float HoldTime { get; set; }
 
 
-    Vector2 _direction;
-    float _pressTime;
-    bool isHeld;
+    //Vector2 _direction;
+    //float _pressTime;
+    //bool isHeld;
 
-    public Movement(float speed, float holdtime)
+    public Movement(float speed)
     {
         Speed = speed;
-        HoldTime = holdtime;
+        //HoldTime = holdtime;
     }
 
     #region Public utility method
@@ -43,60 +43,7 @@ public class Movement
     {
             rb.position = Vector2.MoveTowards(rb.position, destination, Speed * deltaTime);
     }
-
-    public void ProcessMovement2D(Rigidbody2D rb, float fixedDeltaTime)
-    {
-        if (isHeld)
-            _pressTime += fixedDeltaTime;
-
-        if (_pressTime >= HoldTime)
-        {
-            _pressTime = 0;
-            Debug.Log($"Execute {_pressTime}");
-            DesiredPosition = rb.position + _direction;
-            Debug.Log($"Change desiredPosition {DesiredPosition}, direction {_direction}");
-        }
-
-        //Debug.Log($"moving {DesiredPosition}");
-        MoveTowards2D(rb, DesiredPosition, fixedDeltaTime);
-    }
-
-    public void ProcessMovementInput(InputAction.CallbackContext ctx)
-    {
-        if (ctx.started)
-        {
-            isHeld = true;
-            Debug.Log($"started {isHeld}");
-        }
-
-        if (ctx.performed)
-        {
-            _direction = ctx.ReadValue<Vector2>().normalized;
-            _direction = RestrainDiagonalDirection(_direction);
-            Debug.Log($"performed {_direction}");
-
-        }
-
-        if (ctx.canceled)
-        {
-            isHeld = false;
-            Debug.Log($"cancelled {isHeld}");
-        }
-    }
-
-    #endregion
-
-    #region Private methods
-
-    Vector2 Calculate(Vector2 direction, float deltaTime)
-    {
-        float horizontal = direction.x * Speed * deltaTime;
-        float vertical = direction.y * Speed * deltaTime;
-
-
-        return new Vector2(horizontal, vertical);
-    }
-    Vector2 RestrainDiagonalDirection(Vector2 direction)
+    public Vector2 RestrainDiagonalDirection(Vector2 direction)
     {
         if (direction.magnitude < .2)
             return Vector2.zero;
@@ -114,7 +61,7 @@ public class Movement
             else
                 direction.y = 0;
         }
-        else if(isAxisDominantX)
+        else if (isAxisDominantX)
         {
             direction.y = 0;
 
@@ -131,6 +78,59 @@ public class Movement
         }
 
         return direction;
+    }
+
+    //public void ProcessMovement2D(Rigidbody2D rb, float fixedDeltaTime)
+    //{
+    //    if (isHeld)
+    //        _pressTime += fixedDeltaTime;
+
+    //    if (_pressTime >= HoldTime)
+    //    {
+    //        _pressTime = 0;
+    //        Debug.Log($"Execute {_pressTime}");
+    //        DesiredPosition = rb.position + _direction;
+    //        Debug.Log($"Change desiredPosition {DesiredPosition}, direction {_direction}");
+    //    }
+
+    //    //Debug.Log($"moving {DesiredPosition}");
+    //    MoveTowards2D(rb, DesiredPosition, fixedDeltaTime);
+    //}
+
+    //public void ProcessMovementInput(InputAction.CallbackContext ctx)
+    //{
+    //    if (ctx.started)
+    //    {
+    //        isHeld = true;
+    //        Debug.Log($"started {isHeld}");
+    //    }
+
+    //    if (ctx.performed)
+    //    {
+    //        _direction = ctx.ReadValue<Vector2>().normalized;
+    //        _direction = RestrainDiagonalDirection(_direction);
+    //        Debug.Log($"performed {_direction}");
+
+    //    }
+
+    //    if (ctx.canceled)
+    //    {
+    //        isHeld = false;
+    //        Debug.Log($"cancelled {isHeld}");
+    //    }
+    //}
+
+    #endregion
+
+    #region Private methods
+
+    Vector2 Calculate(Vector2 direction, float deltaTime)
+    {
+        float horizontal = direction.x * Speed * deltaTime;
+        float vertical = direction.y * Speed * deltaTime;
+
+
+        return new Vector2(horizontal, vertical);
     }
 
     #endregion
