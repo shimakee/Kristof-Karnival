@@ -5,6 +5,7 @@ using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem.Users;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
+using System.Collections;
 
 
 //Using input actions by attaching to Player input invoking uity events
@@ -88,6 +89,12 @@ public class Player : MonoBehaviour
 
             //gridMap.CheckForObstacles();
             route = _pathFinding.FindPath(gridMap.Map[origin.x, origin.y], gridMap.Map[destination.x, destination.y]);
+
+            //foreach (var path in route)
+            //{
+            //    var routine = StartCoroutine(GoToPath(path));
+            //}
+            StartCoroutine(FollowPath(route));
         }
     }
 
@@ -153,6 +160,26 @@ public class Player : MonoBehaviour
                 _movement.DesiredPosition = gridMap.ToNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
         }
             _movement.MoveTowards2D(_rb, _movement.DesiredPosition, fixedDeltaTime);
+    }
+
+    IEnumerator FollowPath(Queue<Node> route)
+    {
+        if (route == null)
+            yield break;
+
+        if (route.Count <= 0)
+            yield break;
+
+        var node = route.Dequeue();
+
+        Vector2 destination = gridMap.GridToWord(new Vector2Int(node.x, node.y));
+        _movement.DesiredPosition = destination;
+
+        //yield return _rb.position == destination;
+        yield return new WaitUntil(() => _rb.position == destination);
+        yield return new WaitForSeconds(holdTime);
+
+        StartCoroutine(FollowPath(route));
     }
     #endregion
 }
