@@ -25,14 +25,15 @@ public class GridNode : MonoBehaviour
     [Header("Mask To check collisions")]
     [SerializeField] LayerMask[] collisionMask;
 
-    public TrialNode[,] Map { get { return _map; } }
+    public Node[,] Map { get { return _map; } }
     public Vector3 TileSize { get { return _tileSize; } }
 
 
     Vector2 _mapSize;
-    TrialNode[,] _map;
+    Node[,] _map;
     Vector3 _tileSize;
     Astar _pathfinding;
+    AstarPathfinding astarPathfinding;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class GridNode : MonoBehaviour
         _tileSize = AdjustTileSize();
         CreateConnectedGrid(numberOfColumns, numberOfRows);
         _pathfinding = new Astar();
+        astarPathfinding = new AstarPathfinding();
         //EstablishNodeConnectionForAll(numberOfColumns, numberOfRows);
     }
 
@@ -60,7 +62,8 @@ public class GridNode : MonoBehaviour
         {
             var origin = WorldToGrid(player.transform.position);
             var destination = WorldToGrid(target.transform.position);
-            var path = _pathfinding.findPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
+            //var path = _pathfinding.FindPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
+            var path = astarPathfinding.FindPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
             foreach (var node in _map)
             {
                 Gizmos.color = (node.CanPass) ? Color.blue : Color.red;
@@ -138,7 +141,7 @@ public class GridNode : MonoBehaviour
 
     void CreateGrid(int column, int rows)
     {
-        _map = new TrialNode[column, rows];
+        _map = new Node[column, rows];
 
         for (int x = 0; x < column; x++)
         {
@@ -147,7 +150,7 @@ public class GridNode : MonoBehaviour
                 Vector3 position = GridToWord(x, y);
                 bool canPass = CanPass(position, collisionMask);
 
-                _map[x, y] = new TrialNode(x, y, canPass, position);
+                _map[x, y] = new Node(x, y, canPass, position);
             }
         }
     }
@@ -162,7 +165,7 @@ public class GridNode : MonoBehaviour
         }
     }
 
-    void EstablishGridNodeConnection(TrialNode current)
+    void EstablishGridNodeConnection(Node current)
     {
         if (current == null)
             Debug.LogError("Node cannot be null in order to assign neighbors");
@@ -187,7 +190,7 @@ public class GridNode : MonoBehaviour
                 if (isBeyondMap)
                     continue;
 
-                TrialNode neighbor = _map[xCoordinate, yCoordinate];
+                Node neighbor = _map[xCoordinate, yCoordinate];
                 current.Neighbors.Add(neighbor);
             }
         }

@@ -106,7 +106,7 @@ public class NodeGridmapComponent : MonoBehaviour
         return new Vector2Int(x, y);
     }
 
-    public Vector2 GridToWord(Vector2Int position)
+    public Vector3 GridToWord(Vector2Int position)
     {
         float xOffset = _tileSize.x / 2;
         float yOffset = _tileSize.y / 2;
@@ -118,7 +118,7 @@ public class NodeGridmapComponent : MonoBehaviour
         return adjustedPosition;
     }
 
-    public Vector2 ToNearestTilePosition(Vector2 position)
+    public Vector3 ToNearestTilePosition(Vector2 position)
     {
         var gridPos = WorldToGrid(position);
         var worldPos = GridToWord(gridPos);
@@ -186,7 +186,7 @@ public class NodeGridmapComponent : MonoBehaviour
                 //bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
                 bool canPass = CanPass(pos, layerMasks);
 
-                Map[x, y] = new Node(x, y, canPass);
+                Map[x, y] = new Node(x, y, canPass, pos);
 
                 //if(Map[x,y] != null)
                 //    Debug.Log($"Generated node for x {x} y{y}:");
@@ -223,8 +223,8 @@ public class NodeGridmapComponent : MonoBehaviour
                 if (!allowDiagonalMoves && isMoveDiagonal)
                     continue;
 
-                int xCoordinate = current.x + x;
-                int yCoordinate = current.y + y;
+                int xCoordinate = current.Coordinates.x + x;
+                int yCoordinate = current.Coordinates.y + y;
                 bool isBeyondMap = xCoordinate < 0 || xCoordinate >= Map.GetLength(0) ||
                                     yCoordinate < 0 || yCoordinate >= Map.GetLength(1);
                 if (isBeyondMap)
@@ -263,7 +263,7 @@ public class NodeGridmapComponent : MonoBehaviour
 
                 var node = Map[x, y];
 
-                Vector3 pos = computation(new Vector2(node.x, node.y), _tileSize);
+                Vector3 pos = computation(new Vector2(node.Coordinates.x, node.Coordinates.y), _tileSize);
                 //Vector3 pos = (node != null ) ? computation(new Vector2(node.x, node.y), _tileSize) : computation(new Vector2(x, y), _tileSize);
                 //bool canPass = (node != null) ?  node.CanPass : !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
 

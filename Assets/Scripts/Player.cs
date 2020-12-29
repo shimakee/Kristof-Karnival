@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     bool _hasMovementInput;
     float _movementInputPressedTime;
     AstarPathfinding _pathFinding;
-    Queue<Node> _route;
+    List<Node> _route;
     Coroutine _followPathRoutine;
 
     private void Awake()
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         if(_route != null)
         foreach (var path in _route)
         {
-            Gizmos.DrawSphere(gridMap.GridToWord(new Vector2Int(path.x, path.y)), gridMap.TilSize.x/2);
+            Gizmos.DrawSphere(gridMap.GridToWord(new Vector2Int(path.Coordinates.x, path.Coordinates.y)), gridMap.TilSize.x/2);
         }
     }
 
@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
     //    StopCoroutine(routine);
     //}
 
-    IEnumerator FollowPath(Rigidbody2D rb, Queue<Node> route)
+    IEnumerator FollowPath(Rigidbody2D rb, List<Node> route)
     {
         if (route == null)
             yield break;
@@ -195,7 +195,7 @@ public class Player : MonoBehaviour
             var node = path;
             Debug.Log("goind to path");
 
-            Vector2 destination = gridMap.GridToWord(new Vector2Int(node.x, node.y));
+            Vector2 destination = gridMap.GridToWord(new Vector2Int(node.Coordinates.x, node.Coordinates.y));
             SetDesiredPosition(rb, destination - rb.position);
 
             yield return new WaitUntil(() => _rb.position == destination);

@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Astar : MonoBehaviour
+public class Astar : MonoBehaviour, IPathfinding
 {
-    public List<TrialNode> findPath(TrialNode origin, TrialNode destination)
+    public List<Node> FindPath(Node origin, Node destination)
     {
-        List<TrialNode> unvisitedList = new List<TrialNode>();
-        HashSet<TrialNode> visitedList = new HashSet<TrialNode>();
+        List<Node> unvisitedList = new List<Node>();
+        HashSet<Node> visitedList = new HashSet<Node>();
 
         unvisitedList.Add(origin);
 
         while (unvisitedList.Count > 0)
         {
-            //TrialNode currentNode = UnvisitedList[0];
             //get lowest cost
-            TrialNode currentNode = FindLowestCost(unvisitedList);
+            Node currentNode = FindLowestCost(unvisitedList);
             //visit current node
             visitedList.Add(currentNode);
             unvisitedList.Remove(currentNode);
@@ -26,12 +25,12 @@ public class Astar : MonoBehaviour
         return GetNodesPath(origin, destination);
     }
 
-    List<TrialNode> GetNodesPath(TrialNode origin, TrialNode destination)
+    List<Node> GetNodesPath(Node origin, Node destination)
     {
         if (destination == null || origin == null)
             Debug.LogError("Argument cannot be null");
 
-        List<TrialNode> path = new List<TrialNode>();
+        List<Node> path = new List<Node>();
         var currentNode = destination;
 
         while (currentNode != origin || currentNode.Coordinates != origin.Coordinates)
@@ -51,12 +50,12 @@ public class Astar : MonoBehaviour
         return path;
     }
 
-    TrialNode FindLowestCost(IList<TrialNode> nodes)
+    Node FindLowestCost(IList<Node> nodes)
     {
         if (nodes == null || nodes.Count <= 0)
             return null;
 
-        TrialNode lowestCost = null;
+        Node lowestCost = null;
         for (int i = 0; i < nodes.Count; i++)
         {
             var node = nodes[i];
@@ -79,7 +78,7 @@ public class Astar : MonoBehaviour
         return lowestCost;
     }
 
-    void EvaluateNeighbors(TrialNode current,TrialNode destination, HashSet<TrialNode> visitedList, List<TrialNode> unvisitedList)
+    void EvaluateNeighbors(Node current,Node destination, HashSet<Node> visitedList, List<Node> unvisitedList)
     {
         for (int i = 0; i < current.Neighbors.Count; i++)
         {
@@ -95,7 +94,7 @@ public class Astar : MonoBehaviour
         }
     }
 
-    int ComputeDistance(TrialNode first, TrialNode second)
+    int ComputeDistance(Node first, Node second)
     {
         var xDiff = first.Coordinates.x - second.Coordinates.x;
         var yDiff = first.Coordinates.y - second.Coordinates.y;
@@ -105,7 +104,7 @@ public class Astar : MonoBehaviour
         return (int)(cost * 10);
     }
 
-    void ComputeCostToNeighbor(TrialNode current, TrialNode neighbor, TrialNode destination, List<TrialNode> unvisitedList)
+    void ComputeCostToNeighbor(Node current, Node neighbor, Node destination, List<Node> unvisitedList)
     {
         var distance = ComputeDistance(current, neighbor);
         var gcost = distance + current.Gcost + neighbor.baseCost;

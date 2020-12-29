@@ -1,48 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class AstarPathfinding : IPathfinding
 {
-    public Queue<Node> VisitedNodes { get { return _visitedNodes; } }
+    public HashSet<Node> VisitedNodes { get { return _visitedNodes; } }
     public List<Node> UnvisitedNodes { get { return _unvisitedNodes; } }
 
-    Queue<Node> _visitedNodes;
+    HashSet<Node> _visitedNodes;
     List<Node> _unvisitedNodes;
 
     public AstarPathfinding()
     {
-        _visitedNodes = new Queue<Node>();
+        _visitedNodes = new HashSet<Node>();
         _unvisitedNodes = new List<Node>();
     }
 
-    public Queue<Node> FindPath(Node first, Node second)
+    public List<Node> FindPath(Node origin, Node destination)
     {
-        if (first == null || second == null)
+        if (origin == null || destination == null)
             Debug.LogError("Null parameters given");
 
-        if (first.Position == second.Position || first == second)
-        {
-            Debug.Log("No path to calculate, origin and destination are in the same position.");
-
-            Queue<Node> path = new Queue<Node>();
-            path.Enqueue(first);
-
-            return path;
-        }
-
-        first.ParentNode = null;
-        second.ParentNode = null;
         _visitedNodes.Clear();
         _unvisitedNodes.Clear();
 
-        GetNeighborPathAndCost(first, first, second);
+        _unvisitedNodes.Add(origin);
 
-        bool hasPath = EvaluatePathToDestination(first, second, _unvisitedNodes);
+        bool hasPath = EvaluatePathToDestination(origin, destination, _unvisitedNodes);
 
         if (hasPath)
-            return GetNodesPath(first, second);
+            return GetNodesPath(origin, destination);
         return null; // return null or path with empty?
     }
 
@@ -52,46 +39,44 @@ public class AstarPathfinding : IPathfinding
 
     #region Private Core Methods
 
-    Queue<Node> GetNodesPath(Node start, Node destination)
+    List<Node> GetNodesPath(Node origin, Node destination)
     {
         if (destination == null)
             Debug.LogError("Argument cannot be null");
 
-        Queue<Node> path = new Queue<Node>();
+        List<Node> path = new List<Node>();
         var currentNode = destination;
 
         do
         {
             if (!path.Contains(currentNode))
-                path.Enqueue(currentNode);
-
-            if (currentNode == start || currentNode.Position == start.Position)
-                break;
+                path.Add(currentNode);
 
             if (currentNode.ParentNode == null)
                 break;
 
-            //bool isPreviousSameAsCurrent = currentNode == currentNode.PreviousNode ||
-            //                                currentNode.Position == currentNode.PreviousNode.Position;
-            //if (isPreviousSameAsCurrent)
-            //    break;
-
             currentNode = currentNode.ParentNode;
-        } while (currentNode != start || currentNode.Position != start.Position);
-        //} while (currentNode.PreviousNode != null || currentNode != currentNode.PreviousNode);
+        } while (currentNode != origin || currentNode.Coordinates != origin.Coordinates);
 
-        return new Queue<Node>(path.Reverse());
+        path.Reverse();
+
+        return path;
     }
 
-    bool EvaluatePathToDestination(Node current, Node destination, IList<Node> unvisitedNodes)
+    bool EvaluatePathToDestination(Node origin, Node destination, IList<Node> unvisitedNodes)
     {
-        if (current == null || destination == null)
+        if (origin == null || destination == null)
             Debug.LogError("destination and current node must not be null");
-        if (current == destination || current.Position == destination.Position)
+        if (origin == destination || origin.Coordinates == destination.Coordinates)
             return true;
 
-        MarkNodeAsVisisted(current);
-        EvaluateNeighbors(current, destination);
+
+        Node lowestCost = FindLowestCost(unvisitedNodes);
+
+
+        _visitedNodes.Add(origin);
+        _unvisitedNodes.Remove(origin);
+        EvaluateNeighbors(origin, destination);
 
         if (unvisitedNodes.Count <= 0)
         {
@@ -99,9 +84,7 @@ public class AstarPathfinding : IPathfinding
             return false;
         }
 
-        Node lowestCostUnvisitedNode = FindLowestCost(unvisitedNodes);
-
-        return EvaluatePathToDestination(lowestCostUnvisitedNode, destination, unvisitedNodes);
+        return EvaluatePathToDestination(lowestCost, destination, unvisitedNodes);
     }
 
     void EvaluateNeighbors(Node current, Node destination)
@@ -110,34 +93,16 @@ public class AstarPathfinding : IPathfinding
         {
             var neighbor = current.Neighbors[i];
 
-            if (neighbor.CanPass)
-            {
-                MarkNodeAsUnvisited(neighbor);
-                GetNeighborPathAndCost(current, neighbor, destination);
-            }
-            else
-            {
-                MarkNodeAsVisisted(neighbor);
-            }
-            //if (!unvisitedNodes.Contains(neighbor))
-            //    unvisitedNodes.Add(neighbor);
+            if (!neighbor.CanPass || _visitedNodes.Contains(neighbor))
+                continue;
 
+            GetNeighborPathAndCost(current, neighbor, destination);
+
+            if (!_unvisitedNodes.Contains(neighbor))
+                _unvisitedNodes.Add(neighbor);
         }
     }
 
-    void MarkNodeAsUnvisited(Node node)
-    {
-        if (!_unvisitedNodes.Contains(node) && !_visitedNodes.Contains(node))
-            _unvisitedNodes.Add(node);
-    }
-
-    void MarkNodeAsVisisted(Node node)
-    {
-        if (!VisitedNodes.Contains(node))
-            VisitedNodes.Enqueue(node);
-        if (UnvisitedNodes.Contains(node))
-            UnvisitedNodes.Remove(node);
-    }
 
     Node FindLowestCost(IList<Node> nodes)
     {
@@ -145,12 +110,10 @@ public class AstarPathfinding : IPathfinding
             return null;
 
         Node lowestCost = null;
+
         for (int i = 0; i < nodes.Count; i++)
         {
             var node = nodes[i];
-
-            if (!node.CanPass)
-                continue;
 
             if (lowestCost == null)
             {
@@ -158,15 +121,9 @@ public class AstarPathfinding : IPathfinding
                 continue;
             }
 
-            if (lowestCost.Fcost == node.Fcost)
-            {
-                lowestCost = (lowestCost.Hcost < node.Hcost) ? lowestCost : node;
-            }
-            else
-            {
-                lowestCost = (lowestCost.Fcost < node.Fcost) ? lowestCost : node;
-            }
-
+            bool isNodeLowerCost = lowestCost.Fcost > node.Fcost || (lowestCost.Fcost == node.Fcost && lowestCost.Hcost > node.Hcost);
+            if (isNodeLowerCost)
+                lowestCost = node;
         }
 
         return lowestCost;
@@ -174,8 +131,8 @@ public class AstarPathfinding : IPathfinding
 
     int ComputeDistance(Node first, Node second)
     {
-        var xDiff = first.x - second.x;
-        var yDiff = first.y - second.y;
+        var xDiff = first.Coordinates.x - second.Coordinates.x;
+        var yDiff = first.Coordinates.y - second.Coordinates.y;
 
         var cost = Mathf.Sqrt((xDiff * xDiff) + (yDiff * yDiff));
 
@@ -184,24 +141,16 @@ public class AstarPathfinding : IPathfinding
 
     void GetNeighborPathAndCost(Node current, Node neighbor, Node destination)
     {
-        if (current.CanPass && neighbor.CanPass)
-        {
             var distance = ComputeDistance(current, neighbor);
             int gCost = distance + current.Gcost + neighbor.baseCost;
+            neighbor.Hcost = ComputeDistance(neighbor, destination);
+        
 
-            if (gCost < neighbor.Gcost || neighbor.ParentNode == null)
+            if (gCost < neighbor.Gcost || !_unvisitedNodes.Contains(neighbor))
             {
                 neighbor.Gcost = gCost;
                 neighbor.ParentNode = current;
             }
-
-            ComputeHCost(neighbor, destination);
-        }
-    }
-
-    void ComputeHCost(Node node, Node destination)
-    {
-        node.Hcost = ComputeDistance(node, destination);
     }
 
     #endregion
