@@ -8,14 +8,6 @@ using UnityEngine.Tilemaps;
 
 public class NodeGridmapComponent : MonoBehaviour
 {
-    //TODO: create different verions
-    //One inherits or required tilemap component
-
-    //Another that just gets screen coordinates or world position and translates it to current grid on screen
-    //therefore never needing more than a grid that fits the screen
-    //[Header("Tilemap")]
-    //[SerializeField] Tilemap tilemap;
-
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
     [Range(1, 50)] [SerializeField] int numberOfColumns = 5;
@@ -239,13 +231,6 @@ public class NodeGridmapComponent : MonoBehaviour
                     continue;
 
                 Node neighbor = Map[xCoordinate, yCoordinate];
-
-                if (neighbor == null)
-                {
-                    Debug.Log("neighbor was null");
-                    continue;
-                }
-
                 current.Neighbors.Add(neighbor);
             }
         }

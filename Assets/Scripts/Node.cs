@@ -25,7 +25,7 @@ public class Node
     public int x { get { return Position.X; } }
     public int y { get { return Position.Y; } }
     public IList<Node> Neighbors { get; private set; }
-    public Node PreviousNode { get; set; }
+    public Node ParentNode { get; set; }
     public int Fcost { get { return Gcost + Hcost; } }
     public int baseCost, Hcost, Gcost;
 
@@ -38,7 +38,7 @@ public class Node
 
     public void ClearNode()
     {
-        PreviousNode = null;
+        ParentNode = null;
         Gcost = 0;
         Hcost = 0;
     }

@@ -32,8 +32,8 @@ public class AstarPathfinding : IPathfinding
             return path;
         }
 
-        first.PreviousNode = null;
-        second.PreviousNode = null;
+        first.ParentNode = null;
+        second.ParentNode = null;
         _visitedNodes.Clear();
         _unvisitedNodes.Clear();
 
@@ -68,7 +68,7 @@ public class AstarPathfinding : IPathfinding
             if (currentNode == start || currentNode.Position == start.Position)
                 break;
 
-            if (currentNode.PreviousNode == null)
+            if (currentNode.ParentNode == null)
                 break;
 
             //bool isPreviousSameAsCurrent = currentNode == currentNode.PreviousNode ||
@@ -76,7 +76,7 @@ public class AstarPathfinding : IPathfinding
             //if (isPreviousSameAsCurrent)
             //    break;
 
-            currentNode = currentNode.PreviousNode;
+            currentNode = currentNode.ParentNode;
         } while (currentNode != start || currentNode.Position != start.Position);
         //} while (currentNode.PreviousNode != null || currentNode != currentNode.PreviousNode);
 
@@ -189,10 +189,10 @@ public class AstarPathfinding : IPathfinding
             var distance = ComputeDistance(current, neighbor);
             int gCost = distance + current.Gcost + neighbor.baseCost;
 
-            if (gCost < neighbor.Gcost || neighbor.PreviousNode == null)
+            if (gCost < neighbor.Gcost || neighbor.ParentNode == null)
             {
                 neighbor.Gcost = gCost;
-                neighbor.PreviousNode = current;
+                neighbor.ParentNode = current;
             }
 
             ComputeHCost(neighbor, destination);

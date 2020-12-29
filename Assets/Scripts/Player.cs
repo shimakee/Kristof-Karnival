@@ -40,8 +40,8 @@ public class Player : MonoBehaviour
             Debug.LogError("no rigidbody component attached");
         if (_animator == null)
             Debug.LogError("no animator component found in children");
-        if (gridMap == null)
-            Debug.LogError("no grid map attached.");
+        //if (gridMap == null)
+        //    Debug.LogError("no grid map attached.");
 
     }
     #region Unity Methods

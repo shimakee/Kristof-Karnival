@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
   m_PrefabInstance: {fileID: 6733583448470177061}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1559218123}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 820b22e2b3f6c27478bc57c741ac9503, type: 3}
@@ -2661,6 +2661,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1361934759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361934761}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1361934761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361934759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.6792254, y: 3.1781132, z: -14.036861}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1559218123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6733583448537637915, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
+  m_PrefabInstance: {fileID: 6733583448470177061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912731902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,17 +2751,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1912731902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34795a34ff9284947a8a44772ab4c003, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a957d6c1ceff4547abae428e26e60f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1559218123}
   mapWidth: 18
   numberOfColumns: 18
   mapHeight: 10
   numberOfRows: 10
   tileHeight: 0
-  isIsometric: 0
-  allowDiagonalMoves: 0
-  layerMasks:
+  collisionMask:
   - serializedVersion: 2
     m_Bits: 2048
 --- !u!1001 &5870572131220903020
@@ -2746,11 +2780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5870572130322782450, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.52
+      value: 8.73
       objectReference: {fileID: 0}
     - target: {fileID: 5870572130322782450, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 5870572130322782450, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2969,7 +3003,7 @@ PrefabInstance:
     - target: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: gridMap
       value: 
-      objectReference: {fileID: 1912731905}
+      objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: holdTime
       value: 0.5
