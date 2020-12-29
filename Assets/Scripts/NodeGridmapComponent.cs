@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 
-public class NodeGridmapComponent : MonoBehaviour
+public class NodeGridmapComponent : MonoBehaviour, IGridNodeMap
 {
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
@@ -24,7 +24,7 @@ public class NodeGridmapComponent : MonoBehaviour
     [SerializeField] bool allowDiagonalMoves;
 
     [Header("Mask To check collisions")]
-    [SerializeField] LayerMask[] layerMasks;
+    [SerializeField] LayerMask collisionMask;
 
     //public Node[,] Map { get { return _map; } }
     public Vector3 TilSize { get { return _tileSize; } }
@@ -49,7 +49,7 @@ public class NodeGridmapComponent : MonoBehaviour
 
     private void Start()
     {
-        CheckForObstacles();
+        CheckForTileCollisions();
     }
 
     private void FixedUpdate()
@@ -84,7 +84,7 @@ public class NodeGridmapComponent : MonoBehaviour
             DrawOnMap(ComputePositionForCartesean);
         }
     }
-    public void CheckForObstacles()
+    public void CheckForTileCollisions()
     {
         CheckForObstacles(numberOfColumns, numberOfRows);
     }
@@ -105,8 +105,11 @@ public class NodeGridmapComponent : MonoBehaviour
 
         return new Vector2Int(x, y);
     }
-
-    public Vector3 GridToWord(Vector2Int position)
+    public Vector3 GridToWorld(int x, int y)
+    {
+        return GridToWorld(new Vector2Int(x, y));
+    }
+    public Vector3 GridToWorld(Vector2Int position)
     {
         float xOffset = _tileSize.x / 2;
         float yOffset = _tileSize.y / 2;
@@ -118,10 +121,10 @@ public class NodeGridmapComponent : MonoBehaviour
         return adjustedPosition;
     }
 
-    public Vector3 ToNearestTilePosition(Vector2 position)
+    public Vector3 ToNearestTilePosition(Vector3 position)
     {
         var gridPos = WorldToGrid(position);
-        var worldPos = GridToWord(gridPos);
+        var worldPos = GridToWorld(gridPos);
 
         return worldPos;
     }
@@ -184,7 +187,7 @@ public class NodeGridmapComponent : MonoBehaviour
                 }
 
                 //bool canPass = !Physics2D.BoxCast(pos, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, new Vector2(0, 0), 0, LayerMask.GetMask("Tile Obstacles"));
-                bool canPass = CanPass(pos, layerMasks);
+                bool canPass = CanPass(pos, collisionMask);
 
                 Map[x, y] = new Node(x, y, canPass, pos);
 
@@ -295,7 +298,7 @@ public class NodeGridmapComponent : MonoBehaviour
                 else
                     pos = ComputePositionForCartesean(new Vector2(x, y), _tileSize);
 
-                bool canPass = CanPass(pos, layerMasks);
+                bool canPass = CanPass(pos, collisionMask);
 
                 var node = Map[x, y];
 
@@ -308,21 +311,9 @@ public class NodeGridmapComponent : MonoBehaviour
         }
     }
 
-    bool CanPass(Vector2 position, LayerMask[] layerMasks)
+    bool CanPass(Vector2 position, LayerMask collisionMask)
     {
-        if (layerMasks == null)
-            return true;
-        if (layerMasks.Length <= 0)
-            return true;
-
-        foreach (var mask in layerMasks)
-        {
-            bool canPass = !Physics2D.BoxCast(position, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, Vector2.zero, 0, mask);
-            if (!canPass)
-                return false;
-        }
-
-        return true;
+        return !Physics2D.BoxCast(position, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, Vector2.zero, 0, collisionMask);
     }
 
     #endregion

@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         if(_route != null)
         foreach (var path in _route)
         {
-            Gizmos.DrawSphere(gridMap.GridToWord(new Vector2Int(path.Coordinates.x, path.Coordinates.y)), gridMap.TilSize.x/2);
+            Gizmos.DrawSphere(gridMap.GridToWorld(new Vector2Int(path.Coordinates.x, path.Coordinates.y)), gridMap.TilSize.x/2);
         }
     }
 
@@ -195,7 +195,7 @@ public class Player : MonoBehaviour
             var node = path;
             Debug.Log("goind to path");
 
-            Vector2 destination = gridMap.GridToWord(new Vector2Int(node.Coordinates.x, node.Coordinates.y));
+            Vector2 destination = gridMap.GridToWorld(new Vector2Int(node.Coordinates.x, node.Coordinates.y));
             SetDesiredPosition(rb, destination - rb.position);
 
             yield return new WaitUntil(() => _rb.position == destination);
