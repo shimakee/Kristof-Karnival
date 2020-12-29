@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
     [SerializeField] float speed, holdTime = 1f;
-    [SerializeField] NodeGridmapComponent gridMap;
+    [SerializeField] GridNode gridMap;
     [SerializeField] LayerMask[] layerMasksObstacles;
 
     Animator _animator;
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     Vector2 _movementDirection;
     bool _hasMovementInput;
     float _movementInputPressedTime;
-    AstarPathfinding _pathFinding;
+    IPathfinding _pathFinding;
     List<Node> _route;
     Coroutine _followPathRoutine;
 
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
         _movement = new Movement(speed);
-        _pathFinding = new AstarPathfinding();
+        _pathFinding = new Astar();
 
         if (_rb == null)
             Debug.LogError("no rigidbody component attached");
@@ -52,12 +52,12 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (_rb != null && _movementDirection != null && gridMap != null)
-            Gizmos.DrawCube(_rb.position + _movementDirection, gridMap.TilSize / 2);
+            Gizmos.DrawCube(_rb.position + _movementDirection, gridMap.TileSize / 2);
 
         if(_route != null)
         foreach (var path in _route)
         {
-            Gizmos.DrawSphere(gridMap.GridToWorld(new Vector2Int(path.Coordinates.x, path.Coordinates.y)), gridMap.TilSize.x/2);
+            Gizmos.DrawSphere(gridMap.GridToWorld(new Vector2Int(path.Coordinates.x, path.Coordinates.y)), gridMap.TileSize.x/2);
         }
     }
 
@@ -96,13 +96,14 @@ public class Player : MonoBehaviour
         {
             Vector2Int origin = gridMap.WorldToGrid(_rb.position);
             Debug.Log($"origin {origin}");
-            Vector2Int destination = gridMap.ScreenToGrid(_mousePosition);
+            var mPos = Camera.main.ScreenToWorldPoint(_mousePosition);
+            Vector2Int destination = gridMap.WorldToGrid(mPos);
             Debug.Log($"destination {destination}");
 
             //gridMap.CheckForObstacles();
             if(_followPathRoutine != null)
                 StopCoroutine(_followPathRoutine);
-            gridMap.ResetMap();
+
             _route = _pathFinding.FindPath(gridMap.Map[origin.x, origin.y], gridMap.Map[destination.x, destination.y]);
 
             _followPathRoutine = StartCoroutine(FollowPath(_rb, _route));
@@ -163,7 +164,7 @@ public class Player : MonoBehaviour
         {
             var mask = layerMasksObstacles[i];
 
-            RaycastHit2D hit = Physics2D.BoxCast(rb.position, gridMap.TilSize, 0, _movementDirection, 1f, LayerMask.GetMask("Tile Obstacles"));
+            RaycastHit2D hit = Physics2D.BoxCast(rb.position, gridMap.TileSize, 0, _movementDirection, 1f, LayerMask.GetMask("Tile Obstacles"));
             if (hit)
                 return;
         }

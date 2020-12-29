@@ -9,6 +9,8 @@ public interface IPathfinding
 
 public interface IGridNodeMap
 {
+    Node[,] Map { get; }
+    Vector3 TileSize { get; }
     void CheckForTileCollisions();
     Vector2Int WorldToGrid(Vector3 position);
     Vector3 GridToWorld(Vector2Int position);

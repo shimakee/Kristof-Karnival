@@ -9,9 +9,6 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     public GameObject player;
     public GameObject target;
     Astar _pathfinding;
-    AstarPathfinding astarPathfinding;
-
-
 
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
@@ -48,7 +45,6 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
         //temp
         _pathfinding = new Astar();
-        astarPathfinding = new AstarPathfinding();
     }
 
     // Start is called before the first frame update
@@ -72,8 +68,8 @@ public class GridNode : MonoBehaviour, IGridNodeMap
             var origin = WorldToGrid(player.transform.position);
             var destination = WorldToGrid(target.transform.position);
             var path = _pathfinding.FindPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
-            //var path = astarPathfinding.FindPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
             foreach (var node in _map)
+
             {
 
                 if (node.Coordinates == WorldToGrid(player.transform.position))

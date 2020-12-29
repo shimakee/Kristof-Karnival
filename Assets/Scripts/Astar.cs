@@ -13,12 +13,9 @@ public class Astar : MonoBehaviour, IPathfinding
 
         while (unvisitedList.Count > 0)
         {
-            //get lowest cost
             Node currentNode = FindLowestCost(unvisitedList);
-            //visit current node
             visitedList.Add(currentNode);
             unvisitedList.Remove(currentNode);
-            //check neighbors
             EvaluateNeighbors(currentNode, destination, visitedList, unvisitedList);
         }
 
