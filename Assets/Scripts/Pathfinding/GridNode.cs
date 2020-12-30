@@ -374,7 +374,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
         if (hasConflict) 
         {
-            //resolve conflict
+            //resolve conflict //TODO: better to use heap since its already sorted
             int lowestInt = 0;
             var arrayInt = neighborsValue.ToArray();
 
