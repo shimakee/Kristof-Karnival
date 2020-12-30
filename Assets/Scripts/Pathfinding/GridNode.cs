@@ -309,35 +309,15 @@ public class GridNode : MonoBehaviour, IGridNodeMap
             for (int y = 0; y < row; y++)
             {
                 var current = _map[x, y];
-                if (current.ConnectedValue == 0)
-                    continue;
+                //if (current.ConnectedValue == 0)
+                //    continue;
 
                 //evaluate neighbors
                 counter = EvaluateConnectedNeighbors(counter, current);
             }
         }
 
-        //Debug.Log($"before reduction {EquivalencyList.Count}");
-        //foreach (var item in EquivalencyList)
-        //{
-        //    Debug.Log($"==============> key: {item.Key}");
-        //    foreach (var number in item.Value)
-        //    {
-        //        Debug.Log($"{number}");
-        //    }
-        //}
-
-        //ReduceEquivalencyList(EquivalencyList);
-        //Debug.Log($"after reduction {EquivalencyList.Count}");
-
-        //foreach (var item in EquivalencyList)
-        //{
-        //    Debug.Log($"==============> key: {item.Key}");
-        //    foreach (var number in item.Value)
-        //    {
-        //        Debug.Log($"{number}");
-        //    }
-        //}
+        ReduceEquivalencyList(EquivalencyList);
 
         for (int x = 0; x < column; x++)
         {
@@ -387,11 +367,12 @@ public class GridNode : MonoBehaviour, IGridNodeMap
             }
         }
 
-        if (neighborsValue.Count == 1)
-        {
-            current.ConnectedValue = neighborsValue.First();
-        }
-        else if (neighborsValue.Count > 1)
+        bool hasConflict = neighborsValue.Count > 1;
+
+        if (current.ConnectedValue == 0 && !hasConflict)
+            return counter;
+
+        if (hasConflict) 
         {
             //resolve conflict
             int lowestInt = 0;
@@ -406,12 +387,17 @@ public class GridNode : MonoBehaviour, IGridNodeMap
                     lowestInt = arrayInt[i];
             }
 
-            current.ConnectedValue = lowestInt;
+            if (current.ConnectedValue != 0)
+                current.ConnectedValue = lowestInt;
 
-            if(!EquivalencyList.ContainsKey(lowestInt))
+            if (!EquivalencyList.ContainsKey(lowestInt))
                 EquivalencyList[lowestInt] = new HashSet<int>();
 
             EquivalencyList[lowestInt].UnionWith(neighborsValue);
+        }
+        else if (neighborsValue.Count == 1)
+        {
+            current.ConnectedValue = neighborsValue.First();
         }
 
         if ((separationCounter == 3 && allowDiagonalConnections) || (separationCounter == 2 && !allowDiagonalConnections))
@@ -433,23 +419,34 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
         var lowestEquivalent = counter;
 
-        //foreach (var item in list)
-        //{
         for (int i = list.Count -1; i >= 0; i--)
         {
             var item = list.ElementAt(i);
             if (item.Value.Contains(lowestEquivalent))
                 lowestEquivalent = item.Key;
         }
-        //}
 
         return lowestEquivalent;
     }
 
     void ReduceEquivalencyList(Dictionary<int, HashSet<int>> list)
     {
+        for (int index = 0; index < list.Count; index++)
+        {
+            var item = list.ElementAt(index);
 
+            for (int i = list.Count -1; i >= 0; i--)
+            {
+                var toCheck = list.ElementAt(i);
+
+                if (item.Value.Contains(toCheck.Key) && item.Value != toCheck.Value)
+                {
+                    list[item.Key].UnionWith(list[toCheck.Key]);
+                    list.Remove(toCheck.Key);
+                }
+            }
+        }
     }
 
-        #endregion
+    #endregion
     }
