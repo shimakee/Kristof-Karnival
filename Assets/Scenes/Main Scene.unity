@@ -2755,13 +2755,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1559218123}
+  target: {fileID: 1361934759}
   mapWidth: 18
   numberOfColumns: 18
   mapHeight: 10
   numberOfRows: 10
   tileHeight: 0
+  isIsometric: 0
+  allowDiagonalConnections: 0
   collisionMask:
-  - serializedVersion: 2
+    serializedVersion: 2
     m_Bits: 2048
 --- !u!1001 &5870572131220903020
 PrefabInstance:
@@ -2780,11 +2783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5870572130322782450, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.73
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 5870572130322782450, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 5870572130322782450, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2826,6 +2829,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5870572131220005618, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.58646774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870572131220005618, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8308825
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870572131220005618, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.16283888
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870572131220005618, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.467003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe461d0ee334f2d40a265c6ecfa2308a, type: 3}
 --- !u!1001 &6409690579065419550
@@ -2835,17 +2854,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6409690579489314432, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.086107194
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409690579489314432, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32812655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409690579489314432, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.4214691
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409690579489314432, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Size.x
+      value: 2.821098
+      objectReference: {fileID: 0}
     - target: {fileID: 6409690579489314437, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.46
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3003,10 +3038,14 @@ PrefabInstance:
     - target: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: gridMap
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1912731905}
     - target: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: holdTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733583448537637991, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
+      propertyPath: collisionMask.m_Bits
+      value: 2048
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc64dcc942021684485ab165eb27efa4, type: 3}

@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Node
 {
-
     public bool CanPass;
     public Vector2Int Coordinates;
     public Vector3 WorldPosition;
     public IList<Node> Neighbors { get; private set; }
     public Node ParentNode { get; set; }
     public int Fcost { get { return Gcost + Hcost; } }
-    public int baseCost, Hcost, Gcost;
+    public int baseCost, Hcost, Gcost, ConnectedValue;
 
     public void SetNeighbors(IList<Node> tilenodes)
     {

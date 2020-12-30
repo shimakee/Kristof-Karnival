@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Astar : MonoBehaviour, IPathfinding
+public class Astar : IPathfinding
 {
     public List<Node> FindPath(Node origin, Node destination)
     {
@@ -36,7 +36,10 @@ public class Astar : MonoBehaviour, IPathfinding
                 path.Add(currentNode);
 
             if (currentNode.ParentNode == null)
+            {
+                path.Clear();
                 break;
+            }
 
             currentNode = currentNode.ParentNode;
 

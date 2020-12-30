@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerInput playerInput;
     [SerializeField] float speed, holdTime = 1f;
     [SerializeField] GridNode gridMap;
-    [SerializeField] LayerMask[] layerMasksObstacles;
+    [SerializeField] LayerMask collisionMask;
 
     Animator _animator;
     Rigidbody2D _rb;
@@ -95,13 +95,14 @@ public class Player : MonoBehaviour
         if (ctx.performed)
         {
             Vector2Int origin = gridMap.WorldToGrid(_rb.position);
-            Debug.Log($"origin {origin}");
+            Debug.Log($"origin node connectedness {gridMap.Map[origin.x, origin.y].ConnectedValue}");
             var mPos = Camera.main.ScreenToWorldPoint(_mousePosition);
             Vector2Int destination = gridMap.WorldToGrid(mPos);
-            Debug.Log($"destination {destination}");
+            Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y].ConnectedValue}");
+
 
             //gridMap.CheckForObstacles();
-            if(_followPathRoutine != null)
+            if (_followPathRoutine != null)
                 StopCoroutine(_followPathRoutine);
 
             _route = _pathFinding.FindPath(gridMap.Map[origin.x, origin.y], gridMap.Map[destination.x, destination.y]);
@@ -160,26 +161,11 @@ public class Player : MonoBehaviour
 
     void SetDesiredPosition(Rigidbody2D rb, Vector2 direction)
     {
-        for (int i = 0; i < layerMasksObstacles.Length; i++)
-        {
-            var mask = layerMasksObstacles[i];
-
-            RaycastHit2D hit = Physics2D.BoxCast(rb.position, gridMap.TileSize, 0, _movementDirection, 1f, LayerMask.GetMask("Tile Obstacles"));
-            if (hit)
-                return;
-        }
-
+        RaycastHit2D hit = Physics2D.BoxCast(rb.position, gridMap.TileSize, 0, _movementDirection, 1f, collisionMask);
+        if (hit)
+            return;
         _movement.DesiredPosition = gridMap.ToNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
     }
-
-    //IEnumerator StartPath(Rigidbody2D rb, Queue<Node> route)
-    //{
-    //    var routine = StartCoroutine(FollowPath(rb, route));
-
-    //    yield return routine;
-
-    //    StopCoroutine(routine);
-    //}
 
     IEnumerator FollowPath(Rigidbody2D rb, List<Node> route)
     {
@@ -189,22 +175,18 @@ public class Player : MonoBehaviour
         if (route.Count <= 0)
             yield break;
 
-        Debug.Log("path start");
 
         foreach (var path in route)
         {
             var node = path;
-            Debug.Log("goind to path");
 
             Vector2 destination = gridMap.GridToWorld(new Vector2Int(node.Coordinates.x, node.Coordinates.y));
             SetDesiredPosition(rb, destination - rb.position);
 
             yield return new WaitUntil(() => _rb.position == destination);
             yield return new WaitForSeconds(holdTime);
-            //route.Dequeue();
         }
 
-        Debug.Log("path end");
     }
     #endregion
 }

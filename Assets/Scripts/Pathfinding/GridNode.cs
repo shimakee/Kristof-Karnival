@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GridNode : MonoBehaviour, IGridNodeMap
@@ -22,7 +23,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     [Range(0, 50)] [SerializeField] float tileHeight = 0;
 
     [SerializeField] bool isIsometric;
-    [SerializeField] bool allowDiagonalMoves;
+    [SerializeField] bool allowDiagonalConnections;
 
     [Header("Mask To check collisions")]
     [SerializeField] LayerMask collisionMask;
@@ -34,6 +35,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     Vector2 _mapSize;
     Node[,] _map;
     Vector3 _tileSize;
+    Dictionary<int, HashSet<int>> EquivalencyList = new Dictionary<int, HashSet<int>>();
 
     #region Unity Methods
 
@@ -51,6 +53,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     void Start()
     {
         CheckForTileCollisions();
+        DetermineConnectedness();
     }
 
     // Update is called once per frame
@@ -187,6 +190,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
                 bool canPass = CanPass(position, collisionMask);
 
                 _map[x, y] = new Node(x, y, canPass, position);
+                _map[x, y].ConnectedValue = canPass ? 1 : 0;
             }
         }
     }
@@ -216,7 +220,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
                     continue;
 
                 bool isMoveDiagonal = (x > 0 || x < 0) && (y > 0 || y < 0);
-                if (!allowDiagonalMoves && isMoveDiagonal)
+                if (!allowDiagonalConnections && isMoveDiagonal)
                     continue;
 
                 int xCoordinate = current.Coordinates.x + x;
@@ -290,4 +294,162 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     }
 
     #endregion
-}
+
+    #region Connectedness
+    void DetermineConnectedness()
+    {
+        DetermineConnectedness(numberOfColumns, numberOfRows);
+    }
+    void DetermineConnectedness(int column, int row)
+    {
+        int counter = 0;
+
+        for (int x = 0; x < column; x++)
+        {
+            for (int y = 0; y < row; y++)
+            {
+                var current = _map[x, y];
+                if (current.ConnectedValue == 0)
+                    continue;
+
+                //evaluate neighbors
+                counter = EvaluateConnectedNeighbors(counter, current);
+            }
+        }
+
+        //Debug.Log($"before reduction {EquivalencyList.Count}");
+        //foreach (var item in EquivalencyList)
+        //{
+        //    Debug.Log($"==============> key: {item.Key}");
+        //    foreach (var number in item.Value)
+        //    {
+        //        Debug.Log($"{number}");
+        //    }
+        //}
+
+        //ReduceEquivalencyList(EquivalencyList);
+        //Debug.Log($"after reduction {EquivalencyList.Count}");
+
+        //foreach (var item in EquivalencyList)
+        //{
+        //    Debug.Log($"==============> key: {item.Key}");
+        //    foreach (var number in item.Value)
+        //    {
+        //        Debug.Log($"{number}");
+        //    }
+        //}
+
+        for (int x = 0; x < column; x++)
+        {
+            for (int y = 0; y < row; y++)
+            {
+                var current = _map[x, y];
+
+                current.ConnectedValue = LowestValueEquivalent(current.ConnectedValue, EquivalencyList);
+            }
+        }
+    }
+
+    int EvaluateConnectedNeighbors(int counter, Node current)
+    {
+        int separationCounter = 0;
+        HashSet<int> neighborsValue = new HashSet<int>();
+        for (int x = -1; x < 1; x++)
+        {
+            for (int y = -1; y < 1; y++)
+            {
+                if (x == 0 && y == 0)
+                    continue;
+
+                bool isMoveDiagonal = (x > 0 || x < 0) && (y > 0 || y < 0);
+                if (!allowDiagonalConnections && isMoveDiagonal)
+                    continue;
+
+                int xCoordinate = current.Coordinates.x + x;
+                int yCoordinate = current.Coordinates.y + y;
+                bool isBeyondMap = xCoordinate < 0 || xCoordinate >= _map.GetLength(0) ||
+                                    yCoordinate < 0 || yCoordinate >= _map.GetLength(1);
+                if (isBeyondMap)
+                {
+                    separationCounter++;
+                    continue;
+                }
+
+                Node neighbor = _map[xCoordinate, yCoordinate];
+
+                if (neighbor.ConnectedValue <= 0)
+                {
+                    separationCounter++;
+                    continue;
+                }
+
+                neighborsValue.Add(neighbor.ConnectedValue);
+            }
+        }
+
+        if (neighborsValue.Count == 1)
+        {
+            current.ConnectedValue = neighborsValue.First();
+        }
+        else if (neighborsValue.Count > 1)
+        {
+            //resolve conflict
+            int lowestInt = 0;
+            var arrayInt = neighborsValue.ToArray();
+
+            for (int i = 0; i < arrayInt.Length; i++)
+            {
+                if (i == 0)
+                    lowestInt = arrayInt[i];
+
+                if (arrayInt[i] < lowestInt)
+                    lowestInt = arrayInt[i];
+            }
+
+            current.ConnectedValue = lowestInt;
+
+            if(!EquivalencyList.ContainsKey(lowestInt))
+                EquivalencyList[lowestInt] = new HashSet<int>();
+
+            EquivalencyList[lowestInt].UnionWith(neighborsValue);
+        }
+
+        if ((separationCounter == 3 && allowDiagonalConnections) || (separationCounter == 2 && !allowDiagonalConnections))
+        {
+            counter++;
+            current.ConnectedValue = counter;
+
+            if (!EquivalencyList.ContainsKey(counter))
+                EquivalencyList[counter] = new HashSet<int>();
+
+            EquivalencyList[counter].Add(counter);
+        }
+
+        return counter;
+    }
+
+    int LowestValueEquivalent(int counter, Dictionary<int, HashSet<int>> list)
+    {
+
+        var lowestEquivalent = counter;
+
+        //foreach (var item in list)
+        //{
+        for (int i = list.Count -1; i >= 0; i--)
+        {
+            var item = list.ElementAt(i);
+            if (item.Value.Contains(lowestEquivalent))
+                lowestEquivalent = item.Key;
+        }
+        //}
+
+        return lowestEquivalent;
+    }
+
+    void ReduceEquivalencyList(Dictionary<int, HashSet<int>> list)
+    {
+
+    }
+
+        #endregion
+    }
