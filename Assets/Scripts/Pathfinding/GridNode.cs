@@ -9,8 +9,11 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     //temp
     public GameObject player;
     public GameObject target;
+    //extras
     Astar _pathfinding;
+    GridConnectedness _connectedness;
 
+    //inspector modifications
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
     [Range(1, 50)] [SerializeField] int numberOfColumns = 5;
@@ -28,6 +31,8 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     [Header("Mask To check collisions")]
     [SerializeField] LayerMask collisionMask;
 
+    //Public fields
+
     public Node[,] Map { get { return _map; } }
     public Vector3 TileSize { get { return _tileSize; } }
 
@@ -35,7 +40,6 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     Vector2 _mapSize;
     Node[,] _map;
     Vector3 _tileSize;
-    Dictionary<int, HashSet<int>> EquivalencyList = new Dictionary<int, HashSet<int>>();
 
     #region Unity Methods
 
@@ -47,13 +51,14 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
         //temp
         _pathfinding = new Astar();
+        _connectedness = new GridConnectedness();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         CheckForTileCollisions();
-        DetermineConnectedness();
+        _connectedness.DetermineConnectedness(_map, allowDiagonalConnections);
     }
 
     // Update is called once per frame
@@ -296,157 +301,157 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     #endregion
 
     #region Connectedness
-    void DetermineConnectedness()
-    {
-        DetermineConnectedness(numberOfColumns, numberOfRows);
-    }
-    void DetermineConnectedness(int column, int row)
-    {
-        int counter = 0;
+    //void DetermineConnectedness()
+    //{
+    //    DetermineConnectedness(numberOfColumns, numberOfRows);
+    //}
+    //void DetermineConnectedness(int column, int row)
+    //{
+    //    int counter = 0;
 
-        for (int x = 0; x < column; x++)
-        {
-            for (int y = 0; y < row; y++)
-            {
-                var current = _map[x, y];
-                //if (current.ConnectedValue == 0)
-                //    continue;
+    //    for (int x = 0; x < column; x++)
+    //    {
+    //        for (int y = 0; y < row; y++)
+    //        {
+    //            var current = _map[x, y];
+    //            //if (current.ConnectedValue == 0)
+    //            //    continue;
 
-                //evaluate neighbors
-                counter = EvaluateConnectedNeighbors(counter, current);
-            }
-        }
+    //            //evaluate neighbors
+    //            counter = EvaluateConnectedNeighbors(counter, current);
+    //        }
+    //    }
 
-        ReduceEquivalencyList(EquivalencyList);
+    //    ReduceEquivalencyList(EquivalencyList);
 
-        for (int x = 0; x < column; x++)
-        {
-            for (int y = 0; y < row; y++)
-            {
-                var current = _map[x, y];
+    //    for (int x = 0; x < column; x++)
+    //    {
+    //        for (int y = 0; y < row; y++)
+    //        {
+    //            var current = _map[x, y];
 
-                current.ConnectedValue = LowestValueEquivalent(current.ConnectedValue, EquivalencyList);
-            }
-        }
-    }
+    //            current.ConnectedValue = LowestValueEquivalent(current.ConnectedValue, EquivalencyList);
+    //        }
+    //    }
+    //}
 
-    int EvaluateConnectedNeighbors(int counter, Node current)
-    {
-        int separationCounter = 0;
-        HashSet<int> neighborsValue = new HashSet<int>();
-        for (int x = -1; x < 1; x++)
-        {
-            for (int y = -1; y < 1; y++)
-            {
-                if (x == 0 && y == 0)
-                    continue;
+    //int EvaluateConnectedNeighbors(int counter, Node current)
+    //{
+    //    int separationCounter = 0;
+    //    HashSet<int> neighborsValue = new HashSet<int>();
+    //    for (int x = -1; x < 1; x++)
+    //    {
+    //        for (int y = -1; y < 1; y++)
+    //        {
+    //            if (x == 0 && y == 0)
+    //                continue;
 
-                bool isMoveDiagonal = (x > 0 || x < 0) && (y > 0 || y < 0);
-                if (!allowDiagonalConnections && isMoveDiagonal)
-                    continue;
+    //            bool isMoveDiagonal = (x > 0 || x < 0) && (y > 0 || y < 0);
+    //            if (!allowDiagonalConnections && isMoveDiagonal)
+    //                continue;
 
-                int xCoordinate = current.Coordinates.x + x;
-                int yCoordinate = current.Coordinates.y + y;
-                bool isBeyondMap = xCoordinate < 0 || xCoordinate >= _map.GetLength(0) ||
-                                    yCoordinate < 0 || yCoordinate >= _map.GetLength(1);
-                if (isBeyondMap)
-                {
-                    separationCounter++;
-                    continue;
-                }
+    //            int xCoordinate = current.Coordinates.x + x;
+    //            int yCoordinate = current.Coordinates.y + y;
+    //            bool isBeyondMap = xCoordinate < 0 || xCoordinate >= _map.GetLength(0) ||
+    //                                yCoordinate < 0 || yCoordinate >= _map.GetLength(1);
+    //            if (isBeyondMap)
+    //            {
+    //                separationCounter++;
+    //                continue;
+    //            }
 
-                Node neighbor = _map[xCoordinate, yCoordinate];
+    //            Node neighbor = _map[xCoordinate, yCoordinate];
 
-                if (neighbor.ConnectedValue <= 0)
-                {
-                    separationCounter++;
-                    continue;
-                }
+    //            if (neighbor.ConnectedValue <= 0)
+    //            {
+    //                separationCounter++;
+    //                continue;
+    //            }
 
-                neighborsValue.Add(neighbor.ConnectedValue);
-            }
-        }
+    //            neighborsValue.Add(neighbor.ConnectedValue);
+    //        }
+    //    }
 
-        bool hasConflict = neighborsValue.Count > 1;
+    //    bool hasConflict = neighborsValue.Count > 1;
 
-        if (current.ConnectedValue == 0 && !hasConflict)
-            return counter;
+    //    if (current.ConnectedValue == 0 && !hasConflict)
+    //        return counter;
 
-        if (hasConflict) 
-        {
-            //resolve conflict //TODO: better to use heap since its already sorted
-            int lowestInt = 0;
-            var arrayInt = neighborsValue.ToArray();
+    //    if (hasConflict) 
+    //    {
+    //        //resolve conflict //TODO: better to use heap since its already sorted
+    //        int lowestInt = 0;
+    //        var arrayInt = neighborsValue.ToArray();
 
-            for (int i = 0; i < arrayInt.Length; i++)
-            {
-                if (i == 0)
-                    lowestInt = arrayInt[i];
+    //        for (int i = 0; i < arrayInt.Length; i++)
+    //        {
+    //            if (i == 0)
+    //                lowestInt = arrayInt[i];
 
-                if (arrayInt[i] < lowestInt)
-                    lowestInt = arrayInt[i];
-            }
+    //            if (arrayInt[i] < lowestInt)
+    //                lowestInt = arrayInt[i];
+    //        }
 
-            if (current.ConnectedValue != 0)
-                current.ConnectedValue = lowestInt;
+    //        if (current.ConnectedValue != 0)
+    //            current.ConnectedValue = lowestInt;
 
-            if (!EquivalencyList.ContainsKey(lowestInt))
-                EquivalencyList[lowestInt] = new HashSet<int>();
+    //        if (!EquivalencyList.ContainsKey(lowestInt))
+    //            EquivalencyList[lowestInt] = new HashSet<int>();
 
-            EquivalencyList[lowestInt].UnionWith(neighborsValue);
-        }
-        else if (neighborsValue.Count == 1)
-        {
-            current.ConnectedValue = neighborsValue.First();
-        }
+    //        EquivalencyList[lowestInt].UnionWith(neighborsValue);
+    //    }
+    //    else if (neighborsValue.Count == 1)
+    //    {
+    //        current.ConnectedValue = neighborsValue.First();
+    //    }
 
-        if ((separationCounter == 3 && allowDiagonalConnections) || (separationCounter == 2 && !allowDiagonalConnections))
-        {
-            counter++;
-            current.ConnectedValue = counter;
+    //    if ((separationCounter == 3 && allowDiagonalConnections) || (separationCounter == 2 && !allowDiagonalConnections))
+    //    {
+    //        counter++;
+    //        current.ConnectedValue = counter;
 
-            if (!EquivalencyList.ContainsKey(counter))
-                EquivalencyList[counter] = new HashSet<int>();
+    //        if (!EquivalencyList.ContainsKey(counter))
+    //            EquivalencyList[counter] = new HashSet<int>();
 
-            EquivalencyList[counter].Add(counter);
-        }
+    //        EquivalencyList[counter].Add(counter);
+    //    }
 
-        return counter;
-    }
+    //    return counter;
+    //}
 
-    int LowestValueEquivalent(int counter, Dictionary<int, HashSet<int>> list)
-    {
+    //int LowestValueEquivalent(int counter, Dictionary<int, HashSet<int>> list)
+    //{
 
-        var lowestEquivalent = counter;
+    //    var lowestEquivalent = counter;
 
-        for (int i = list.Count -1; i >= 0; i--)
-        {
-            var item = list.ElementAt(i);
-            if (item.Value.Contains(lowestEquivalent))
-                lowestEquivalent = item.Key;
-        }
+    //    for (int i = list.Count -1; i >= 0; i--)
+    //    {
+    //        var item = list.ElementAt(i);
+    //        if (item.Value.Contains(lowestEquivalent))
+    //            lowestEquivalent = item.Key;
+    //    }
 
-        return lowestEquivalent;
-    }
+    //    return lowestEquivalent;
+    //}
 
-    void ReduceEquivalencyList(Dictionary<int, HashSet<int>> list)
-    {
-        for (int index = 0; index < list.Count; index++)
-        {
-            var item = list.ElementAt(index);
+    //void ReduceEquivalencyList(Dictionary<int, HashSet<int>> list)
+    //{
+    //    for (int index = 0; index < list.Count; index++)
+    //    {
+    //        var item = list.ElementAt(index);
 
-            for (int i = list.Count -1; i >= 0; i--)
-            {
-                var toCheck = list.ElementAt(i);
+    //        for (int i = list.Count -1; i >= 0; i--)
+    //        {
+    //            var toCheck = list.ElementAt(i);
 
-                if (item.Value.Contains(toCheck.Key) && item.Value != toCheck.Value)
-                {
-                    list[item.Key].UnionWith(list[toCheck.Key]);
-                    list.Remove(toCheck.Key);
-                }
-            }
-        }
-    }
+    //            if (item.Value.Contains(toCheck.Key) && item.Value != toCheck.Value)
+    //            {
+    //                list[item.Key].UnionWith(list[toCheck.Key]);
+    //                list.Remove(toCheck.Key);
+    //            }
+    //        }
+    //    }
+    //}
 
     #endregion
     }
