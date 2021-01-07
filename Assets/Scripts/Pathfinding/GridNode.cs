@@ -11,7 +11,8 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     public GameObject target;
     //extras
     Astar _pathfinding;
-    GridConnectedness _connectedness;
+    //GridConnectedness _connectedness;
+    Connectedness _connectedness;
 
     //inspector modifications
     [Header("Map details:")]
@@ -51,14 +52,16 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
         //temp
         _pathfinding = new Astar();
-        _connectedness = new GridConnectedness();
+        //_connectedness = new GridConnectedness();
+        _connectedness = new Connectedness();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         CheckForTileCollisions();
-        _connectedness.DetermineConnectedness(_map, allowDiagonalConnections);
+        _connectedness.DetermineConnectedness(_map);
+        //_connectedness.DetermineConnectedness(_map, allowDiagonalConnections);
     }
 
     // Update is called once per frame
@@ -236,7 +239,9 @@ public class GridNode : MonoBehaviour, IGridNodeMap
                     continue;
 
                 Node neighbor = _map[xCoordinate, yCoordinate];
-                current.Neighbors.Add(neighbor);
+
+                //if (neighbor.CanPass && current.CanPass)
+                    current.Neighbors.Add(neighbor);
             }
         }
     }

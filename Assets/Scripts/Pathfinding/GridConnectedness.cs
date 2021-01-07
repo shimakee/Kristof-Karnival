@@ -87,8 +87,9 @@ public class GridConnectedness
         }
 
         bool hasConflict = neighborsValue.Count > 1;
+        bool noConnectionToEvaluate = current.ConnectedValue == 0 && (!hasConflict || !_allowDiagonalConnection);
 
-        if (current.ConnectedValue == 0 && (!hasConflict || !_allowDiagonalConnection))
+        if (noConnectionToEvaluate)
             return counter;
 
         if (hasConflict)
