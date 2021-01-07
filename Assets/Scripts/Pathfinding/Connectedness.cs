@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Connectedness
 {
-    public void DetermineConnectedness(Node[,] nodes)
+    public int DetermineConnectedness(Node[,] nodes)
     {
         List<Node> nodesVisited = new List<Node>();
         int connectedGraphCounter = 0;
@@ -23,6 +23,8 @@ public class Connectedness
                 }
             }
         }
+
+        return connectedGraphCounter;
     }
 
     void DepthFirstSearchConnectedNeighbors(Node node,int connectedGraphValue, List<Node> nodesVisited)
