@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class GridNode : MonoBehaviour, IGridNodeMap
+public class GridMap2D : MonoBehaviour, IConnectedGridMap2D<IUnityPathNode>
 {
-    //temp
-    public GameObject player;
-    public GameObject target;
-    //extras
-    Astar _pathfinding;
-    //GridConnectedness _connectedness;
-    Connectedness<IUnityPathNode> _connectedness;
-
     //inspector modifications
     [Header("Map details:")]
     [Range(1, 50)] [SerializeField] float mapWidth = 10;
@@ -23,113 +13,54 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     [Range(1, 50)] [SerializeField] float mapHeight = 10;
     [Range(1, 50)] [SerializeField] int numberOfRows = 5; //use resolution as well?
 
+    [Range(0, 90)] [SerializeField] float angle = 0;
+
     [Header("Tile details:")]
     [Range(0, 50)] [SerializeField] float tileHeight = 0;
 
-    [SerializeField] float angle;
     [SerializeField] bool isIsometric;
     [SerializeField] bool allowDiagonalConnections;
 
     [Header("Mask To check collisions")]
-    [SerializeField] LayerMask collisionMask;
+    [SerializeField] LayerMask maskToCheckForCollision;
 
-    //Public fields
-
-    public Node[,] Map { get { return _map; } }
-    public Vector3 TileSize { get { return _tileSize; } }
-
+    public Vector2 TileSize { get { return _tileSize; } }
+    public IUnityPathNode[,] Map { get { return _map; } }
 
     Vector2 _mapSize;
-    Node[,] _map;
-    Vector3 _tileSize;
+    Vector2 _tileSize;
+    IUnityPathNode[,] _map;
 
-    #region Unity Methods
-
+    #region Unity Mehtods
     private void Awake()
     {
         _mapSize = new Vector2(mapWidth, mapHeight);
         _tileSize = AdjustTileSize();
-        CreateConnectedGrid(numberOfColumns, numberOfRows);
-
-        //temp
-        _pathfinding = new Astar();
-        //_connectedness = new GridConnectedness();
-        _connectedness = new Connectedness<IUnityPathNode>();
+        _map = CreateConnectedGrid(numberOfColumns, numberOfRows);
     }
-
     // Start is called before the first frame update
     void Start()
     {
-        CheckForTileCollisions();
-        _connectedness.DetermineConnectedness(_map);
-        //_connectedness.DetermineConnectedness(_map, allowDiagonalConnections);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnDrawGizmos()
-    {
-        if(_map != null)
-        {
-            DrawOnMap();
-
-            var origin = WorldToGrid(player.transform.position);
-            var destination = WorldToGrid(target.transform.position);
-            var path = _pathfinding.FindPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
-            foreach (var node in _map)
-
-            {
-                var coord = WorldToGrid(player.transform.position);
-                if (node.Coordinates == new Vector3Int(coord.x, coord.y, 0))
-                {
-                    Gizmos.color = Color.green;
-                    Gizmos.DrawCube(node.WorldPosition, _tileSize / 2);
-                }
-
-                if (path.Contains(node))
-                {
-                    Gizmos.color = Color.white;
-                    Gizmos.DrawCube(node.WorldPosition, _tileSize / 2);
-                }
-            }
-        }
-    }
-
-
-    #endregion
-
-    #region Drawing methods
-    public void DrawOnMap()
-    {
-        for (int x = 0; x < numberOfColumns; x++)
-        {
-            for (int y = 0; y < numberOfRows; y++)
-            {
-                if (Map == null)
-                    return;
-
-                var node = Map[x, y];
-
-                if (node.CanPass)
-                {
-                    Gizmos.color = Color.blue;
-                    Gizmos.DrawWireCube(node.WorldPosition, new Vector3(_tileSize.x * .9f, _tileSize.y * .9f, _tileSize.z));
-                }
-                else
-                {
-                    Gizmos.color = Color.red;
-                    Gizmos.DrawWireCube(node.WorldPosition, new Vector3(_tileSize.x * .9f, _tileSize.y * .9f, _tileSize.z));
-                }
-            }
-        }
-    }
     #endregion
 
     #region Utility Methods
+    public IUnityPathNode GetGridObject(Vector2Int coordinates)
+    {
+        return _map[coordinates.x, coordinates.y];
+    }
+    public void CheckForTileCollisions()
+    {
+        CheckForTileCollisions(_map, maskToCheckForCollision);
+    }
 
     public Vector3 GridToWorld(Vector2Int coordinates)
     {
@@ -165,59 +96,63 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
 
     }
-    public Vector3 ToNearestTilePosition(Vector3 position)
+    public Vector3 GetNearestTilePosition(Vector3 position)
     {
         var gridPos = WorldToGrid(position);
         var worldPos = GridToWorld(gridPos);
 
         return worldPos;
     }
-
-    public void CheckForTileCollisions()
-    {
-        CheckForTileCollisions(numberOfColumns, numberOfRows);
-    }
-
     #endregion
 
     #region Private Methods
-    void CreateConnectedGrid(int column, int rows)
+    IUnityPathNode[,] CreateConnectedGrid(int column, int rows)
     {
-        CreateGrid(column, rows);
-        EstablishNodeConnectionForAll(column, rows);
+        var map = CreateGrid(column, rows);
+        EstablishNodeConnectionForAll(map);
+        return map;
     }
 
-    void CreateGrid(int column, int rows)
+    IUnityPathNode[,] CreateGrid(int column, int rows)
     {
-        _map = new Node[column, rows];
+        var map = new Node[column, rows];
 
         for (int x = 0; x < column; x++)
         {
             for (int y = 0; y < rows; y++)
             {
                 Vector3 position = GridToWorld(x, y);
-                bool canPass = CanPass(position, collisionMask);
+                bool canPass = CanPass(position, maskToCheckForCollision);
 
-                _map[x, y] = new Node(x, y, 0, canPass, position);
-                _map[x, y].ConnectedValue = canPass ? 1 : 0;
+                map[x, y] = new Node(x, y, 0, canPass, position);
+                map[x, y].ConnectedValue = canPass ? 1 : 0;
             }
         }
+
+        return map;
     }
-    void EstablishNodeConnectionForAll(int numberOfColumns, int numberOfRows)
+
+    void EstablishNodeConnectionForAll(IUnityPathNode[,] map)
     {
-        for (int x = 0; x < numberOfColumns; x++)
+        int mapWidth = map.GetLength(0);
+        int mapHeight = map.GetLength(1);
+
+        for (int x = 0; x < mapWidth; x++)
         {
-            for (int y = 0; y < numberOfRows; y++)
+            for (int y = 0; y < mapHeight; y++)
             {
-                EstablishGridNodeConnection(_map[x, y]);
+                EstablishGridNodeConnection(map[x, y] , map);
             }
         }
     }
 
-    void EstablishGridNodeConnection(Node current)
+    void EstablishGridNodeConnection(IUnityPathNode current, IUnityPathNode[,] map)
     {
         if (current == null)
             Debug.LogError("Node cannot be null in order to assign neighbors");
+
+        int mapWidth = map.GetLength(0);
+        int mapHeight = map.GetLength(1);
 
         current.Neighbors.Clear();
 
@@ -234,32 +169,32 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
                 int xCoordinate = current.Coordinates.x + x;
                 int yCoordinate = current.Coordinates.y + y;
-                bool isBeyondMap = xCoordinate < 0 || xCoordinate >= Map.GetLength(0) ||
-                                    yCoordinate < 0 || yCoordinate >= Map.GetLength(1);
+                bool isBeyondMap = xCoordinate < 0 || xCoordinate >=  mapWidth ||
+                                    yCoordinate < 0 || yCoordinate >= mapHeight;
                 if (isBeyondMap)
                     continue;
 
-                Node neighbor = _map[xCoordinate, yCoordinate];
+                IUnityPathNode neighbor = map[xCoordinate, yCoordinate];
 
                 //if (neighbor.CanPass && current.CanPass)
-                    current.Neighbors.Add(neighbor);
+                current.Neighbors.Add(neighbor);
             }
         }
     }
 
-   
 
-    void CheckForTileCollisions(int numberOfColumns, int numberOfRows)
+
+    void CheckForTileCollisions(IUnityPathNode[,] map, LayerMask layerMask)
     {
-        for (int x = 0; x < numberOfColumns; x++)
+        for (int x = 0; x < map.GetLength(0); x++)
         {
-            for (int y = 0; y < numberOfRows; y++)
+            for (int y = 0; y < map.GetLength(1); y++)
             {
                 Vector3 pos = GridToWorld(new Vector2Int(x, y));
 
-                bool canPass = CanPass(pos, collisionMask);
+                bool canPass = CanPass(pos, layerMask);
 
-                var node = Map[x, y];
+                var node = map[x, y];
 
                 if (node != null)
                     node.CanPass = canPass;
@@ -270,18 +205,16 @@ public class GridNode : MonoBehaviour, IGridNodeMap
         }
     }
 
-    bool CanPass(Vector2 position, LayerMask layerMasks)
+    bool CanPass(Vector2 position, LayerMask layerMask)
     {
-
-        return !Physics2D.BoxCast(position, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, Vector2.zero, 0, layerMasks);
+        return !Physics2D.BoxCast(position, new Vector2(_tileSize.x * .9f, _tileSize.y * .9f), 0, Vector2.zero, 0, layerMask);
     }
-
     #endregion
 
-    #region Computation and adjustment methods
+    #region Adjustment Methods
     float DegreesToRadians(float degrees)
     {
-        return (float)(degrees * (3.14/180));
+        return (float)(degrees * (3.14 / 180));
     }
 
     float RadiansToDegrees(float radians)
@@ -303,6 +236,10 @@ public class GridNode : MonoBehaviour, IGridNodeMap
         float cosin = Mathf.Cos(DegreesToRadians(angle));
         float sin = Mathf.Sin(DegreesToRadians(angle));
 
+        Debug.Log($"cos {cosin}");
+        Debug.Log($"sin {sin}");
+
+
         float x = (vector.x * cosin) + (vector.y * sin);
         float y = (vector.x * -sin) + (vector.y * cosin);
 
@@ -314,12 +251,13 @@ public class GridNode : MonoBehaviour, IGridNodeMap
         float cosin = Mathf.Cos(DegreesToRadians(angle));
         float sin = Mathf.Sin(DegreesToRadians(angle));
 
+        Debug.Log($"cos rever {cosin}");
+        Debug.Log($"sin rever {sin}");
+
         float x = (vector.x * cosin) + (vector.y * -sin);
         float y = (vector.x * sin) + (vector.y * cosin);
 
         return new Vector2(x, y);
     }
-
     #endregion
-
 }

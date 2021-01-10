@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node
+public class Node : IUnityPathNode
 {
-    public bool CanPass;
-    public Vector2Int Coordinates;
-    public Vector3 WorldPosition;
-    public IList<Node> Neighbors { get; private set; }
-    public Node ParentNode { get; set; }
+    public bool CanPass { get; set; }
+    public int ConnectedValue { get; set; }
+    public IList<IUnityPathNode> Neighbors { get; private set; }
     public int Fcost { get { return Gcost + Hcost; } }
-    public int baseCost, Hcost, Gcost, ConnectedValue;
+    public int BaseCost { get; set; }
+    public int Hcost { get; set; }
+    public int Gcost { get; set; }
+    public Vector3Int Coordinates { get; set; }
+    public Vector3 WorldPosition { get; set; }
+    public IUnityPathNode ParentNode { get; set; }
 
-    public void SetNeighbors(IList<Node> tilenodes)
+
+    public void SetNeighbors(IList<IUnityPathNode> tilenodes)
     {
         if (tilenodes == null || tilenodes.Count <= 0)
             return;
@@ -28,26 +32,26 @@ public class Node
     }
     Node()
     {
-        Neighbors = new List<Node>();
+        Neighbors = new List<IUnityPathNode>();
     }
-    Node(int x, int y)
+    Node(int x, int y, int z)
         : this()
     {
-        Coordinates = new Vector2Int(x, y);
+        Coordinates = new Vector3Int(x, y, z);
     }
-    Node(Vector2Int coordinates)
+    Node(Vector3Int coordinates)
         : this ()
     {
         Coordinates = coordinates;
     }
 
-    public Node(int x, int y, bool canPass, Vector3 position)
-        : this(x, y)
+    public Node(int x, int y, int z, bool canPass, Vector3 position)
+        : this(x, y, z)
     {
         CanPass = canPass;
         WorldPosition = position;
     }
-    public Node(Vector2Int coordinates, bool canPass, Vector3 position)
+    public Node(Vector3Int coordinates, bool canPass, Vector3 position)
         : this(coordinates)
     {
         CanPass = canPass;

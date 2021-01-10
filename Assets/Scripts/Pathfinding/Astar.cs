@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Astar : IPathfinding
 {
-    public List<Node> FindPath(Node origin, Node destination)
+    public IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination)
     {
-        List<Node> unvisitedList = new List<Node>();
-        HashSet<Node> visitedList = new HashSet<Node>();
+        List<IUnityPathNode> unvisitedList = new List<IUnityPathNode>();
+        HashSet<IUnityPathNode> visitedList = new HashSet<IUnityPathNode>();
 
         unvisitedList.Add(origin);
 
         while (unvisitedList.Count > 0)
         {
-            Node currentNode = FindLowestCost(unvisitedList);
+            IUnityPathNode currentNode = FindLowestCost(unvisitedList);
             visitedList.Add(currentNode);
             unvisitedList.Remove(currentNode);
             EvaluateNeighbors(currentNode, destination, visitedList, unvisitedList);
@@ -22,12 +22,12 @@ public class Astar : IPathfinding
         return GetNodesPath(origin, destination);
     }
 
-    List<Node> GetNodesPath(Node origin, Node destination)
+    IList<IUnityPathNode> GetNodesPath(IUnityPathNode origin, IUnityPathNode destination)
     {
         if (destination == null || origin == null)
             Debug.LogError("Argument cannot be null");
 
-        List<Node> path = new List<Node>();
+        List<IUnityPathNode> path = new List<IUnityPathNode>();
         var currentNode = destination;
 
         while (currentNode != origin || currentNode.Coordinates != origin.Coordinates)
@@ -50,12 +50,12 @@ public class Astar : IPathfinding
         return path;
     }
 
-    Node FindLowestCost(IList<Node> nodes)
+    IUnityPathNode FindLowestCost(IList<IUnityPathNode> nodes)
     {
         if (nodes == null || nodes.Count <= 0)
             return null;
 
-        Node lowestCost = null;
+        IUnityPathNode lowestCost = null;
         for (int i = 0; i < nodes.Count; i++)
         {
             var node = nodes[i];
@@ -78,7 +78,7 @@ public class Astar : IPathfinding
         return lowestCost;
     }
 
-    void EvaluateNeighbors(Node current,Node destination, HashSet<Node> visitedList, List<Node> unvisitedList)
+    void EvaluateNeighbors(IUnityPathNode current, IUnityPathNode destination, HashSet<IUnityPathNode> visitedList, IList<IUnityPathNode> unvisitedList)
     {
         for (int i = 0; i < current.Neighbors.Count; i++)
         {
@@ -94,7 +94,7 @@ public class Astar : IPathfinding
         }
     }
 
-    int ComputeDistance(Node first, Node second)
+    int ComputeDistance(IUnityPathNode first, IUnityPathNode second)
     {
         var xDiff = first.Coordinates.x - second.Coordinates.x;
         var yDiff = first.Coordinates.y - second.Coordinates.y;
@@ -104,10 +104,10 @@ public class Astar : IPathfinding
         return (int)(cost * 10);
     }
 
-    void ComputeCostToNeighbor(Node current, Node neighbor, Node destination, List<Node> unvisitedList)
+    void ComputeCostToNeighbor(IUnityPathNode current, IUnityPathNode neighbor, IUnityPathNode destination, IList<IUnityPathNode> unvisitedList)
     {
         var distance = ComputeDistance(current, neighbor);
-        var gcost = distance + current.Gcost + neighbor.baseCost;
+        var gcost = distance + current.Gcost + neighbor.BaseCost;
         var hcost = ComputeDistance(neighbor, destination);
 
         if(gcost < neighbor.Gcost || !unvisitedList.Contains(neighbor))

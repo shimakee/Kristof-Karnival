@@ -94,6 +94,18 @@ public class Player : MonoBehaviour
     {
         if (ctx.performed)
         {
+            //var mPos = Camera.main.ScreenToWorldPoint(_mousePosition);
+            //var hit = Physics2D.Raycast(mPos, Vector2.zero);
+
+            //if (hit)
+            //{
+            //    Debug.Log($"layer hit {hit.transform.gameObject.layer}");
+            //}
+            //else
+            //{
+            //    Debug.Log("nothing hit");
+            //}
+
             Vector2Int origin = gridMap.WorldToGrid(_rb.position);
             Debug.Log($"origin node connectedness {gridMap.Map[origin.x, origin.y].ConnectedValue}");
             var mPos = Camera.main.ScreenToWorldPoint(_mousePosition);
@@ -102,12 +114,12 @@ public class Player : MonoBehaviour
 
 
             //gridMap.CheckForObstacles();
-            if (_followPathRoutine != null)
-                StopCoroutine(_followPathRoutine);
+            //if (_followPathRoutine != null)
+            //    StopCoroutine(_followPathRoutine);
 
-            _route = _pathFinding.FindPath(gridMap.Map[origin.x, origin.y], gridMap.Map[destination.x, destination.y]);
+            //_route = _pathFinding.FindPath(gridMap.Map[origin.x, origin.y], gridMap.Map[destination.x, destination.y]);
 
-            _followPathRoutine = StartCoroutine(FollowPath(_rb, _route));
+            //_followPathRoutine = StartCoroutine(FollowPath(_rb, _route));
         }
     }
 
