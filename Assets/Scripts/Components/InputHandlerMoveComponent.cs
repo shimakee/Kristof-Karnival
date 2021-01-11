@@ -27,9 +27,9 @@ public class InputHandlerMoveComponent : InputHandlerComponent, IInputHandlerCom
         {
             _inputDirection = ctx.ReadValue<Vector2>().normalized;
             _inputDirection = InputHandlerUtils.RemoveDiagonalInputDirection(_inputDirection);
-            _mover.TargetPosition = _mover.CurrentPosition + (Vector3)_inputDirection;
+            //_mover.TargetPosition = _mover.CurrentPosition + (Vector3)_inputDirection;
             _mover.Direction = _inputDirection;
-            
+
             Debug.Log($"performed {_inputDirection}");
 
         }

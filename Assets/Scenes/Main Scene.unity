@@ -2749,6 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c410e1816988097498c9de05ed762516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionName: Move
 --- !u!1 &1912731902
 GameObject:
   m_ObjectHideFlags: 0
