@@ -65,6 +65,9 @@ public class ConnectedGridMap : GridMap<IUnityPathNode>, IConnectedGridMap<IUnit
         {
             _mapSize = new Vector3(mapWidth, mapHeight, mapDepth);
             _tileSize = AdjustTileSize();
+            _angle.x = xAngle;
+            _angle.y = yAngle;
+            _angle.z = zAngle;
 
             for (int x = 0; x < numberOfColumns; x++)
             {

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed, holdTime = 1f;
     [SerializeField] ConnectedGridMap gridMap;
     [SerializeField] LayerMask pathMask;
+    [SerializeField] GameObject target;
 
     Animator _animator;
     Rigidbody2D _rb;
@@ -113,7 +114,6 @@ public class Player : MonoBehaviour
             Debug.Log($"origin node connectedness {gridMap.Map[origin.x, origin.y, origin.z].ConnectedValue}");
             var mPos = Camera.main.ScreenToWorldPoint(_mousePosition);
             Vector3Int destination = gridMap.WorldToGrid(mPos);
-            Debug.Log($"destination coordinates {destination}");
             destination.z = 0;
             Debug.Log($"destination coordinates {destination}");
 
