@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     bool _hasMovementInput;
     float _movementInputPressedTime;
     IPathfinding _pathFinding;
-    List<Node> _route;
+    IList<IUnityPathNode> _route;
     Coroutine _followPathRoutine;
 
     private void Awake()
@@ -109,23 +109,27 @@ public class Player : MonoBehaviour
             //}
 
             Vector3Int origin = gridMap.WorldToGrid(_rb.position);
+            Debug.Log($"origin coordinates {origin}");
             Debug.Log($"origin node connectedness {gridMap.Map[origin.x, origin.y, origin.z].ConnectedValue}");
             var mPos = Camera.main.ScreenToWorldPoint(_mousePosition);
             Vector3Int destination = gridMap.WorldToGrid(mPos);
+            Debug.Log($"destination coordinates {destination}");
             destination.z = 0;
-
-            int mask = gridMap.Map[destination.x, destination.y, destination.z].PathBlockMask;
-            Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y, destination.z].ConnectedValue}");
-            Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y, destination.z].Coordinates}");
+            Debug.Log($"destination coordinates {destination}");
 
 
-            //gridMap.CheckForObstacles();
-            //if (_followPathRoutine != null)
-            //    StopCoroutine(_followPathRoutine);
+            //int mask = gridMap.Map[destination.x, destination.y, destination.z].PathBlockMask;
+            //Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y, destination.z].ConnectedValue}");
+            //Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y, destination.z].Coordinates}");
 
-            //_route = _pathFinding.FindPath(gridMap.Map[origin.x, origin.y], gridMap.Map[destination.x, destination.y]);
 
-            //_followPathRoutine = StartCoroutine(FollowPath(_rb, _route));
+            gridMap.CheckForTileCollisions();
+            if (_followPathRoutine != null)
+                StopCoroutine(_followPathRoutine);
+
+            _route = _pathFinding.FindPath(gridMap.Map[origin.x, origin.y, origin.z], gridMap.Map[destination.x, destination.y, origin.z], pathMask);
+
+            _followPathRoutine = StartCoroutine(FollowPath(_rb, _route));
         }
     }
 
@@ -185,7 +189,7 @@ public class Player : MonoBehaviour
         _movement.DesiredPosition = gridMap.GetNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
     }
 
-    IEnumerator FollowPath(Rigidbody2D rb, List<Node> route)
+    IEnumerator FollowPath(Rigidbody2D rb, IList<IUnityPathNode> route)
     {
         if (route == null)
             yield break;

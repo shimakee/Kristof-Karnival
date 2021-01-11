@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class Astar : IPathfinding
 {
-    public IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination)
-    {
-        int layer = 0;
-        layer = ~layer;
-        return FindPath(origin, destination, layer);
-    }
     public IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask)
     {
         List<IUnityPathNode> unvisitedList = new List<IUnityPathNode>();
@@ -48,7 +42,6 @@ public class Astar : IPathfinding
             }
 
             currentNode = currentNode.ParentNode;
-
         } 
 
         path.Reverse();

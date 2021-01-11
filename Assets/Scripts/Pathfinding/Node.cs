@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Node : IUnityPathNode
 {
-    public bool ObstacleMask { get; set; }
     public LayerMask PathBlockMask { get; set; }
     public int ConnectedValue { get; set; }
     public IList<IUnityPathNode> Neighbors { get; private set; }
-    public int Fcost { get { return Gcost + Hcost; } }
-    public int BaseCost { get; set; }
-    public int Hcost { get; set; }
-    public int Gcost { get; set; }
     public Vector3Int Coordinates { get; set; }
     public Vector3 WorldPosition { get; set; }
+    public int BaseCost { get; set; }
+    public int Fcost { get { return Gcost + Hcost; } }
+    public int Hcost { get; set; }
+    public int Gcost { get; set; }
     public IUnityPathNode ParentNode { get; set; }
     public bool CanPass()
     {

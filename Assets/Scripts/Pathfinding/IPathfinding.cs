@@ -24,19 +24,7 @@ using UnityEngine;
     }
     public interface IPathfinding
     {
-        IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination);
         IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask);
-    }
-
-public interface IGridNodeMap
-    {
-        Node[,] Map { get; } //TO change IUnityPathNode
-        Vector3 TileSize { get; }
-        void CheckForTileCollisions();
-        Vector2Int WorldToGrid(Vector3 position);
-        Vector3 GridToWorld(Vector2Int position);
-        Vector3 GridToWorld(int x, int y);
-        Vector3 ToNearestTilePosition(Vector3 position);
     }
 
     public interface IGridMap<T>
