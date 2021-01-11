@@ -89,13 +89,13 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
         Vector3 adjustedPosition = position;
 
         //if (isIsometric)
-        adjustedPosition = RevertRotationOnVector(position, _angle);
         adjustedPosition = adjustedPosition - transform.position;
+        //adjustedPosition = RevertRotationOnVector(position, -_angle);
+        adjustedPosition = RotateVector(position, -_angle);
 
-
-        int x = Mathf.FloorToInt(adjustedPosition.x / _tileSize.x);
-        int y = Mathf.FloorToInt(adjustedPosition.y / _tileSize.y);
-        int z = Mathf.FloorToInt(adjustedPosition.z / _tileSize.z);
+        int x = Mathf.FloorToInt((adjustedPosition.x / _tileSize.x));
+        int y = Mathf.FloorToInt((adjustedPosition.y / _tileSize.y));
+        int z = Mathf.FloorToInt((adjustedPosition.z / _tileSize.z));
 
         return new Vector3Int(x, y, z);
 
@@ -151,24 +151,24 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
         return referenceVector;
     }
 
-    Vector3 RevertRotationOnVector(Vector3 vector, Vector3 angle)
-    {
-        var referenceVector = new Vector3(vector.x, vector.y, vector.z);
-        //transform in x
-        var transformedInX = RevertTransform2DVector(new Vector2(referenceVector.y, referenceVector.z), angle.x);
-        referenceVector.y = transformedInX.x;
-        referenceVector.z = transformedInX.y;
-        //transform in y
-        var transformedInY = RevertTransform2DVector(new Vector2(referenceVector.z, referenceVector.x), angle.y);
-        referenceVector.z = transformedInY.x;
-        referenceVector.x = transformedInY.y;
-        //transform in z
-        var transformedInZ = RevertTransform2DVector(new Vector2(referenceVector.x, referenceVector.y), angle.z);
-        referenceVector.x = transformedInZ.x;
-        referenceVector.y = transformedInZ.y;
+    //Vector3 RevertRotationOnVector(Vector3 vector, Vector3 angle)
+    //{
+    //    var referenceVector = new Vector3(vector.x, vector.y, vector.z);
 
-        return referenceVector;
-    }
+    //    //transform in x
+    //    var transformedInX = RevertTransform2DVector(new Vector2(referenceVector.y, referenceVector.z), angle.x);
+    //    referenceVector.y = transformedInX.x;
+    //    referenceVector.z = transformedInX.y;
+    //    //transform in y
+    //    var transformedInY = RevertTransform2DVector(new Vector2(referenceVector.z, referenceVector.x), angle.y);
+    //    referenceVector.z = transformedInY.x;
+    //    referenceVector.x = transformedInY.y;
+    //    //transform in z
+    //    var transformedInZ = RevertTransform2DVector(new Vector2(referenceVector.x, referenceVector.y), angle.z);
+    //    referenceVector.x = transformedInZ.x;
+    //    referenceVector.y = transformedInZ.y;
+    //    return referenceVector;
+    //}
 
     Vector2 Transform2DVector(Vector2 vector, float angle) //TODO: make based on angle
     {
@@ -181,16 +181,16 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
         return new Vector2(x, y);
     }
 
-    Vector2 RevertTransform2DVector(Vector2 vector, float angle) //TODO: make based on angle
-    {
-        float cosin = Mathf.Cos(DegreesToRadians(angle));
-        float sin = Mathf.Sin(DegreesToRadians(angle));
+    //Vector2 RevertTransform2DVector(Vector2 vector, float angle) //TODO: make based on angle
+    //{
+    //    float cosin = Mathf.Cos(DegreesToRadians(angle));
+    //    float sin = Mathf.Sin(DegreesToRadians(angle));
 
-        float x = (vector.x * cosin) + (vector.y * -sin);
-        float y = (vector.x * sin) + (vector.y * cosin);
+    //    float x = (vector.x * cosin) + (vector.y * -sin);
+    //    float y = (vector.x * sin) + (vector.y * cosin);
 
-        return new Vector2(x, y);
-    }
+    //    return new Vector2(x, y);
+    //}
 
     #endregion
 
