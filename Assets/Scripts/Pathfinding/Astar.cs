@@ -6,6 +6,12 @@ public class Astar : IPathfinding
 {
     public IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination)
     {
+        int layer = 0;
+        layer = ~layer;
+        return FindPath(origin, destination, layer);
+    }
+    public IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask)
+    {
         List<IUnityPathNode> unvisitedList = new List<IUnityPathNode>();
         HashSet<IUnityPathNode> visitedList = new HashSet<IUnityPathNode>();
 
@@ -16,7 +22,7 @@ public class Astar : IPathfinding
             IUnityPathNode currentNode = FindLowestCost(unvisitedList);
             visitedList.Add(currentNode);
             unvisitedList.Remove(currentNode);
-            EvaluateNeighbors(currentNode, destination, visitedList, unvisitedList);
+            EvaluateNeighbors(currentNode, destination, visitedList, unvisitedList, pathMask);
         }
 
         return GetNodesPath(origin, destination);
@@ -78,13 +84,13 @@ public class Astar : IPathfinding
         return lowestCost;
     }
 
-    void EvaluateNeighbors(IUnityPathNode current, IUnityPathNode destination, HashSet<IUnityPathNode> visitedList, IList<IUnityPathNode> unvisitedList)
+    void EvaluateNeighbors(IUnityPathNode current, IUnityPathNode destination, HashSet<IUnityPathNode> visitedList, IList<IUnityPathNode> unvisitedList, LayerMask pathMask)
     {
         for (int i = 0; i < current.Neighbors.Count; i++)
         {
             var neighbor = current.Neighbors[i];
 
-            if (!neighbor.CanPass || visitedList.Contains(neighbor))
+            if (!neighbor.CanPass(pathMask) || visitedList.Contains(neighbor))
                 continue;
 
             ComputeCostToNeighbor(current, neighbor, destination, unvisitedList);

@@ -61,7 +61,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
     void Start()
     {
         CheckForTileCollisions();
-        _connectedness.DetermineConnectedness(_map);
+        //_connectedness.DetermineConnectedness(_map.);
         //_connectedness.DetermineConnectedness(_map, allowDiagonalConnections);
     }
 
@@ -73,30 +73,30 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
     private void OnDrawGizmos()
     {
-        if(_map != null)
-        {
-            DrawOnMap();
+        //if(_map != null)
+        //{
+        //    DrawOnMap();
 
-            var origin = WorldToGrid(player.transform.position);
-            var destination = WorldToGrid(target.transform.position);
-            var path = _pathfinding.FindPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
-            foreach (var node in _map)
+        //    var origin = WorldToGrid(player.transform.position);
+        //    var destination = WorldToGrid(target.transform.position);
+        //    var path = _pathfinding.FindPath(_map[origin.x, origin.y], _map[destination.x, destination.y]);
+        //    foreach (var node in _map)
 
-            {
-                var coord = WorldToGrid(player.transform.position);
-                if (node.Coordinates == new Vector3Int(coord.x, coord.y, 0))
-                {
-                    Gizmos.color = Color.green;
-                    Gizmos.DrawCube(node.WorldPosition, _tileSize / 2);
-                }
+        //    {
+        //        var coord = WorldToGrid(player.transform.position);
+        //        if (node.Coordinates == new Vector3Int(coord.x, coord.y, 0))
+        //        {
+        //            Gizmos.color = Color.green;
+        //            Gizmos.DrawCube(node.WorldPosition, _tileSize / 2);
+        //        }
 
-                if (path.Contains(node))
-                {
-                    Gizmos.color = Color.white;
-                    Gizmos.DrawCube(node.WorldPosition, _tileSize / 2);
-                }
-            }
-        }
+        //        if (path.Contains(node))
+        //        {
+        //            Gizmos.color = Color.white;
+        //            Gizmos.DrawCube(node.WorldPosition, _tileSize / 2);
+        //        }
+        //    }
+        //}
     }
 
 
@@ -114,7 +114,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
 
                 var node = Map[x, y];
 
-                if (node.CanPass)
+                if (node.CanPass())
                 {
                     Gizmos.color = Color.blue;
                     Gizmos.DrawWireCube(node.WorldPosition, new Vector3(_tileSize.x * .9f, _tileSize.y * .9f, _tileSize.z));
@@ -198,7 +198,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
                 Vector3 position = GridToWorld(x, y);
                 bool canPass = CanPass(position, collisionMask);
 
-                _map[x, y] = new Node(x, y, 0, canPass, position);
+                _map[x, y] = new Node(x, y, 0, 0, position);
                 _map[x, y].ConnectedValue = canPass ? 1 : 0;
             }
         }
@@ -262,7 +262,7 @@ public class GridNode : MonoBehaviour, IGridNodeMap
                 var node = Map[x, y];
 
                 if (node != null)
-                    node.CanPass = canPass;
+                    node.ObstacleMask = canPass;
                 else
                     Debug.Log("node was null on obstacle check", this);
 

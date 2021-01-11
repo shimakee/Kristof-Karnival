@@ -7,7 +7,9 @@ using UnityEngine;
     {
         int ConnectedValue { get; set; }
         IList<T> Neighbors { get; }
-        bool CanPass { get; set; }
+        LayerMask PathBlockMask { get; set; }
+        bool CanPass(LayerMask path);
+        bool CanPass();
     }
 
     public interface IUnityPathNode : IConnectedNode<IUnityPathNode>
@@ -23,9 +25,10 @@ using UnityEngine;
     public interface IPathfinding
     {
         IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination);
+        IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask);
     }
 
-    public interface IGridNodeMap
+public interface IGridNodeMap
     {
         Node[,] Map { get; } //TO change IUnityPathNode
         Vector3 TileSize { get; }
@@ -39,28 +42,33 @@ using UnityEngine;
     public interface IGridMap<T>
     {
         T[,,] Map { get; }
+        T this[int x,int y, int z] { get; }
         Vector3 TileSize { get; }
+        Vector3 MapSize { get; }
+        Vector3Int MapVolumeCount { get; }
         T GetGridObject(Vector3Int coordinates);
         Vector3Int WorldToGrid(Vector3 position);
         Vector3 GridToWorld(Vector3Int coordinates);
         Vector3 GridToWorld(int x, int y, int z);
         Vector3 GetNearestTilePosition(Vector3 position);
-
     }
-
-    public interface IConnectedGridMap<T> : IGridMap<T> where T : IConnectedNode<T> 
+    public interface IConnectedGridMap<T>: IGridMap<T> where T : IUnityPathNode
     {
         void CheckForTileCollisions();
+        void EstablishConnection();
     }
-
-    public interface IConnectedGridMap2D<T> where T : IConnectedNode<T>
-    {
-        T[,] Map { get; }
-        void CheckForTileCollisions();
-        Vector2 TileSize { get; }
-        T GetGridObject(Vector2Int coordinates);
-        Vector2Int WorldToGrid(Vector3 position);
-        Vector3 GridToWorld(Vector2Int coordinates);
-        Vector3 GridToWorld(int x, int y);
-        Vector3 GetNearestTilePosition(Vector3 position);
-    }
+//public interface IConnectedGridMap2D<T> where T : IUnityPathNode
+//    {
+//        T[,] Map { get; }
+//        T this[int x, int y] { get; }
+//        T GetGridObject(Vector2Int coordinates);
+//        Vector2 TileSize { get; }
+//        Vector2 MapSize { get; }
+//        Vector2Int MapVolumeCount { get; }
+//        Vector2Int WorldToGrid(Vector3 position);
+//        Vector3 GridToWorld(Vector2Int coordinates);
+//        Vector3 GridToWorld(int x, int y);
+//        Vector3 GetNearestTilePosition(Vector3 position);
+//        void CheckForTileCollisions();
+//        void EstablishConnection();
+//    }

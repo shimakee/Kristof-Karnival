@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
     [SerializeField] float speed, holdTime = 1f;
-    [SerializeField] GridNode gridMap;
-    [SerializeField] LayerMask collisionMask;
+    [SerializeField] ConnectedGridMap gridMap;
+    [SerializeField] LayerMask pathMask;
 
     Animator _animator;
     Rigidbody2D _rb;
@@ -40,14 +40,16 @@ public class Player : MonoBehaviour
             Debug.LogError("no rigidbody component attached");
         if (_animator == null)
             Debug.LogError("no animator component found in children");
-        //if (gridMap == null)
-        //    Debug.LogError("no grid map attached.");
+        if (gridMap.Map == null)
+            Debug.LogError("no grid map attached.");
 
     }
     #region Unity Methods
     private void Start()
     {
         _movement.DesiredPosition = _rb.position;
+        Connectedness<IUnityPathNode> _connectedness = new Connectedness<IUnityPathNode>();
+        _connectedness.DetermineConnectedness(gridMap.Map, pathMask);
     }
     private void OnDrawGizmos()
     {
@@ -57,7 +59,7 @@ public class Player : MonoBehaviour
         if(_route != null)
         foreach (var path in _route)
         {
-            Gizmos.DrawSphere(gridMap.GridToWorld(new Vector2Int(path.Coordinates.x, path.Coordinates.y)), gridMap.TileSize.x/2);
+            Gizmos.DrawSphere(gridMap.GridToWorld(path.Coordinates.x, path.Coordinates.y, path.Coordinates.z), gridMap.TileSize.x/2);
         }
     }
 
@@ -106,11 +108,15 @@ public class Player : MonoBehaviour
             //    Debug.Log("nothing hit");
             //}
 
-            Vector2Int origin = gridMap.WorldToGrid(_rb.position);
-            Debug.Log($"origin node connectedness {gridMap.Map[origin.x, origin.y].ConnectedValue}");
+            Vector3Int origin = gridMap.WorldToGrid(_rb.position);
+            Debug.Log($"origin node connectedness {gridMap.Map[origin.x, origin.y, origin.z].ConnectedValue}");
             var mPos = Camera.main.ScreenToWorldPoint(_mousePosition);
-            Vector2Int destination = gridMap.WorldToGrid(mPos);
-            Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y].ConnectedValue}");
+            Vector3Int destination = gridMap.WorldToGrid(mPos);
+            destination.z = 0;
+
+            int mask = gridMap.Map[destination.x, destination.y, destination.z].PathBlockMask;
+            Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y, destination.z].ConnectedValue}");
+            Debug.Log($"destination node connectedness {gridMap.Map[destination.x, destination.y, destination.z].Coordinates}");
 
 
             //gridMap.CheckForObstacles();
@@ -173,10 +179,10 @@ public class Player : MonoBehaviour
 
     void SetDesiredPosition(Rigidbody2D rb, Vector2 direction)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(rb.position, gridMap.TileSize, 0, _movementDirection, 1f, collisionMask);
+        RaycastHit2D hit = Physics2D.BoxCast(rb.position, gridMap.TileSize, 0, _movementDirection, 1f, pathMask);
         if (hit)
             return;
-        _movement.DesiredPosition = gridMap.ToNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
+        _movement.DesiredPosition = gridMap.GetNearestTilePosition(rb.position + direction); // convert to grid location - just to make sure that it is aligned to a gird.
     }
 
     IEnumerator FollowPath(Rigidbody2D rb, List<Node> route)
@@ -192,7 +198,7 @@ public class Player : MonoBehaviour
         {
             var node = path;
 
-            Vector2 destination = gridMap.GridToWorld(new Vector2Int(node.Coordinates.x, node.Coordinates.y));
+            Vector2 destination = gridMap.GridToWorld(node.Coordinates.x, node.Coordinates.y, node.Coordinates.z);
             SetDesiredPosition(rb, destination - rb.position);
 
             yield return new WaitUntil(() => _rb.position == destination);

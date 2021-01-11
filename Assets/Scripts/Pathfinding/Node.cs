@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Node : IUnityPathNode
 {
-    public bool CanPass { get; set; }
+    public bool ObstacleMask { get; set; }
+    public LayerMask PathBlockMask { get; set; }
     public int ConnectedValue { get; set; }
     public IList<IUnityPathNode> Neighbors { get; private set; }
     public int Fcost { get { return Gcost + Hcost; } }
@@ -14,8 +15,17 @@ public class Node : IUnityPathNode
     public Vector3Int Coordinates { get; set; }
     public Vector3 WorldPosition { get; set; }
     public IUnityPathNode ParentNode { get; set; }
-
-
+    public bool CanPass()
+    {
+        return true;
+    }
+    public bool CanPass(LayerMask path)
+    {
+        bool isAllPathBlocked = (path & PathBlockMask) == path;
+        if (isAllPathBlocked)
+            return false;
+        return true;
+    }
     public void SetNeighbors(IList<IUnityPathNode> tilenodes)
     {
         if (tilenodes == null || tilenodes.Count <= 0)
@@ -45,16 +55,16 @@ public class Node : IUnityPathNode
         Coordinates = coordinates;
     }
 
-    public Node(int x, int y, int z, bool canPass, Vector3 position)
+    public Node(int x, int y, int z, LayerMask pathBlock, Vector3 position)
         : this(x, y, z)
     {
-        CanPass = canPass;
+        PathBlockMask = pathBlock;
         WorldPosition = position;
     }
-    public Node(Vector3Int coordinates, bool canPass, Vector3 position)
+    public Node(Vector3Int coordinates, LayerMask pathBlock, Vector3 position)
         : this(coordinates)
     {
-        CanPass = canPass;
+        PathBlockMask = pathBlock;
         WorldPosition = position;
     }
 }
