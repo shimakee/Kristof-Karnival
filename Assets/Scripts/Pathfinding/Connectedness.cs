@@ -25,7 +25,6 @@ public class Connectedness<T> where T : IConnectedNode<T>
 
                     IConnectedNode<T> node = nodes[x, y, z];
                     bool canPass = node.CanPass(pathMask);
-                        Debug.Log(canPass);
                     if (!nodesVisited.Contains(node) && canPass)
                     {
                         connectedGraphCounter++;
