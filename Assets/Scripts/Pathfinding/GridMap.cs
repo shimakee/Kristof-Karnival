@@ -112,12 +112,12 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
 
     #region Adjustments
 
-    float DegreesToRadians(float degrees)
+    protected float DegreesToRadians(float degrees)
     {
         return (float)(degrees * (3.14 / 180));
     }
 
-    float RadiansToDegrees(float radians)
+    protected float RadiansToDegrees(float radians)
     {
         return (float)(radians * 3.14);
     }
@@ -132,7 +132,7 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
         return _tileSize;
     }
 
-    Vector3 RotateVector(Vector3 vector, Vector3 angle)
+    protected Vector3 RotateVector(Vector3 vector, Vector3 angle)
     {
         var referenceVector = new Vector3(vector.x, vector.y, vector.z);
         //transform in z
@@ -151,26 +151,7 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
         return referenceVector;
     }
 
-    //Vector3 RevertRotationOnVector(Vector3 vector, Vector3 angle)
-    //{
-    //    var referenceVector = new Vector3(vector.x, vector.y, vector.z);
-
-    //    //transform in x
-    //    var transformedInX = RevertTransform2DVector(new Vector2(referenceVector.y, referenceVector.z), angle.x);
-    //    referenceVector.y = transformedInX.x;
-    //    referenceVector.z = transformedInX.y;
-    //    //transform in y
-    //    var transformedInY = RevertTransform2DVector(new Vector2(referenceVector.z, referenceVector.x), angle.y);
-    //    referenceVector.z = transformedInY.x;
-    //    referenceVector.x = transformedInY.y;
-    //    //transform in z
-    //    var transformedInZ = RevertTransform2DVector(new Vector2(referenceVector.x, referenceVector.y), angle.z);
-    //    referenceVector.x = transformedInZ.x;
-    //    referenceVector.y = transformedInZ.y;
-    //    return referenceVector;
-    //}
-
-    Vector2 Transform2DVector(Vector2 vector, float angle) //TODO: make based on angle
+    protected Vector2 Transform2DVector(Vector2 vector, float angle) //TODO: make based on angle
     {
         float cosin = Mathf.Cos(DegreesToRadians(angle));
         float sin = Mathf.Sin(DegreesToRadians(angle));
@@ -180,18 +161,6 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
 
         return new Vector2(x, y);
     }
-
-    //Vector2 RevertTransform2DVector(Vector2 vector, float angle) //TODO: make based on angle
-    //{
-    //    float cosin = Mathf.Cos(DegreesToRadians(angle));
-    //    float sin = Mathf.Sin(DegreesToRadians(angle));
-
-    //    float x = (vector.x * cosin) + (vector.y * -sin);
-    //    float y = (vector.x * sin) + (vector.y * cosin);
-
-    //    return new Vector2(x, y);
-    //}
-
     #endregion
 
 }

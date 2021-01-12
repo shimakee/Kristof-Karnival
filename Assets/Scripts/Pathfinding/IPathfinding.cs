@@ -45,18 +45,18 @@ using UnityEngine;
         void CheckForTileCollisions();
         void EstablishConnection();
     }
-//public interface IConnectedGridMap2D<T> where T : IUnityPathNode
-//    {
-//        T[,] Map { get; }
-//        T this[int x, int y] { get; }
-//        T GetGridObject(Vector2Int coordinates);
-//        Vector2 TileSize { get; }
-//        Vector2 MapSize { get; }
-//        Vector2Int MapVolumeCount { get; }
-//        Vector2Int WorldToGrid(Vector3 position);
-//        Vector3 GridToWorld(Vector2Int coordinates);
-//        Vector3 GridToWorld(int x, int y);
-//        Vector3 GetNearestTilePosition(Vector3 position);
-//        void CheckForTileCollisions();
-//        void EstablishConnection();
-//    }
+public interface IConnectedGridMap2D<T> where T : IUnityPathNode
+{
+    T[,] Map { get; }
+    T this[int x, int y] { get; }
+    T GetGridObject(Vector2Int coordinates);
+    Vector2 TileSize { get; }
+    Vector2 MapSize { get; }
+    Vector2Int MapVolumeCount { get; }
+    Vector2Int WorldToGrid(Vector3 position);
+    Vector2 GridToWorld(Vector2Int coordinates);
+    Vector2 GridToWorld(int x, int y);
+    Vector2 GetNearestTilePosition(Vector3 position);
+    void CheckForTileCollisions();
+    void EstablishConnection();
+}

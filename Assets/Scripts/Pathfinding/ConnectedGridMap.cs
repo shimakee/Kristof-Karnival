@@ -13,10 +13,10 @@ public class ConnectedGridMap : GridMap<IUnityPathNode>, IConnectedGridMap<IUnit
     [SerializeField] bool enableDrawOnSelection = false;
 
     #region Unity Mehtods
-    private void Awake()
-    {
-        CreateGrid();
-    }
+    //private void Awake()
+    //{
+    //    CreateGrid();
+    //}
 
     private void Start()
     {
