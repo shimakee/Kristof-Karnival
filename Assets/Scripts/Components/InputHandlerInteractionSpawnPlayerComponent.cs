@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(InputHandlerMousePositionComponent))]
-public class InputHandlerInteractionComponent : InputHandlerComponent, IInputHandlerComponent
+public class InputHandlerInteractionSpawnPlayerComponent : InputHandlerComponent, IInputHandlerComponent
 {
     [SerializeField] GridMap2DInherited gridMap;
     [SerializeField] GameObject something;

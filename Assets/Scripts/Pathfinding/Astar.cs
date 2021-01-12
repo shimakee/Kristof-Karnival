@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Astar : IPathfinding
 {
-    public IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask)
+    public List<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask)
     {
         List<IUnityPathNode> unvisitedList = new List<IUnityPathNode>();
         HashSet<IUnityPathNode> visitedList = new HashSet<IUnityPathNode>();
@@ -22,7 +22,7 @@ public class Astar : IPathfinding
         return GetNodesPath(origin, destination);
     }
 
-    IList<IUnityPathNode> GetNodesPath(IUnityPathNode origin, IUnityPathNode destination)
+    List<IUnityPathNode> GetNodesPath(IUnityPathNode origin, IUnityPathNode destination)
     {
         if (destination == null || origin == null)
             Debug.LogError("Argument cannot be null");

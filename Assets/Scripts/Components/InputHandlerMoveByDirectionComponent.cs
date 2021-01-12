@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(IMoverComponent))]
-public class InputHandlerMoveComponent : InputHandlerComponent, IInputHandlerComponent
+public class InputHandlerMoveByDirectionComponent : InputHandlerComponent, IInputHandlerComponent
 {
     bool _hasMovementInput;
     Vector2 _inputDirection;

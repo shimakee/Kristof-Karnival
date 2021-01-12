@@ -24,7 +24,7 @@ using UnityEngine;
     }
     public interface IPathfinding
     {
-        IList<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask);
+        List<IUnityPathNode> FindPath(IUnityPathNode origin, IUnityPathNode destination, LayerMask pathMask);
     }
 
     public interface IGridMap<T>

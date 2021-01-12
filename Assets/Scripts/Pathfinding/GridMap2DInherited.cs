@@ -106,7 +106,7 @@ public class GridMap2DInherited : GridMap<IUnityPathNode>, IConnectedGridMap2D<I
 
     new public Vector2 GetNearestTilePosition(Vector3 position)
     {
-        return GetNearestTilePosition(position);
+        return base.GetNearestTilePosition(position);
     }
 
     public Vector2 GridToWorld(Vector2Int coordinates)
