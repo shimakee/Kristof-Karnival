@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[Serializable]
 [RequireComponent(typeof(PlayerInput))]
 public abstract class InputHandlerComponent : MonoBehaviour, IInputHandlerComponent
 {

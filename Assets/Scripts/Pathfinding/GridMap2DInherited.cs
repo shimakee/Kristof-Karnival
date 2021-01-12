@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SampleConnected : GridMap<IUnityPathNode>, IConnectedGridMap2D<IUnityPathNode>
+public class GridMap2DInherited : GridMap<IUnityPathNode>, IConnectedGridMap2D<IUnityPathNode>
 {
     //[Header("Mask To check collisions")]
     [SerializeField] LayerMask pathBlockMask;
@@ -99,6 +99,10 @@ public class SampleConnected : GridMap<IUnityPathNode>, IConnectedGridMap2D<IUni
     {
         return GetGridObject(new Vector3Int(coordinates.x, coordinates.y, 0));
     }
+    public override IUnityPathNode GetGridObject(Vector3Int coordinates)
+    {
+        return _map2D[coordinates.x, coordinates.y];
+    }
 
     new public Vector2 GetNearestTilePosition(Vector3 position)
     {
@@ -117,7 +121,7 @@ public class SampleConnected : GridMap<IUnityPathNode>, IConnectedGridMap2D<IUni
 
     new public Vector2Int WorldToGrid(Vector3 position)
     {
-        return (Vector2Int)WorldToGrid(new Vector3(position.x, position.y, 0));
+        return (Vector2Int)base.WorldToGrid(new Vector3(position.x, position.y, 0));
     }
     #endregion
 
@@ -127,6 +131,7 @@ public class SampleConnected : GridMap<IUnityPathNode>, IConnectedGridMap2D<IUni
         _mapSize = new Vector2(mapWidth, mapHeight);
         _mapVolumeCount = new Vector3Int(numberOfColumns, numberOfRows, 0);
         _tileSize = AdjustTileSize();
+        _angle = new Vector3(0, 0, zAngle);
         _map2D = CreateAndPopulateConnectedGrid(numberOfColumns, numberOfRows);
         EstablishNodeConnectionForAll(_map2D);
     }

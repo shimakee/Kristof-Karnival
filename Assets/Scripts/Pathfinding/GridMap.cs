@@ -58,7 +58,7 @@ public class GridMap<T> : MonoBehaviour, IGridMap<T>
 
 
     #region Utility Methods
-    public T GetGridObject(Vector3Int coordinates)
+    public virtual T GetGridObject(Vector3Int coordinates)
     {
         return _map[coordinates.x, coordinates.y, coordinates.z];
     }

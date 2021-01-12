@@ -21,8 +21,8 @@ public class RbGridMove2DComponent : MonoBehaviour, IMoverComponent
 
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
         _movement = new Movement(speed);
+        _rb = GetComponent<Rigidbody2D>();
         _movement.DesiredPosition = _rb.position;
     }
 

@@ -67,8 +67,6 @@ public class ConnectedGridMap2D : MonoBehaviour, IConnectedGridMap2D<IUnityPathN
                         }
                         else
                             Gizmos.color = Color.white;
-
-
                     }
 
                     Gizmos.DrawWireCube(GridToWorld(x, y), _tileSize * .9f);
@@ -160,7 +158,7 @@ public class ConnectedGridMap2D : MonoBehaviour, IConnectedGridMap2D<IUnityPathN
         _mapVolumeCount = new Vector2Int(numberOfColumns, numberOfRows);
         _tileSize = AdjustTileSize();
         _angle = angle;
-        _map = new IUnityPathNode[numberOfColumns, numberOfRows];
+        _map = CreateAndPopulateConnectedGrid(numberOfColumns, numberOfRows);
         EstablishNodeConnectionForAll(_map);
     }
 
