@@ -35,8 +35,6 @@ public class GetAngleBetweenCamCharFaceDirectionAnimatorComponent : MonoBehaviou
         }
 
         var angleSigned = Vector3.SignedAngle(directionToCam, _directionFacing, currentPosition);
-        Debug.Log($"cam angle {angleSigned}");
-
 
         animator.SetFloat(animatorParameterName, angleSigned);
     }

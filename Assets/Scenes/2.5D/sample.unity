@@ -229,6 +229,14 @@ PrefabInstance:
       propertyPath: cameraToGetAngle
       value: 
       objectReference: {fileID: 1428429235}
+    - target: {fileID: 2079732150, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
+      propertyPath: ignoreYAxis
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079732150, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
+      propertyPath: inputAsReferenceDirection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2079732151, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
       propertyPath: target
       value: 
@@ -247,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5608617772274140532, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.368496
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 5608617772274140532, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -287,15 +295,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5608617772274140533, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5608617772274140539, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
       propertyPath: m_Name
-      value: Character (1)
+      value: Character by Target
       objectReference: {fileID: 0}
     - target: {fileID: 5608617772274140539, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2079732153, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
@@ -319,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionName: Interact
-  isOrthographic: 1
+  isOrthographic: 0
 --- !u!114 &223343529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  ignoreY: 1
 --- !u!1 &394656390
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394656390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8912916, y: -1.555985, z: 3.0543995}
+  m_LocalPosition: {x: -5.95, y: -1.07, z: 3.0543995}
   m_LocalScale: {x: 2.1376, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1735420943}
@@ -1485,7 +1494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb403af34cf164ab81212badf1d71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 2079732147}
+  Target: {fileID: 223343527}
   offset: {x: 0, y: 3, z: -2}
 --- !u!114 &1428429238
 MonoBehaviour:
@@ -1499,7 +1508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9b3caed889d9f4c8d8b1a0102fae39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2079732147}
+  target: {fileID: 223343527}
   clampX: 0
   clampY: 0
   clampZ: 1
@@ -1916,12 +1925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5608617772274140539, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
       propertyPath: m_Name
-      value: Character
+      value: Character by Direction
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608617772274140539, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
---- !u!1 &2079732147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5608617772274140539, guid: c780212ed64a92a40965aa20a39c8fcb, type: 3}
-  m_PrefabInstance: {fileID: 2079732146}
-  m_PrefabAsset: {fileID: 0}
