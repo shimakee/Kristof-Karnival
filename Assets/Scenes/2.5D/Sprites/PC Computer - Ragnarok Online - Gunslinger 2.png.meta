@@ -1,0 +1,2926 @@
+fileFormatVersion: 2
+guid: 8fbfc7c0fb9db244ab3146fad2ed16bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5643824982446703523
+    second: PC Computer - Ragnarok Online - Gunslinger 2_0
+  - first:
+      213: -760808183085883845
+    second: PC Computer - Ragnarok Online - Gunslinger 2_1
+  - first:
+      213: -3500173746626587675
+    second: PC Computer - Ragnarok Online - Gunslinger 2_2
+  - first:
+      213: -7934801752446162059
+    second: PC Computer - Ragnarok Online - Gunslinger 2_3
+  - first:
+      213: -8184734471070817124
+    second: PC Computer - Ragnarok Online - Gunslinger 2_4
+  - first:
+      213: 5879608934175936050
+    second: PC Computer - Ragnarok Online - Gunslinger 2_5
+  - first:
+      213: -3714866330220420900
+    second: PC Computer - Ragnarok Online - Gunslinger 2_6
+  - first:
+      213: -6824906417434775394
+    second: PC Computer - Ragnarok Online - Gunslinger 2_7
+  - first:
+      213: 5722642813141640386
+    second: PC Computer - Ragnarok Online - Gunslinger 2_8
+  - first:
+      213: 5538414963705285579
+    second: PC Computer - Ragnarok Online - Gunslinger 2_9
+  - first:
+      213: 7475596759145902884
+    second: PC Computer - Ragnarok Online - Gunslinger 2_10
+  - first:
+      213: 7021765292208637122
+    second: PC Computer - Ragnarok Online - Gunslinger 2_11
+  - first:
+      213: -4154949904183253927
+    second: PC Computer - Ragnarok Online - Gunslinger 2_12
+  - first:
+      213: 6854287215937832795
+    second: PC Computer - Ragnarok Online - Gunslinger 2_13
+  - first:
+      213: -1294996955338687292
+    second: PC Computer - Ragnarok Online - Gunslinger 2_14
+  - first:
+      213: 2732821657882699987
+    second: PC Computer - Ragnarok Online - Gunslinger 2_15
+  - first:
+      213: -2392349942762164586
+    second: PC Computer - Ragnarok Online - Gunslinger 2_16
+  - first:
+      213: -8691463675012183660
+    second: PC Computer - Ragnarok Online - Gunslinger 2_17
+  - first:
+      213: 2841445414603563327
+    second: PC Computer - Ragnarok Online - Gunslinger 2_18
+  - first:
+      213: -7119096408591636662
+    second: PC Computer - Ragnarok Online - Gunslinger 2_19
+  - first:
+      213: -384746565261602336
+    second: PC Computer - Ragnarok Online - Gunslinger 2_20
+  - first:
+      213: -6552906738674782187
+    second: PC Computer - Ragnarok Online - Gunslinger 2_21
+  - first:
+      213: -6526705067284336632
+    second: PC Computer - Ragnarok Online - Gunslinger 2_22
+  - first:
+      213: 377086958564942899
+    second: PC Computer - Ragnarok Online - Gunslinger 2_23
+  - first:
+      213: -4541141890218384799
+    second: PC Computer - Ragnarok Online - Gunslinger 2_24
+  - first:
+      213: -3468798782635310228
+    second: PC Computer - Ragnarok Online - Gunslinger 2_25
+  - first:
+      213: -124040813383499271
+    second: PC Computer - Ragnarok Online - Gunslinger 2_26
+  - first:
+      213: -198422413158833968
+    second: PC Computer - Ragnarok Online - Gunslinger 2_27
+  - first:
+      213: 2314098233749900486
+    second: PC Computer - Ragnarok Online - Gunslinger 2_28
+  - first:
+      213: -1033823912979603959
+    second: PC Computer - Ragnarok Online - Gunslinger 2_29
+  - first:
+      213: -6397369723424066047
+    second: PC Computer - Ragnarok Online - Gunslinger 2_30
+  - first:
+      213: -1999061972290650955
+    second: PC Computer - Ragnarok Online - Gunslinger 2_31
+  - first:
+      213: -8307727116601735555
+    second: PC Computer - Ragnarok Online - Gunslinger 2_32
+  - first:
+      213: -4301888914870710846
+    second: PC Computer - Ragnarok Online - Gunslinger 2_33
+  - first:
+      213: 707862926077007051
+    second: PC Computer - Ragnarok Online - Gunslinger 2_34
+  - first:
+      213: 2238268068596569530
+    second: PC Computer - Ragnarok Online - Gunslinger 2_35
+  - first:
+      213: -6992612571680410222
+    second: PC Computer - Ragnarok Online - Gunslinger 2_36
+  - first:
+      213: -8473445403882741363
+    second: PC Computer - Ragnarok Online - Gunslinger 2_37
+  - first:
+      213: -8692575267504104038
+    second: PC Computer - Ragnarok Online - Gunslinger 2_38
+  - first:
+      213: 2770068589918442522
+    second: PC Computer - Ragnarok Online - Gunslinger 2_39
+  - first:
+      213: 7175183998946190708
+    second: PC Computer - Ragnarok Online - Gunslinger 2_40
+  - first:
+      213: -4632950644267032145
+    second: PC Computer - Ragnarok Online - Gunslinger 2_41
+  - first:
+      213: -7005573922604158109
+    second: PC Computer - Ragnarok Online - Gunslinger 2_42
+  - first:
+      213: -1942464536482045245
+    second: PC Computer - Ragnarok Online - Gunslinger 2_43
+  - first:
+      213: 4371125384550627799
+    second: PC Computer - Ragnarok Online - Gunslinger 2_44
+  - first:
+      213: -7823909421289381434
+    second: PC Computer - Ragnarok Online - Gunslinger 2_45
+  - first:
+      213: -2752349856929283130
+    second: PC Computer - Ragnarok Online - Gunslinger 2_46
+  - first:
+      213: -2077366317046604956
+    second: PC Computer - Ragnarok Online - Gunslinger 2_47
+  - first:
+      213: -89668117701458872
+    second: PC Computer - Ragnarok Online - Gunslinger 2_48
+  - first:
+      213: -4419398194128368499
+    second: PC Computer - Ragnarok Online - Gunslinger 2_49
+  - first:
+      213: 387150893732102645
+    second: PC Computer - Ragnarok Online - Gunslinger 2_50
+  - first:
+      213: 5175539821467067117
+    second: PC Computer - Ragnarok Online - Gunslinger 2_51
+  - first:
+      213: 6771290635135677539
+    second: PC Computer - Ragnarok Online - Gunslinger 2_52
+  - first:
+      213: 2328580793114995490
+    second: PC Computer - Ragnarok Online - Gunslinger 2_53
+  - first:
+      213: -1205736259587370827
+    second: PC Computer - Ragnarok Online - Gunslinger 2_54
+  - first:
+      213: -4190056420955029369
+    second: PC Computer - Ragnarok Online - Gunslinger 2_55
+  - first:
+      213: -5337424789123185361
+    second: PC Computer - Ragnarok Online - Gunslinger 2_56
+  - first:
+      213: -1667167684012379975
+    second: PC Computer - Ragnarok Online - Gunslinger 2_57
+  - first:
+      213: -4662110906349603098
+    second: PC Computer - Ragnarok Online - Gunslinger 2_58
+  - first:
+      213: -7358605801529908321
+    second: PC Computer - Ragnarok Online - Gunslinger 2_59
+  - first:
+      213: -8715363351363930818
+    second: PC Computer - Ragnarok Online - Gunslinger 2_60
+  - first:
+      213: -4703746717206201652
+    second: PC Computer - Ragnarok Online - Gunslinger 2_61
+  - first:
+      213: -6767016442537895655
+    second: PC Computer - Ragnarok Online - Gunslinger 2_62
+  - first:
+      213: 649119280273930015
+    second: PC Computer - Ragnarok Online - Gunslinger 2_63
+  - first:
+      213: -2692493269864311815
+    second: PC Computer - Ragnarok Online - Gunslinger 2_64
+  - first:
+      213: -6674020063510353365
+    second: PC Computer - Ragnarok Online - Gunslinger 2_65
+  - first:
+      213: 784745711585048797
+    second: PC Computer - Ragnarok Online - Gunslinger 2_66
+  - first:
+      213: -514548037952113627
+    second: PC Computer - Ragnarok Online - Gunslinger 2_67
+  - first:
+      213: 4663432653700573795
+    second: PC Computer - Ragnarok Online - Gunslinger 2_68
+  - first:
+      213: 1672761567004792412
+    second: PC Computer - Ragnarok Online - Gunslinger 2_69
+  - first:
+      213: -4121734671237479987
+    second: PC Computer - Ragnarok Online - Gunslinger 2_70
+  - first:
+      213: 1996204007060179437
+    second: PC Computer - Ragnarok Online - Gunslinger 2_71
+  - first:
+      213: -6814758691146268579
+    second: PC Computer - Ragnarok Online - Gunslinger 2_72
+  - first:
+      213: 5259783311157529771
+    second: PC Computer - Ragnarok Online - Gunslinger 2_73
+  - first:
+      213: 2218786306187446939
+    second: PC Computer - Ragnarok Online - Gunslinger 2_74
+  - first:
+      213: 7782817664638216897
+    second: PC Computer - Ragnarok Online - Gunslinger 2_75
+  - first:
+      213: 5982578788151093079
+    second: PC Computer - Ragnarok Online - Gunslinger 2_76
+  - first:
+      213: -736663312556707553
+    second: PC Computer - Ragnarok Online - Gunslinger 2_77
+  - first:
+      213: -5706356560979552484
+    second: PC Computer - Ragnarok Online - Gunslinger 2_78
+  - first:
+      213: 1638368700480327414
+    second: PC Computer - Ragnarok Online - Gunslinger 2_79
+  - first:
+      213: 3514579404108615667
+    second: PC Computer - Ragnarok Online - Gunslinger 2_80
+  - first:
+      213: -7779365298226816988
+    second: PC Computer - Ragnarok Online - Gunslinger 2_81
+  - first:
+      213: -8932206126618832703
+    second: PC Computer - Ragnarok Online - Gunslinger 2_82
+  - first:
+      213: 8709905598939545464
+    second: PC Computer - Ragnarok Online - Gunslinger 2_83
+  - first:
+      213: -7712086888133687732
+    second: PC Computer - Ragnarok Online - Gunslinger 2_84
+  - first:
+      213: -1485634637402192478
+    second: PC Computer - Ragnarok Online - Gunslinger 2_85
+  - first:
+      213: -9042912541141998447
+    second: PC Computer - Ragnarok Online - Gunslinger 2_86
+  - first:
+      213: -7536309430419504216
+    second: PC Computer - Ragnarok Online - Gunslinger 2_87
+  - first:
+      213: -4400496575349845124
+    second: PC Computer - Ragnarok Online - Gunslinger 2_88
+  - first:
+      213: 6425863525309289999
+    second: PC Computer - Ragnarok Online - Gunslinger 2_89
+  - first:
+      213: -2612948662363079292
+    second: PC Computer - Ragnarok Online - Gunslinger 2_90
+  - first:
+      213: -3585435188104512369
+    second: PC Computer - Ragnarok Online - Gunslinger 2_91
+  - first:
+      213: 2967166885849643115
+    second: PC Computer - Ragnarok Online - Gunslinger 2_92
+  - first:
+      213: 1405125005699585551
+    second: PC Computer - Ragnarok Online - Gunslinger 2_93
+  - first:
+      213: -326280224524098125
+    second: PC Computer - Ragnarok Online - Gunslinger 2_94
+  - first:
+      213: -922696347881687289
+    second: PC Computer - Ragnarok Online - Gunslinger 2_95
+  - first:
+      213: 9013824551498052695
+    second: PC Computer - Ragnarok Online - Gunslinger 2_96
+  - first:
+      213: -8482110328619737250
+    second: PC Computer - Ragnarok Online - Gunslinger 2_97
+  - first:
+      213: -1339458613405269545
+    second: PC Computer - Ragnarok Online - Gunslinger 2_98
+  - first:
+      213: 8266773396153232063
+    second: PC Computer - Ragnarok Online - Gunslinger 2_99
+  - first:
+      213: 5258555910384623345
+    second: PC Computer - Ragnarok Online - Gunslinger 2_100
+  - first:
+      213: -634540208598078391
+    second: PC Computer - Ragnarok Online - Gunslinger 2_101
+  - first:
+      213: 1993709686388700609
+    second: PC Computer - Ragnarok Online - Gunslinger 2_102
+  - first:
+      213: 4911522522311507155
+    second: PC Computer - Ragnarok Online - Gunslinger 2_103
+  - first:
+      213: -1570409073638136695
+    second: PC Computer - Ragnarok Online - Gunslinger 2_104
+  - first:
+      213: -6381867045839196703
+    second: PC Computer - Ragnarok Online - Gunslinger 2_105
+  - first:
+      213: -1178838310545304895
+    second: PC Computer - Ragnarok Online - Gunslinger 2_106
+  - first:
+      213: 6745687659797370717
+    second: PC Computer - Ragnarok Online - Gunslinger 2_107
+  - first:
+      213: -4211246182904616048
+    second: PC Computer - Ragnarok Online - Gunslinger 2_108
+  - first:
+      213: 999535262848134327
+    second: PC Computer - Ragnarok Online - Gunslinger 2_109
+  - first:
+      213: 5278380392642421151
+    second: PC Computer - Ragnarok Online - Gunslinger 2_110
+  - first:
+      213: -6893571649905827957
+    second: PC Computer - Ragnarok Online - Gunslinger 2_111
+  - first:
+      213: 7785123049096697946
+    second: PC Computer - Ragnarok Online - Gunslinger 2_112
+  - first:
+      213: 9042576954989197210
+    second: PC Computer - Ragnarok Online - Gunslinger 2_113
+  - first:
+      213: 7941227117403856795
+    second: PC Computer - Ragnarok Online - Gunslinger 2_114
+  - first:
+      213: -8260670049759090897
+    second: PC Computer - Ragnarok Online - Gunslinger 2_115
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 914
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5cf9caa41b1da1b0800000000000000
+      internalID: -5643824982446703523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 916
+        width: 47
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e94f80df01175f0800000000000000
+      internalID: -760808183085883845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 918
+        width: 39
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e39c2ca582ec6fc0800000000000000
+      internalID: -3500173746626587675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 917
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bac46b8dbe1e190800000000000000
+      internalID: -7934801752446162059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 918
+        width: 46
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94ede6fc5bf96e80800000000000000
+      internalID: -8184734471070817124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_5
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 921
+        width: 52
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e05c39c21989150800000000000000
+      internalID: 5879608934175936050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_6
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 922
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0272f31c4227cc0800000000000000
+      internalID: -3714866330220420900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_7
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 929
+        width: 56
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e903483f5cf0941a0800000000000000
+      internalID: -6824906417434775394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_8
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 924
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4efb59159ea6f40800000000000000
+      internalID: 5722642813141640386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_9
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 924
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb8c52d0176cdc40800000000000000
+      internalID: 5538414963705285579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_10
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 922
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423f3f025a7aeb760800000000000000
+      internalID: 7475596759145902884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_11
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 931
+        width: 43
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c443429452527160800000000000000
+      internalID: 7021765292208637122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_12
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 925
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9542d957317a656c0800000000000000
+      internalID: -4154949904183253927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_13
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 931
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57c97648e15f1f50800000000000000
+      internalID: 6854287215937832795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_14
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 789
+        width: 41
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc33db512f370ee0800000000000000
+      internalID: -1294996955338687292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_15
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 791
+        width: 39
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8a79891deece520800000000000000
+      internalID: 2732821657882699987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_16
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 792
+        width: 39
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e2c3bf66aacced0800000000000000
+      internalID: -2392349942762164586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_17
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 790
+        width: 39
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49900b046d7b16780800000000000000
+      internalID: -8691463675012183660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_18
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 789
+        width: 41
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31ab1acc87de6720800000000000000
+      internalID: 2841445414603563327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_19
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 791
+        width: 36
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47e224f883e33d90800000000000000
+      internalID: -7119096408591636662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_20
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 792
+        width: 35
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1d701990b19aaf0800000000000000
+      internalID: -384746565261602336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_21
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 790
+        width: 36
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510b60b3a066f05a0800000000000000
+      internalID: -6552906738674782187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_22
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 806
+        width: 58
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80076ce325c7c65a0800000000000000
+      internalID: -6526705067284336632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_23
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 806
+        width: 64
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33422b6479eab3500800000000000000
+      internalID: 377086958564942899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_24
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 815
+        width: 68
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16223e6c28f9af0c0800000000000000
+      internalID: -4541141890218384799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_25
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 696
+        width: 40
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6307bbb2e95cdfc0800000000000000
+      internalID: -3468798782635310228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_26
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 698
+        width: 43
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f140a49981574ef0800000000000000
+      internalID: -124040813383499271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_27
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 697
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d02134dddf0f3df0800000000000000
+      internalID: -198422413158833968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_28
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 697
+        width: 43
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc850e35145d1020800000000000000
+      internalID: 2314098233749900486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_29
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 694
+        width: 39
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90edb8ae0ae17a1f0800000000000000
+      internalID: -1033823912979603959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_30
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 696
+        width: 36
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106387a912af737a0800000000000000
+      internalID: -6397369723424066047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_31
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 699
+        width: 41
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcbf994ab7e144e0800000000000000
+      internalID: -1999061972290650955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_32
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 698
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76c214243605bc80800000000000000
+      internalID: -8307727116601735555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_33
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 702
+        width: 36
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdc0f503de9c44c0800000000000000
+      internalID: -4301888914870710846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_34
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 700
+        width: 39
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc41d72b495d2d900800000000000000
+      internalID: 707862926077007051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_35
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 704
+        width: 66
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab55cc413fcef0f10800000000000000
+      internalID: 2238268068596569530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_36
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 603
+        width: 28
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295fe0d1aef35fe90800000000000000
+      internalID: -6992612571680410222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_37
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 603
+        width: 37
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8127e5ac46486a80800000000000000
+      internalID: -8473445403882741363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_38
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 604
+        width: 47
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d521579d4cd5780800000000000000
+      internalID: -8692575267504104038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_39
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 603
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a145e81c4b2417620800000000000000
+      internalID: 2770068589918442522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_40
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 601
+        width: 34
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475214fc4df539360800000000000000
+      internalID: 7175183998946190708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_41
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 602
+        width: 31
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1eb8a7fe374bfb0800000000000000
+      internalID: -4632950644267032145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_42
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 603
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363707f62a337ce90800000000000000
+      internalID: -7005573922604158109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_43
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 603
+        width: 34
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2a132bbcafa05e0800000000000000
+      internalID: -1942464536482045245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_44
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 566
+        width: 49
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d935d6c06b59ac30800000000000000
+      internalID: 4371125384550627799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_45
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 567
+        width: 50
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1e63d85d3eb6390800000000000000
+      internalID: -7823909421289381434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_46
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 567
+        width: 50
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c302204360bdc9d0800000000000000
+      internalID: -2752349856929283130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_47
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 563
+        width: 46
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b531c4756bb23e0800000000000000
+      internalID: -2077366317046604956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_48
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 564
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8440ab0725f61cef0800000000000000
+      internalID: -89668117701458872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_49
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 565
+        width: 48
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cc9f5e1c42ba2c0800000000000000
+      internalID: -4419398194128368499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_50
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 510
+        width: 36
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f18067cfaf6f5500800000000000000
+      internalID: 387150893732102645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_51
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 510
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2ee63eb0633d740800000000000000
+      internalID: 5175539821467067117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_52
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 511
+        width: 45
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364f032f4f478fd50800000000000000
+      internalID: 6771290635135677539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_53
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 509
+        width: 48
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22baa6cd4e7c05020800000000000000
+      internalID: 2328580793114995490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_54
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 507
+        width: 39
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b09c7a924d544fe0800000000000000
+      internalID: -1205736259587370827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_55
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 506
+        width: 36
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780812092ede9d5c0800000000000000
+      internalID: -4190056420955029369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_56
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 507
+        width: 36
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25c2f4ee68ade5b0800000000000000
+      internalID: -5337424789123185361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_57
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 508
+        width: 36
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b07e6d03d70dd8e0800000000000000
+      internalID: -1667167684012379975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_58
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 462
+        width: 48
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6be83e4dadc4fb0800000000000000
+      internalID: -4662110906349603098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_59
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 463
+        width: 48
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f936ea5d20bf0e990800000000000000
+      internalID: -7358605801529908321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_60
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 462
+        width: 48
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35be79353fcc0780800000000000000
+      internalID: -8715363351363930818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_61
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 464
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccab38f384fe8beb0800000000000000
+      internalID: -4703746717206201652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_62
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 462
+        width: 38
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9191d41166ab612a0800000000000000
+      internalID: -6767016442537895655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_63
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 463
+        width: 41
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17b595db82220900800000000000000
+      internalID: 649119280273930015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_64
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 414
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f39b91f2a752aad0800000000000000
+      internalID: -2692493269864311815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_65
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 413
+        width: 39
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2aa2aadc1e1163a0800000000000000
+      internalID: -6674020063510353365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_66
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 415
+        width: 35
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8b902211af3ea00800000000000000
+      internalID: 784745711585048797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_67
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 414
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5247df12945fbd8f0800000000000000
+      internalID: -514548037952113627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_68
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 414
+        width: 43
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36aa7c56a47d7b040800000000000000
+      internalID: 4663432653700573795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_69
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 413
+        width: 41
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c561f3358c7d63710800000000000000
+      internalID: 1672761567004792412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_70
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 415
+        width: 37
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc18a768728acc6c0800000000000000
+      internalID: -4121734671237479987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_71
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 414
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de98804d7f0f3bb10800000000000000
+      internalID: 1996204007060179437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_72
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 268
+        width: 60
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d508838931d1d61a0800000000000000
+      internalID: -6814758691146268579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_73
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 268
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac8211dd018ef840800000000000000
+      internalID: 5259783311157529771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_74
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 344
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9acdccc366bace10800000000000000
+      internalID: 2218786306187446939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_75
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 344
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca656c4e6f120c60800000000000000
+      internalID: 7782817664638216897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_76
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 344
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7576884f5b3660350800000000000000
+      internalID: 5982578788151093079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_77
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 344
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11bef7ce98d6c5f0800000000000000
+      internalID: -736663312556707553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_78
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 344
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17181df0f2fec0b0800000000000000
+      internalID: -5706356560979552484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_79
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 344
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe8f3317a7acb610800000000000000
+      internalID: 1638368700480327414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_80
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 344
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff4cc4d85b46c030800000000000000
+      internalID: 3514579404108615667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_81
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 274
+        width: 79
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42890356a742a0490800000000000000
+      internalID: -7779365298226816988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_82
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 276
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0115a4add6a0480800000000000000
+      internalID: -8932206126618832703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_83
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 277
+        width: 66
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f3af3cefccfd870800000000000000
+      internalID: 8709905598939545464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_84
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 274
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4608dbe5d929f490800000000000000
+      internalID: -7712086888133687732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_85
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 253
+        width: 42
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a540a32b27f16be0800000000000000
+      internalID: -1485634637402192478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_86
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 253
+        width: 41
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1946e4a84fe118280800000000000000
+      internalID: -9042912541141998447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_87
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 252
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a34b6a8086a96790800000000000000
+      internalID: -7536309430419504216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_88
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 252
+        width: 38
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7313f6fdab4ee2c0800000000000000
+      internalID: -4400496575349845124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_89
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 252
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f061331a4d04d2950800000000000000
+      internalID: 6425863525309289999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_90
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 252
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d348b1901fcbbd0800000000000000
+      internalID: -2612948662363079292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_91
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 252
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c38df51b9fd3ec0800000000000000
+      internalID: -3585435188104512369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_92
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 145
+        width: 88
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68be5cdf8e7d2920800000000000000
+      internalID: 2967166885849643115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_93
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 146
+        width: 55
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f061ebd7fb1008310800000000000000
+      internalID: 1405125005699585551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_94
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 148
+        width: 52
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5a1005dd1d87bf0800000000000000
+      internalID: -326280224524098125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_95
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 147
+        width: 57
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70736fc6f8ce133f0800000000000000
+      internalID: -922696347881687289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_96
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 146
+        width: 44
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7547cbb1ca9871d70800000000000000
+      internalID: 9013824551498052695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_97
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 146
+        width: 43
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5fd2f4a89d794a80800000000000000
+      internalID: -8482110328619737250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_98
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 133
+        width: 46
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d144a4ec79496de0800000000000000
+      internalID: -1339458613405269545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_99
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 132
+        width: 45
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbaec54ca9a79b270800000000000000
+      internalID: 8266773396153232063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_100
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 132
+        width: 45
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe910e4db42af840800000000000000
+      internalID: 5258555910384623345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_101
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 131
+        width: 45
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c2fceca09a137f0800000000000000
+      internalID: -634540208598078391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_102
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 132
+        width: 50
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5347a85641bab10800000000000000
+      internalID: 1993709686388700609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_103
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 132
+        width: 46
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc35b036bb392440800000000000000
+      internalID: 4911522522311507155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_104
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 18
+        width: 79
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984afb59449c43ae0800000000000000
+      internalID: -1570409073638136695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_105
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 22
+        width: 60
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1edabf00cbd0f67a0800000000000000
+      internalID: -6381867045839196703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_106
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 23
+        width: 46
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c253546dcce3afe0800000000000000
+      internalID: -1178838310545304895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_107
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 24
+        width: 42
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5755f7bf2f7d9d50800000000000000
+      internalID: 6745687659797370717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_108
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 26
+        width: 34
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b2046a8e5ae85c0800000000000000
+      internalID: -4211246182904616048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_109
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 26
+        width: 31
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc2a8a96001fdd00800000000000000
+      internalID: 999535262848134327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_110
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 32
+        width: 35
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91a6d44003904940800000000000000
+      internalID: 5278380392642421151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_111
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 31
+        width: 36
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fd8adab1d1550a0800000000000000
+      internalID: -6893571649905827957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_112
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 31
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a585d127a205a0c60800000000000000
+      internalID: 7785123049096697946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_113
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 31
+        width: 35
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97b348b4dfad7d70800000000000000
+      internalID: 9042576954989197210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_114
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 31
+        width: 39
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f5e852df7e43e60800000000000000
+      internalID: 7941227117403856795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Gunslinger 2_115
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 32
+        width: 38
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27a66d4b543c5d80800000000000000
+      internalID: -8260670049759090897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

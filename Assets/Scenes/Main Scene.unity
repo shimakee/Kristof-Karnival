@@ -2824,11 +2824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.33
+      value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3165,11 +3165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.33
+      value: 8.63
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 6733583448537637989, guid: dc64dcc942021684485ab165eb27efa4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3301,13 +3301,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6409690579489314437, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.33
+      value: 9.55
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.38
+      value: 2.54
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3349,6 +3353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign post (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
 --- !u!1 &1373530354 stripped
@@ -3382,13 +3390,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6409690579489314437, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6
+      value: 8.64
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: 2.58
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3429,6 +3441,10 @@ PrefabInstance:
     - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_Name
       value: Sign post (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
@@ -3539,9 +3555,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6409690579489314437, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 6.49
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3586,6 +3606,10 @@ PrefabInstance:
     - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_Name
       value: Sign post (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
@@ -3814,9 +3838,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6409690579489314437, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.05
+      value: 7.59
       objectReference: {fileID: 0}
     - target: {fileID: 6409690579783179644, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3861,6 +3889,10 @@ PrefabInstance:
     - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
       propertyPath: m_Name
       value: Sign post (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409690579783179647, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d4c78496e30064a8f59ac39a0cd561, type: 3}

@@ -9,6 +9,8 @@ public class RbFreeMove2DComponent : MonoBehaviour, IMoverComponent
     public Vector3 TargetPosition { get { return _movement.DesiredPosition; } set { _movement.DesiredPosition = value; } }
     public Vector3 Direction { get { return _movement.Direction; } set { _movement.Direction = value; } }
     public Vector3 CurrentPosition { get { return _rb.position; } }
+    public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
+
 
     Movement _movement;
     Rigidbody2D _rb;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PathfindToTargetMoveComponent : MonoBehaviour, IMoverComponent
+public class PathfindToTargetMove2DComponent : MonoBehaviour, ITargetMoverComponent
 {
     [SerializeField] float speed = 1;
     [SerializeField] float tileIdleTime = .5f;
@@ -12,7 +12,8 @@ public class PathfindToTargetMoveComponent : MonoBehaviour, IMoverComponent
 
 
     public Vector3 CurrentPosition { get { return _rb.position; } }
-    public Vector3 Direction { get { return _movement.Direction; } set { _movement.Direction = value; } }
+    //public Vector3 Direction { get { return _movement.Direction; } set { _movement.Direction = value; } }
+    public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
     public Vector3 TargetPosition
     { 
         get { return _movement.DesiredPosition; } 
@@ -67,6 +68,9 @@ public class PathfindToTargetMoveComponent : MonoBehaviour, IMoverComponent
         while (route.Count > 0)
         {
             _path = gridMap.GetNearestTilePosition(route[0].WorldPosition);
+
+            _movement.LastDirectionFacing = _path - _rb.position;
+
             yield return new WaitUntil(()=> _rb.position == _path);
             yield return new WaitForSeconds(tileIdleTime);
             route.RemoveAt(0);

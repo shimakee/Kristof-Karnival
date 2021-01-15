@@ -1,0 +1,4102 @@
+fileFormatVersion: 2
+guid: fa99c1982459a7248a6ecffa67950f20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1404362497810268756
+    second: PC Computer - Ragnarok Online - Black_0
+  - first:
+      213: -9016634650976710866
+    second: PC Computer - Ragnarok Online - Black_1
+  - first:
+      213: -5135768504665429264
+    second: PC Computer - Ragnarok Online - Black_2
+  - first:
+      213: 7574477475000973253
+    second: PC Computer - Ragnarok Online - Black_3
+  - first:
+      213: 2389282785251375815
+    second: PC Computer - Ragnarok Online - Black_4
+  - first:
+      213: 4683275548866873511
+    second: PC Computer - Ragnarok Online - Black_5
+  - first:
+      213: -4607491299473800219
+    second: PC Computer - Ragnarok Online - Black_6
+  - first:
+      213: -7579400857181884002
+    second: PC Computer - Ragnarok Online - Black_7
+  - first:
+      213: -4158344116932237199
+    second: PC Computer - Ragnarok Online - Black_8
+  - first:
+      213: -796927379193001283
+    second: PC Computer - Ragnarok Online - Black_9
+  - first:
+      213: -2041752406927816711
+    second: PC Computer - Ragnarok Online - Black_10
+  - first:
+      213: -4353470910293196505
+    second: PC Computer - Ragnarok Online - Black_11
+  - first:
+      213: -617416182179723296
+    second: PC Computer - Ragnarok Online - Black_12
+  - first:
+      213: -2741649256559009970
+    second: PC Computer - Ragnarok Online - Black_13
+  - first:
+      213: -3930003434830656117
+    second: PC Computer - Ragnarok Online - Black_14
+  - first:
+      213: -1613033633225513646
+    second: PC Computer - Ragnarok Online - Black_15
+  - first:
+      213: 7305555940621996576
+    second: PC Computer - Ragnarok Online - Black_16
+  - first:
+      213: -5315410931562294877
+    second: PC Computer - Ragnarok Online - Black_17
+  - first:
+      213: -2008566468319901244
+    second: PC Computer - Ragnarok Online - Black_18
+  - first:
+      213: 7415072017431249437
+    second: PC Computer - Ragnarok Online - Black_19
+  - first:
+      213: -948258323601397777
+    second: PC Computer - Ragnarok Online - Black_20
+  - first:
+      213: -7418541290613387602
+    second: PC Computer - Ragnarok Online - Black_21
+  - first:
+      213: 2152734596742865522
+    second: PC Computer - Ragnarok Online - Black_22
+  - first:
+      213: 3552739548995638035
+    second: PC Computer - Ragnarok Online - Black_23
+  - first:
+      213: 7586723055613793671
+    second: PC Computer - Ragnarok Online - Black_24
+  - first:
+      213: -4969064653200311626
+    second: PC Computer - Ragnarok Online - Black_25
+  - first:
+      213: 4222400709177539668
+    second: PC Computer - Ragnarok Online - Black_26
+  - first:
+      213: -1759780204348405137
+    second: PC Computer - Ragnarok Online - Black_27
+  - first:
+      213: -3702749236373328325
+    second: PC Computer - Ragnarok Online - Black_28
+  - first:
+      213: -3003647632623566444
+    second: PC Computer - Ragnarok Online - Black_29
+  - first:
+      213: -7412380087435815286
+    second: PC Computer - Ragnarok Online - Black_30
+  - first:
+      213: 5327644999487577668
+    second: PC Computer - Ragnarok Online - Black_31
+  - first:
+      213: -3300960213471897587
+    second: PC Computer - Ragnarok Online - Black_32
+  - first:
+      213: 7224367468870736249
+    second: PC Computer - Ragnarok Online - Black_33
+  - first:
+      213: 5105741331214790031
+    second: PC Computer - Ragnarok Online - Black_34
+  - first:
+      213: 6349983795740368261
+    second: PC Computer - Ragnarok Online - Black_35
+  - first:
+      213: -2552833309996404469
+    second: PC Computer - Ragnarok Online - Black_36
+  - first:
+      213: 5499747717528279175
+    second: PC Computer - Ragnarok Online - Black_37
+  - first:
+      213: -255408678207610423
+    second: PC Computer - Ragnarok Online - Black_38
+  - first:
+      213: 7322139252015027849
+    second: PC Computer - Ragnarok Online - Black_39
+  - first:
+      213: -1767930628702620092
+    second: PC Computer - Ragnarok Online - Black_40
+  - first:
+      213: 1085326280311153585
+    second: PC Computer - Ragnarok Online - Black_41
+  - first:
+      213: 5005946176992690603
+    second: PC Computer - Ragnarok Online - Black_42
+  - first:
+      213: -3895713366897618536
+    second: PC Computer - Ragnarok Online - Black_43
+  - first:
+      213: 4574267768435043743
+    second: PC Computer - Ragnarok Online - Black_44
+  - first:
+      213: 8305120400192997995
+    second: PC Computer - Ragnarok Online - Black_45
+  - first:
+      213: -5335434677333460152
+    second: PC Computer - Ragnarok Online - Black_46
+  - first:
+      213: -2499674101345360331
+    second: PC Computer - Ragnarok Online - Black_47
+  - first:
+      213: -4848058549163359682
+    second: PC Computer - Ragnarok Online - Black_48
+  - first:
+      213: 3404170067289219454
+    second: PC Computer - Ragnarok Online - Black_49
+  - first:
+      213: 5302362576761173798
+    second: PC Computer - Ragnarok Online - Black_50
+  - first:
+      213: -5514725126093373124
+    second: PC Computer - Ragnarok Online - Black_51
+  - first:
+      213: 5308134553373723683
+    second: PC Computer - Ragnarok Online - Black_52
+  - first:
+      213: 2299217048766500995
+    second: PC Computer - Ragnarok Online - Black_53
+  - first:
+      213: 781380016717804051
+    second: PC Computer - Ragnarok Online - Black_54
+  - first:
+      213: -6900674757777313809
+    second: PC Computer - Ragnarok Online - Black_55
+  - first:
+      213: 4912379152311635962
+    second: PC Computer - Ragnarok Online - Black_56
+  - first:
+      213: -77704408213201054
+    second: PC Computer - Ragnarok Online - Black_57
+  - first:
+      213: -976542103140089953
+    second: PC Computer - Ragnarok Online - Black_58
+  - first:
+      213: 1504694834031027513
+    second: PC Computer - Ragnarok Online - Black_59
+  - first:
+      213: 1373221203045318407
+    second: PC Computer - Ragnarok Online - Black_60
+  - first:
+      213: 8496104884498991774
+    second: PC Computer - Ragnarok Online - Black_61
+  - first:
+      213: -3351797541019715605
+    second: PC Computer - Ragnarok Online - Black_62
+  - first:
+      213: -5140344308972285440
+    second: PC Computer - Ragnarok Online - Black_63
+  - first:
+      213: -6260089905400608613
+    second: PC Computer - Ragnarok Online - Black_64
+  - first:
+      213: 4620862664149626569
+    second: PC Computer - Ragnarok Online - Black_65
+  - first:
+      213: -717789934899068045
+    second: PC Computer - Ragnarok Online - Black_66
+  - first:
+      213: -3967217693703899098
+    second: PC Computer - Ragnarok Online - Black_67
+  - first:
+      213: 2549572598062318990
+    second: PC Computer - Ragnarok Online - Black_68
+  - first:
+      213: -3489078625608732966
+    second: PC Computer - Ragnarok Online - Black_69
+  - first:
+      213: -8736221901569418919
+    second: PC Computer - Ragnarok Online - Black_70
+  - first:
+      213: 3576209998267716095
+    second: PC Computer - Ragnarok Online - Black_71
+  - first:
+      213: -3246157731650151193
+    second: PC Computer - Ragnarok Online - Black_72
+  - first:
+      213: -5717887597724309857
+    second: PC Computer - Ragnarok Online - Black_73
+  - first:
+      213: 2496931868886489964
+    second: PC Computer - Ragnarok Online - Black_74
+  - first:
+      213: 8502813380714135915
+    second: PC Computer - Ragnarok Online - Black_75
+  - first:
+      213: 4227372424757243106
+    second: PC Computer - Ragnarok Online - Black_76
+  - first:
+      213: -4232189506770212101
+    second: PC Computer - Ragnarok Online - Black_77
+  - first:
+      213: -5771006420965027472
+    second: PC Computer - Ragnarok Online - Black_78
+  - first:
+      213: 4523393276101748560
+    second: PC Computer - Ragnarok Online - Black_79
+  - first:
+      213: 9173793840104542452
+    second: PC Computer - Ragnarok Online - Black_80
+  - first:
+      213: 3713688250560130555
+    second: PC Computer - Ragnarok Online - Black_81
+  - first:
+      213: 4692082177173558195
+    second: PC Computer - Ragnarok Online - Black_82
+  - first:
+      213: -2344168698577650777
+    second: PC Computer - Ragnarok Online - Black_83
+  - first:
+      213: 5807177121049890781
+    second: PC Computer - Ragnarok Online - Black_84
+  - first:
+      213: -905283127176905083
+    second: PC Computer - Ragnarok Online - Black_85
+  - first:
+      213: -6612958986398887373
+    second: PC Computer - Ragnarok Online - Black_86
+  - first:
+      213: 7086949498889401421
+    second: PC Computer - Ragnarok Online - Black_87
+  - first:
+      213: 4580426053321777385
+    second: PC Computer - Ragnarok Online - Black_88
+  - first:
+      213: 1861576341027083925
+    second: PC Computer - Ragnarok Online - Black_89
+  - first:
+      213: -2657096172875017100
+    second: PC Computer - Ragnarok Online - Black_90
+  - first:
+      213: -1613657688553598764
+    second: PC Computer - Ragnarok Online - Black_91
+  - first:
+      213: 9036487918497947851
+    second: PC Computer - Ragnarok Online - Black_92
+  - first:
+      213: 4202067702160822315
+    second: PC Computer - Ragnarok Online - Black_93
+  - first:
+      213: -5733721219712087916
+    second: PC Computer - Ragnarok Online - Black_94
+  - first:
+      213: 6280909987044222551
+    second: PC Computer - Ragnarok Online - Black_95
+  - first:
+      213: 6736392554224786506
+    second: PC Computer - Ragnarok Online - Black_96
+  - first:
+      213: 4132237607758299124
+    second: PC Computer - Ragnarok Online - Black_97
+  - first:
+      213: -5103436285023054130
+    second: PC Computer - Ragnarok Online - Black_98
+  - first:
+      213: 500982931360014950
+    second: PC Computer - Ragnarok Online - Black_99
+  - first:
+      213: -7528865332091753520
+    second: PC Computer - Ragnarok Online - Black_100
+  - first:
+      213: 8035844224116862319
+    second: PC Computer - Ragnarok Online - Black_101
+  - first:
+      213: -8842237240347472376
+    second: PC Computer - Ragnarok Online - Black_102
+  - first:
+      213: 3959901349827129793
+    second: PC Computer - Ragnarok Online - Black_103
+  - first:
+      213: 423686836263944827
+    second: PC Computer - Ragnarok Online - Black_104
+  - first:
+      213: 4088699829799209184
+    second: PC Computer - Ragnarok Online - Black_105
+  - first:
+      213: -6921429027115247699
+    second: PC Computer - Ragnarok Online - Black_106
+  - first:
+      213: 4748082283404692558
+    second: PC Computer - Ragnarok Online - Black_107
+  - first:
+      213: -2607103838257360016
+    second: PC Computer - Ragnarok Online - Black_108
+  - first:
+      213: -4026067802439929630
+    second: PC Computer - Ragnarok Online - Black_109
+  - first:
+      213: -74804781712565827
+    second: PC Computer - Ragnarok Online - Black_110
+  - first:
+      213: -4547398824801371116
+    second: PC Computer - Ragnarok Online - Black_111
+  - first:
+      213: 6735206633985331589
+    second: PC Computer - Ragnarok Online - Black_112
+  - first:
+      213: 8471717721624846573
+    second: PC Computer - Ragnarok Online - Black_113
+  - first:
+      213: -1395945000209936334
+    second: PC Computer - Ragnarok Online - Black_114
+  - first:
+      213: 8240935871879148068
+    second: PC Computer - Ragnarok Online - Black_115
+  - first:
+      213: 896256879969703620
+    second: PC Computer - Ragnarok Online - Black_116
+  - first:
+      213: 768848856464199387
+    second: PC Computer - Ragnarok Online - Black_117
+  - first:
+      213: 7124892241484412959
+    second: PC Computer - Ragnarok Online - Black_118
+  - first:
+      213: 3176501818132834246
+    second: PC Computer - Ragnarok Online - Black_119
+  - first:
+      213: 3686611031204454475
+    second: PC Computer - Ragnarok Online - Black_120
+  - first:
+      213: -2920126538210193501
+    second: PC Computer - Ragnarok Online - Black_121
+  - first:
+      213: 266500186345005866
+    second: PC Computer - Ragnarok Online - Black_122
+  - first:
+      213: -3670623772219715838
+    second: PC Computer - Ragnarok Online - Black_123
+  - first:
+      213: -3960836515952270033
+    second: PC Computer - Ragnarok Online - Black_124
+  - first:
+      213: 4023214894560993923
+    second: PC Computer - Ragnarok Online - Black_125
+  - first:
+      213: -3962999211346122793
+    second: PC Computer - Ragnarok Online - Black_126
+  - first:
+      213: -7791041940468315647
+    second: PC Computer - Ragnarok Online - Black_127
+  - first:
+      213: 9166021609781718870
+    second: PC Computer - Ragnarok Online - Black_128
+  - first:
+      213: 4595584691687905901
+    second: PC Computer - Ragnarok Online - Black_129
+  - first:
+      213: 4404546097718120123
+    second: PC Computer - Ragnarok Online - Black_130
+  - first:
+      213: 4216243954019664868
+    second: PC Computer - Ragnarok Online - Black_131
+  - first:
+      213: -8632967308821900886
+    second: PC Computer - Ragnarok Online - Black_132
+  - first:
+      213: -1179863083924772738
+    second: PC Computer - Ragnarok Online - Black_133
+  - first:
+      213: 4513836086529116834
+    second: PC Computer - Ragnarok Online - Black_134
+  - first:
+      213: -36201144499224115
+    second: PC Computer - Ragnarok Online - Black_135
+  - first:
+      213: 4902319757154891948
+    second: PC Computer - Ragnarok Online - Black_136
+  - first:
+      213: 3747762842521191000
+    second: PC Computer - Ragnarok Online - Black_137
+  - first:
+      213: -5661984316180412742
+    second: PC Computer - Ragnarok Online - Black_138
+  - first:
+      213: 7543883516961501650
+    second: PC Computer - Ragnarok Online - Black_139
+  - first:
+      213: -4251341096613023255
+    second: PC Computer - Ragnarok Online - Black_140
+  - first:
+      213: -8228419414241711450
+    second: PC Computer - Ragnarok Online - Black_141
+  - first:
+      213: -288792599405751183
+    second: PC Computer - Ragnarok Online - Black_142
+  - first:
+      213: 7125959741903102098
+    second: PC Computer - Ragnarok Online - Black_143
+  - first:
+      213: -7551388562751429671
+    second: PC Computer - Ragnarok Online - Black_144
+  - first:
+      213: -8820603563361520944
+    second: PC Computer - Ragnarok Online - Black_145
+  - first:
+      213: -1456024166874677200
+    second: PC Computer - Ragnarok Online - Black_146
+  - first:
+      213: -707682685575783555
+    second: PC Computer - Ragnarok Online - Black_147
+  - first:
+      213: -4091173318361868854
+    second: PC Computer - Ragnarok Online - Black_148
+  - first:
+      213: -7988527158719164648
+    second: PC Computer - Ragnarok Online - Black_149
+  - first:
+      213: 4837922946489010108
+    second: PC Computer - Ragnarok Online - Black_150
+  - first:
+      213: 8391386765230547703
+    second: PC Computer - Ragnarok Online - Black_151
+  - first:
+      213: -1628649856717512046
+    second: PC Computer - Ragnarok Online - Black_152
+  - first:
+      213: 864671303824225916
+    second: PC Computer - Ragnarok Online - Black_153
+  - first:
+      213: -271819465549274473
+    second: PC Computer - Ragnarok Online - Black_154
+  - first:
+      213: -9036584011653685179
+    second: PC Computer - Ragnarok Online - Black_155
+  - first:
+      213: -3908159632226761524
+    second: PC Computer - Ragnarok Online - Black_156
+  - first:
+      213: -2470728238980564452
+    second: PC Computer - Ragnarok Online - Black_157
+  - first:
+      213: 9150475534958182102
+    second: PC Computer - Ragnarok Online - Black_158
+  - first:
+      213: 6473428688673691392
+    second: PC Computer - Ragnarok Online - Black_159
+  - first:
+      213: 229310283093193391
+    second: PC Computer - Ragnarok Online - Black_160
+  - first:
+      213: 752665756993027847
+    second: PC Computer - Ragnarok Online - Black_161
+  - first:
+      213: -2252120984490328335
+    second: PC Computer - Ragnarok Online - Black_162
+  - first:
+      213: -5408421462636288211
+    second: PC Computer - Ragnarok Online - Black_163
+  - first:
+      213: -5035399887581908083
+    second: PC Computer - Ragnarok Online - Black_164
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 575
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4528cd9404c4d7310800000000000000
+      internalID: 1404362497810268756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 575
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f0e0f9e8a7ed280800000000000000
+      internalID: -9016634650976710866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 575
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa27c661c51ab8b0800000000000000
+      internalID: -5135768504665429264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_3
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 575
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c771a8d123fd1960800000000000000
+      internalID: 7574477475000973253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 575
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca3dd2c800782120800000000000000
+      internalID: 2389282785251375815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_5
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 576
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a88b737c465ef040800000000000000
+      internalID: 4683275548866873511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_6
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 576
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3492d1317ee00c0800000000000000
+      internalID: -4607491299473800219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 576
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91f169e31f80d690800000000000000
+      internalID: -7579400857181884002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 576
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1782b68be089a46c0800000000000000
+      internalID: -4158344116932237199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_9
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 576
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba0b6b55ceb0f4f0800000000000000
+      internalID: -796927379193001283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_10
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 576
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7c4c9e00d3aa3e0800000000000000
+      internalID: -2041752406927816711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_11
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 576
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7214af3d54d5593c0800000000000000
+      internalID: -4353470910293196505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_12
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 576
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e78996e04f7e67f0800000000000000
+      internalID: -617416182179723296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_13
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 577
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f161ce684b3f9d0800000000000000
+      internalID: -2741649256559009970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_14
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 575
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d8ad4b2b2d579c0800000000000000
+      internalID: -3930003434830656117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 515
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255e5d0f47a5d99e0800000000000000
+      internalID: -1613033633225513646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_16
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 515
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022d487eb6c826560800000000000000
+      internalID: 7305555940621996576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_17
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 506
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a150058beddb36b0800000000000000
+      internalID: -5315410931562294877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_18
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 506
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9080c50732024e0800000000000000
+      internalID: -2008566468319901244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_19
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 506
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12cdee86b0a7e660800000000000000
+      internalID: 7415072017431249437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_20
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 513
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe76e6a241c17d2f0800000000000000
+      internalID: -948258323601397777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_21
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 511
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaecb65500c0c0990800000000000000
+      internalID: -7418541290613387602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_22
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 512
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2726d86c5bc00ed10800000000000000
+      internalID: 2152734596742865522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_23
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 516
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313dd5debcddd4130800000000000000
+      internalID: 3552739548995638035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_24
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 514
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78550234c64794960800000000000000
+      internalID: 7586723055613793671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_25
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 513
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6babb0076065a0bb0800000000000000
+      internalID: -4969064653200311626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_26
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 508
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c72e1e21bf89a30800000000000000
+      internalID: 4222400709177539668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_27
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 510
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a8c055a310497e0800000000000000
+      internalID: -1759780204348405137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_28
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 517
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e6e9100313d9cc0800000000000000
+      internalID: -3702749236373328325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_29
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 515
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49187036466e056d0800000000000000
+      internalID: -3003647632623566444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_30
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 450
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86953c359fe12990800000000000000
+      internalID: -7412380087435815286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_31
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 449
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ed7d366e89fe940800000000000000
+      internalID: 5327644999487577668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_32
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 444
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d085f42dc22a032d0800000000000000
+      internalID: -3300960213471897587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_33
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 444
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9799de4cfeb124460800000000000000
+      internalID: 7224367468870736249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_34
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 443
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d661a70bc3bd640800000000000000
+      internalID: 5105741331214790031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_35
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 450
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d579a5e9caf1850800000000000000
+      internalID: 6349983795740368261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_36
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 450
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0131ea41a3829cd0800000000000000
+      internalID: -2552833309996404469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_37
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 447
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788d9810967035c40800000000000000
+      internalID: 5499747717528279175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_38
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 454
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c122ee092b947cf0800000000000000
+      internalID: -255408678207610423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_39
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 450
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986dc48fad67d9560800000000000000
+      internalID: 7322139252015027849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_40
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 450
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446b5a8c57c0777e0800000000000000
+      internalID: -1767930628702620092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_41
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 444
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3a75b608adf0f00800000000000000
+      internalID: 1085326280311153585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_42
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 445
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1cf5c7681b87540800000000000000
+      internalID: 5005946176992690603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_43
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 451
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891935b4555afe9c0800000000000000
+      internalID: -3895713366897618536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_44
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 450
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9de615cc401b7f30800000000000000
+      internalID: 4574267768435043743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_45
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 385
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a8a566007b14370800000000000000
+      internalID: 8305120400192997995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_46
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 385
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bfc37ed6ab4f5b0800000000000000
+      internalID: -5335434677333460152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 384
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536e01f06af5f4dd0800000000000000
+      internalID: -2499674101345360331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_48
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 384
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3282d68f6c38bcb0800000000000000
+      internalID: -4848058549163359682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_49
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 384
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71aacfd3aa0e3f20800000000000000
+      internalID: 3404170067289219454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_50
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 386
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627bc22aba6c59940800000000000000
+      internalID: 5302362576761173798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_51
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 386
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31884157b2c773b0800000000000000
+      internalID: -5514725126093373124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_52
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 387
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c41d9a0484aa940800000000000000
+      internalID: 5308134553373723683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_53
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 387
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380df3d59b578ef10800000000000000
+      internalID: 2299217048766500995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_54
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 386
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312bd0b3cf408da00800000000000000
+      internalID: 781380016717804051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_55
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 386
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fefad208ed0eb30a0800000000000000
+      internalID: -6900674757777313809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_56
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 385
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affc197efc64c2440800000000000000
+      internalID: 4912379152311635962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_57
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 385
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f58fe9040fbeef0800000000000000
+      internalID: -77704408213201054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_58
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 387
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f3f129120a272f0800000000000000
+      internalID: -976542103140089953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_59
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 386
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935e8c5baffb1e410800000000000000
+      internalID: 1504694834031027513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_60
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 325
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ffc859869ae0310800000000000000
+      internalID: 1373221203045318407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_61
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 325
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a060fc06a38e570800000000000000
+      internalID: 8496104884498991774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_62
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 325
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7fd7025e50c71d0800000000000000
+      internalID: -3351797541019715605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_63
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 324
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0029180f514d9a8b0800000000000000
+      internalID: -5140344308972285440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_64
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 325
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98869ef561bf19a0800000000000000
+      internalID: -6260089905400608613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_65
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 326
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cee0845c1a902040800000000000000
+      internalID: 4620862664149626569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_66
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 326
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3738df27bd5e906f0800000000000000
+      internalID: -717789934899068045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_67
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 326
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628722cd68c91f8c0800000000000000
+      internalID: -3967217693703899098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_68
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 327
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85039c05c6e16320800000000000000
+      internalID: 2549572598062318990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_69
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 326
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adeee27d97d449fc0800000000000000
+      internalID: -3489078625608732966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_70
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 326
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95997fd8774b2c680800000000000000
+      internalID: -8736221901569418919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_71
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 326
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff192fcbb0041a130800000000000000
+      internalID: 3576209998267716095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_72
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 325
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecda10fdb453f2d0800000000000000
+      internalID: -3246157731650151193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_73
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 327
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96e708468bf5a0b0800000000000000
+      internalID: -5717887597724309857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_74
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 325
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bd4513e42e6a220800000000000000
+      internalID: 2496931868886489964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_75
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 271
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6187ec48bf000670800000000000000
+      internalID: 8502813380714135915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_76
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 272
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecefee92d4aaaa30800000000000000
+      internalID: 4227372424757243106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_77
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 272
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa63d2111e3445c0800000000000000
+      internalID: -4232189506770212101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_78
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 272
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07191e97c3449efa0800000000000000
+      internalID: -5771006420965027472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_79
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 272
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0576f69f73256ce30800000000000000
+      internalID: 4523393276101748560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_80
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 272
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0191a84ecdf4f70800000000000000
+      internalID: 9173793840104542452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_81
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 272
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfdad25b9cba98330800000000000000
+      internalID: 3713688250560130555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_82
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 272
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b31f5361ef9d1140800000000000000
+      internalID: 4692082177173558195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_83
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 273
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab70b31df6d77fd0800000000000000
+      internalID: -2344168698577650777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_84
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 272
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf44f7e2dc379050800000000000000
+      internalID: 5807177121049890781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_85
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 272
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e377fcac9cf63f0800000000000000
+      internalID: -905283127176905083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_86
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 273
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332977db6dc0a34a0800000000000000
+      internalID: -6612958986398887373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_87
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 273
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d447f6e5507e95260800000000000000
+      internalID: 7086949498889401421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_88
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 275
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e060343a31f09f30800000000000000
+      internalID: 4580426053321777385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_89
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 273
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596d031b1d5a5d910800000000000000
+      internalID: 1861576341027083925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_90
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 216
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4741cb1db19102bd0800000000000000
+      internalID: -2657096172875017100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_91
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 216
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d05facb1e22b99e0800000000000000
+      internalID: -1613657688553598764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_92
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 216
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0ed2f62ed086d70800000000000000
+      internalID: 9036487918497947851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_93
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 217
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b201075cf4eb05a30800000000000000
+      internalID: 4202067702160822315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_94
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 217
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49801f1edeabd60b0800000000000000
+      internalID: -5733721219712087916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_95
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 217
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75669f30b564a2750800000000000000
+      internalID: 6280909987044222551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_96
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 217
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c972e46597c7d50800000000000000
+      internalID: 6736392554224786506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_97
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 217
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff71f1f538a85930800000000000000
+      internalID: 4132237607758299124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_98
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 218
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec69c59ecb3fc29b0800000000000000
+      internalID: -5103436285023054130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_99
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 217
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6626f3e5259d3f600800000000000000
+      internalID: 500982931360014950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_100
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 218
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbeaeebed8148790800000000000000
+      internalID: -7528865332091753520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_101
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 217
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d2cd00fbd058f60800000000000000
+      internalID: 8035844224116862319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_102
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 216
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ecb5df3101a4580800000000000000
+      internalID: -8842237240347472376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_103
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 220
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c139061c4564f630800000000000000
+      internalID: 3959901349827129793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_104
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 218
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72858bceec31e500800000000000000
+      internalID: 423686836263944827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_105
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 157
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8c16415dafdb830800000000000000
+      internalID: 4088699829799209184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_106
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 157
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7d7bc98f422ff90800000000000000
+      internalID: -6921429027115247699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_107
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 157
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c89aa2ea394e140800000000000000
+      internalID: 4748082283404692558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_108
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 157
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073dc144fd4b1dbd0800000000000000
+      internalID: -2607103838257360016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_109
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 157
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e03ee92aa88028c0800000000000000
+      internalID: -4026067802439929630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_110
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 159
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db99586827d36fef0800000000000000
+      internalID: -74804781712565827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_111
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 158
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c7fabacd464e0c0800000000000000
+      internalID: -4547398824801371116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_112
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 159
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581dc8bbfb2487d50800000000000000
+      internalID: 6735206633985331589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_113
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 161
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0a4daf166919570800000000000000
+      internalID: 8471717721624846573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_114
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 158
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23011881b6b90ace0800000000000000
+      internalID: -1395945000209936334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_115
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 158
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422712c538fad5270800000000000000
+      internalID: 8240935871879148068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_116
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6181e32e4207c00800000000000000
+      internalID: 896256879969703620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_117
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 160
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde838f16ff7baa00800000000000000
+      internalID: 768848856464199387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_118
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 160
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f187d9c8eb3b0e260800000000000000
+      internalID: 7124892241484412959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_119
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 159
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7a032e293351c20800000000000000
+      internalID: 3176501818132834246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_120
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 104
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b406afb4339792330800000000000000
+      internalID: 3686611031204454475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_121
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 105
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af4ace8260a977d0800000000000000
+      internalID: -2920126538210193501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_122
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 105
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a236babe18cc2b300800000000000000
+      internalID: 266500186345005866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_123
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 105
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f4db080235f0dc0800000000000000
+      internalID: -3670623772219715838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_124
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 104
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25e4459c284809c0800000000000000
+      internalID: -3960836515952270033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_125
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 106
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3826e5571a455d730800000000000000
+      internalID: 4023214894560993923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_126
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 106
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d7af82d6399009c0800000000000000
+      internalID: -3962999211346122793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_127
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 106
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a473442a8a0e390800000000000000
+      internalID: -7791041940468315647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_128
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 107
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65fe7962710443f70800000000000000
+      internalID: 9166021609781718870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_129
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 105
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ad74bbdebc6cf30800000000000000
+      internalID: 4595584691687905901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_130
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 105
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe425fe657102d30800000000000000
+      internalID: 4404546097718120123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_131
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 105
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e30bbd998b138a30800000000000000
+      internalID: 4216243954019664868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_132
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 105
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa15c18d8f9813880800000000000000
+      internalID: -8632967308821900886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_133
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 108
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78211fb6c840afe0800000000000000
+      internalID: -1179863083924772738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_134
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 107
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa48ef510e54ae30800000000000000
+      internalID: 4513836086529116834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_135
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 56
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc149a930436f7ff0800000000000000
+      internalID: -36201144499224115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_136
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 56
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8b89478d9880440800000000000000
+      internalID: 4902319757154891948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_137
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 56
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85242e2e27ab20430800000000000000
+      internalID: 3747762842521191000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_138
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 56
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6cb3e43479c61b0800000000000000
+      internalID: -5661984316180412742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_139
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 56
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d13a67e61241b860800000000000000
+      internalID: 7543883516961501650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_140
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 57
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e17c551cc33005c0800000000000000
+      internalID: -4251341096613023255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_141
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 56
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aae1378328cecd80800000000000000
+      internalID: -8228419414241711450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_142
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 59
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17498a239a00efbf0800000000000000
+      internalID: -288792599405751183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_143
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 59
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2906edb51ae74e260800000000000000
+      internalID: 7125959741903102098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_144
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 56
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3e0447c14143790800000000000000
+      internalID: -7551388562751429671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_145
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 56
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2ba4deacbe69580800000000000000
+      internalID: -8820603563361520944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_146
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 56
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0300d0d0cb92bcbe0800000000000000
+      internalID: -1456024166874677200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_147
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 57
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b9f80d85ecd26f0800000000000000
+      internalID: -707682685575783555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_148
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 57
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac51c7cfa8b3937c0800000000000000
+      internalID: -4091173318361868854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_149
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 57
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fcbf9cfdc032190800000000000000
+      internalID: -7988527158719164648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_150
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 9
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb740349941c32340800000000000000
+      internalID: 4837922946489010108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_151
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 9
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f22b72bdc1347470800000000000000
+      internalID: 8391386765230547703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_152
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 10
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292acd2959fd569e0800000000000000
+      internalID: -1628649856717512046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_153
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 10
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76bae738fdeffb00800000000000000
+      internalID: 864671303824225916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_154
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 10
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79226e0e2ad4a3cf0800000000000000
+      internalID: -271819465549274473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_155
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 9
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540686228ba979280800000000000000
+      internalID: -9036584011653685179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_156
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 9
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc44a93558d63c9c0800000000000000
+      internalID: -3908159632226761524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_157
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 10
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a7903d1c536bdd0800000000000000
+      internalID: -2470728238980564452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_158
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 9
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6deb51b84050dfe70800000000000000
+      internalID: 9150475534958182102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_159
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 10
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007d73b381d36d950800000000000000
+      internalID: 6473428688673691392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_160
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 9
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa23d1fcc7cae2300800000000000000
+      internalID: 229310283093193391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_161
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 9
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f7b28a481027a00800000000000000
+      internalID: 752665756993027847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_162
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 9
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe304895ebdeb0e0800000000000000
+      internalID: -2252120984490328335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_163
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 13
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2727f3b55d61f4b0800000000000000
+      internalID: -5408421462636288211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Black_164
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 10
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8373ae1b7aae1ab0800000000000000
+      internalID: -5035399887581908083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
