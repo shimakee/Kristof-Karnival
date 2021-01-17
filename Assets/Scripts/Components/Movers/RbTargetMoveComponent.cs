@@ -37,6 +37,12 @@ public class RbTargetMoveComponent : MonoBehaviour, ITargetMoverComponent
             _targetAdjusted.y = _rb.position.y; // let gravity handle falling
         
         _movement.LastDirectionFacing = _targetAdjusted - _rb.position;
+        _movement.RotateForwardDirectionInYAxis(_rb, _movement.LastDirectionFacing);
         _movement.MoveTowards(_rb, _targetAdjusted, Time.fixedDeltaTime);
+
+        Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
+
     }
+
+
 }

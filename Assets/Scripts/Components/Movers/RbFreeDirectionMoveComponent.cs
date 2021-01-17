@@ -44,5 +44,8 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
             _movement.AssignVelocity(_rb, _movement.SwitchZandY(Direction));
         else
             _movement.AssignVelocity(_rb, Direction);
+
+        _movement.RotateForwardDirectionInYAxis(_rb, _movement.LastDirectionFacing);
+        Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
     }
 }

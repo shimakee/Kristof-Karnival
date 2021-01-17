@@ -60,6 +60,15 @@ public class Movement
     {
         return new Vector3(direction.x, direction.z, direction.y);
     }
+
+    public void RotateForwardDirectionInYAxis(Rigidbody rb, Vector3 direction)
+    {
+        //direction.y = rb.transform.position.y;
+
+        var angle = Vector3.SignedAngle(rb.transform.forward, direction, rb.position);
+
+        rb.transform.Rotate(0f, angle, 0f);
+    }
     #endregion
 
     #region Private methods

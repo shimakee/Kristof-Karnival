@@ -17,14 +17,7 @@ public class Player : MonoBehaviour
     }
     #region Unity Methods
 
-    private void Update()
-    {
-    }
-
-    private void FixedUpdate()
-    {
-    }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Hit enter");
