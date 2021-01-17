@@ -80,6 +80,8 @@ public class RbTargetNavmeshMoveComponent : MonoBehaviour, ITargetMoverComponent
 
     IEnumerator ProcessPath(Vector3 destination)
     {
+        _agent.path.ClearCorners(); 
+
         _agent.SetDestination(destination);
 
         yield return new WaitUntil(() => _agent.hasPath);
@@ -95,9 +97,9 @@ public class RbTargetNavmeshMoveComponent : MonoBehaviour, ITargetMoverComponent
 
             _movement.DesiredPosition = path;
             yield return new WaitUntil(() => _rb.position == _movement.DesiredPosition);
-
-            _agent.Warp(path);
         }
+        _agent.Warp(_rb.position);
         _agent.path.ClearCorners();
+
     }
 }
