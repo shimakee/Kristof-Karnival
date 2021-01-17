@@ -42,7 +42,7 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
 
                 if (hasHit)
                 {
-                    Debug.Log(hitInfo.point);
+                    //Debug.Log(hitInfo.point);
                     _mover.TargetPosition = hitInfo.point;
                 }
                 else
