@@ -23,6 +23,7 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
 
     [Header("Debuging:")]
     [SerializeField] bool drawCastLines = true;
+    [SerializeField] float scale = .5f;
 
     public bool TopChecker { get { return _isTopHit; } }
     public bool BottomChecker { get { return _isBottomHit; } }
@@ -47,6 +48,9 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
 
         Debug.Log(TopChecker);
         Debug.Log(BottomChecker);
+
+        if (!TopChecker && BottomChecker)
+            _rb.velocity += Vector3.up * scale;
         
     }
 
