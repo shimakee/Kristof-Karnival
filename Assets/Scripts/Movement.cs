@@ -65,7 +65,7 @@ public class Movement
     {
         //direction.y = rb.transform.position.y;
 
-        var angle = Vector3.SignedAngle(rb.transform.forward, direction, rb.position);
+        var angle = Vector3.SignedAngle(rb.transform.forward, direction.normalized, rb.position);
 
         rb.transform.Rotate(0f, angle, 0f);
     }
