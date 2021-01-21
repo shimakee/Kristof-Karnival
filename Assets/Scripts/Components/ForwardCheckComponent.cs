@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
+public class ForwardCheckComponent : MonoBehaviour, ICastCollisionChecker
 {
     [Header("Cast height:")]
     [SerializeField] float lengthToLower;
@@ -13,6 +13,7 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
     [Header("Cast distance:")]
     [SerializeField] float castDistanceTop;
     [SerializeField] float castDistanceBottom;
+    [SerializeField] float castDistanceUnder;
     [Space(10)]
 
     [Header("Cast dtails:")]
@@ -23,16 +24,17 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
 
     [Header("Debuging:")]
     [SerializeField] bool drawCastLines = true;
-    [SerializeField] float scale = .5f;
 
     public bool TopChecker { get { return _isTopHit; } }
     public bool BottomChecker { get { return _isBottomHit; } }
+    public bool UnderChecker { get { return _isUnderHit; } }
 
     Vector3 _direction;
     Vector3 _topChecker;
     Vector3 _bottomChecker;
     bool _isTopHit;
     bool _isBottomHit;
+    bool _isUnderHit;
     Rigidbody _rb;
     private void Awake()
     {
@@ -45,13 +47,15 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
 
         CastBottomChecker();
         CastTopChecker();
+        CastUnderChecker();
 
-        Debug.Log(TopChecker);
-        Debug.Log(BottomChecker);
+        //Debug.Log(TopChecker);
+        //Debug.Log(BottomChecker);
 
-        if (!TopChecker && BottomChecker)
-            _rb.velocity += Vector3.up * scale;
-        
+        //if (!TopChecker && BottomChecker)
+        //    _rb.AddForce(Vector3.up * scale); //15
+        ////_rb.velocity += Vector3.up * scale; //.5
+
     }
 
     private void CastTopChecker()
@@ -74,6 +78,23 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
         _isBottomHit = RayCastInAngles(_bottomChecker, _direction, castDistanceBottom);
     }
 
+    private void CastUnderChecker()
+    {
+        var pos = _rb.position;
+        pos.y = _bottomChecker.y - (lengthToLower + separation);
+        _direction = _rb.transform.up * -1;
+
+        //RaycastHit hit;
+        //_isUnderHit = Physics.Raycast(pos, _direction, out hit, castDistanceBottom, mask);
+        _isUnderHit = Physics.Raycast(pos, _direction, castDistanceUnder, mask);
+
+        if (drawCastLines)
+        {
+            var drawDirection = (_direction * castDistanceBottom) + pos;
+            Debug.DrawLine(pos, drawDirection, Color.red);
+        }
+    }
+
 
     private bool RayCastInAngles(Vector3 origin, Vector3 direction, float distance)
     {
@@ -84,10 +105,12 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
             Vector3 angleDirection = TransformVector(direction, stepAngle);
             Vector3 angleDirectionMirrorSide = TransformVector(direction, -stepAngle);
 
-            RaycastHit hit;
-            RaycastHit hitMirror;
-            bool isHit = Physics.Raycast(origin, angleDirection, out hit, distance, mask);
-            bool isHitMirrorSide = Physics.Raycast(origin, angleDirectionMirrorSide, out hitMirror, distance, mask);
+            //RaycastHit hit;
+            //RaycastHit hitMirror;
+            //bool isHit = Physics.Raycast(origin, angleDirection, out hit, distance, mask);
+            //bool isHitMirrorSide = Physics.Raycast(origin, angleDirectionMirrorSide, out hitMirror, distance, mask);
+            bool isHit = Physics.Raycast(origin, angleDirection, distance, mask);
+            bool isHitMirrorSide = Physics.Raycast(origin, angleDirectionMirrorSide, distance, mask);
 
             if (isHit || isHitMirrorSide)
                 return true;
@@ -121,8 +144,9 @@ public class ForwardCheckComponent : MonoBehaviour, IForwardCollisionChecker
 }
 
 
-public interface IForwardCollisionChecker
+public interface ICastCollisionChecker
 {
     bool TopChecker { get; }
     bool BottomChecker { get; }
+    bool UnderChecker { get; }
 }
