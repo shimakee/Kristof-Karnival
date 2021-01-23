@@ -7,9 +7,22 @@ using UnityEngine.InputSystem;
 public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHandlerComponent
 {
     [SerializeField] bool isOrthographic;
+    [SerializeField] LayerMask maskRaycast;
+
+    [SerializeField] bool enableDraw;
+
     InputHandlerMousePositionComponent _inputHandlerMousePosition;
     ITargetMoverComponent _mover;
-    
+    float _maxRayDistance = 1000;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+
+        if (enableDraw && _mover != null)
+            Gizmos.DrawWireSphere(_mover.TargetPosition, .1f);
+    }
+
     protected override void InitializeOnAwake()
     {
         _inputHandlerMousePosition = GetComponent<InputHandlerMousePositionComponent>();
@@ -23,7 +36,6 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
             {
                 Vector2 worldPos = Camera.main.ScreenToWorldPoint(_inputHandlerMousePosition.MousePosition);
                 _mover.TargetPosition = worldPos;
-                Debug.Log(worldPos);
             }
             else
             {
@@ -38,7 +50,7 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
                 Vector3 farRay = Camera.main.ScreenToWorldPoint(farPosition);
 
                 RaycastHit hitInfo;
-                bool hasHit = Physics.Raycast(nearRay, farRay, out hitInfo);
+                bool hasHit = Physics.Raycast(nearRay, farRay, out hitInfo, _maxRayDistance, maskRaycast, QueryTriggerInteraction.Ignore);
 
                 if (hasHit)
                 {

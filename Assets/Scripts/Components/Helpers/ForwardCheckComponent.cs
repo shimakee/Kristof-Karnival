@@ -6,14 +6,14 @@ using UnityEngine;
 public class ForwardCheckComponent : MonoBehaviour, ICastCollisionChecker
 {
     [Header("Cast height:")]
-    [SerializeField] float lengthToLower;
-    [SerializeField] float separation;
+    [Range(0, 1)][SerializeField] float lengthToLower = 0;
+    [Range(0, 1)][SerializeField] float separation = .4f;
     [Space(10)]
 
     [Header("Cast distance:")]
-    [SerializeField] float castDistanceTop;
-    [SerializeField] float castDistanceBottom;
-    [SerializeField] float castDistanceUnder;
+    [Range(0, 1)] [SerializeField] float castDistanceTop = .5f;
+    [Range(0, 1)] [SerializeField] float castDistanceBottom = .2f;
+    [Range(0, 1)] [SerializeField] float castDistanceUnder = .15f;
     [Space(10)]
 
     [Header("Cast dtails:")]
@@ -81,7 +81,7 @@ public class ForwardCheckComponent : MonoBehaviour, ICastCollisionChecker
     private void CastUnderChecker()
     {
         var pos = _rb.position;
-        pos.y = _bottomChecker.y - (lengthToLower + separation);
+        pos.y = _bottomChecker.y;
         _direction = _rb.transform.up * -1;
 
         //RaycastHit hit;
@@ -90,7 +90,7 @@ public class ForwardCheckComponent : MonoBehaviour, ICastCollisionChecker
 
         if (drawCastLines)
         {
-            var drawDirection = (_direction * castDistanceBottom) + pos;
+            var drawDirection = (_direction * castDistanceUnder) + pos;
             Debug.DrawLine(pos, drawDirection, Color.red);
         }
     }
