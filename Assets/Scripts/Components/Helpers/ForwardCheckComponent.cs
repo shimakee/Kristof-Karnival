@@ -86,7 +86,7 @@ public class ForwardCheckComponent : MonoBehaviour, ICastCollisionChecker
 
         //RaycastHit hit;
         //_isUnderHit = Physics.Raycast(pos, _direction, out hit, castDistanceBottom, mask);
-        _isUnderHit = Physics.Raycast(pos, _direction, castDistanceUnder, mask);
+        _isUnderHit = Physics.Raycast(pos, _direction, castDistanceUnder, mask, QueryTriggerInteraction.Ignore);
 
         if (drawCastLines)
         {
@@ -109,8 +109,8 @@ public class ForwardCheckComponent : MonoBehaviour, ICastCollisionChecker
             //RaycastHit hitMirror;
             //bool isHit = Physics.Raycast(origin, angleDirection, out hit, distance, mask);
             //bool isHitMirrorSide = Physics.Raycast(origin, angleDirectionMirrorSide, out hitMirror, distance, mask);
-            bool isHit = Physics.Raycast(origin, angleDirection, distance, mask);
-            bool isHitMirrorSide = Physics.Raycast(origin, angleDirectionMirrorSide, distance, mask);
+            bool isHit = Physics.Raycast(origin, angleDirection, distance, mask, QueryTriggerInteraction.Ignore);
+            bool isHitMirrorSide = Physics.Raycast(origin, angleDirectionMirrorSide, distance, mask, QueryTriggerInteraction.Ignore);
 
             if (isHit || isHitMirrorSide)
                 return true;

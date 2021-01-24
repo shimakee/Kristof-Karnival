@@ -32,8 +32,8 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
         foreach (var item in GameObjectsInSurroundings)
         {
             if (IsInView(item))
-            {
-                if(!GameObjectsInView.Contains(item))
+            {  
+                if (!GameObjectsInView.Contains(item))
                     GameObjectsInView.Add(item);
             }
             else
@@ -47,7 +47,10 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
 
     private void OnTriggerEnter(Collider collider)
     {
-        bool isInLayerMask = (mask & collider.gameObject.layer) == collider.gameObject.layer;
+        int gameObjectLayer = collider.gameObject.layer;
+        int layerMask =(gameObjectLayer > 0)  ? 1 << gameObjectLayer : gameObjectLayer;
+
+        bool isInLayerMask = (mask.value & layerMask) == layerMask;
         if (!GameObjectsInSurroundings.Contains(collider.gameObject) && isInLayerMask)
             GameObjectsInSurroundings.Add(collider.gameObject);
     }
@@ -114,7 +117,26 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
         if (angle > viewAngle)
             return false;
         else
+        {
+            Vector3 direction = gameObject.transform.position - _rb.position;
+
+            RaycastHit hitInfo;
+            var isHit = Physics.Raycast(_rb.position, direction, out hitInfo, Mathf.Infinity, mask.value, QueryTriggerInteraction.Ignore);
+
+            if (!isHit)
+            {
+                Debug.Log("no hit");
+                return false;
+            }
+
+            if (hitInfo.collider.gameObject != gameObject)
+            {
+                Debug.Log($"hit {hitInfo.collider.gameObject.name} instead of {gameObject.name} ");
+                return false;
+            }
+
             return true;
+        }
     }
 
     protected Vector3 TransformVector(Vector3 vector, float angle) //TODO: make based on angle

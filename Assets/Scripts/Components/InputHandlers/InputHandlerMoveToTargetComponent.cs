@@ -13,7 +13,6 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
 
     InputHandlerMousePositionComponent _inputHandlerMousePosition;
     ITargetMoverComponent _mover;
-    float _maxRayDistance = 1000;
 
     private void OnDrawGizmos()
     {
@@ -50,17 +49,14 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
                 Vector3 farRay = Camera.main.ScreenToWorldPoint(farPosition);
 
                 RaycastHit hitInfo;
-                bool hasHit = Physics.Raycast(nearRay, farRay, out hitInfo, _maxRayDistance, maskRaycast, QueryTriggerInteraction.Ignore);
+                bool hasHit = Physics.Raycast(nearRay, farRay, out hitInfo, Mathf.Infinity, maskRaycast, QueryTriggerInteraction.Ignore);
 
                 if (hasHit)
                 {
-                    //Debug.Log(hitInfo.point);
                     _mover.TargetPosition = hitInfo.point;
                 }
                 else
                     Debug.Log("no hit");
-
-                Debug.DrawLine(nearRay, farRay);
             }
         }
     }
