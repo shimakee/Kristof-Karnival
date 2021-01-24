@@ -45,4 +45,9 @@ public class RbTargetMoveComponent : MonoBehaviour, ITargetMoverComponent
 
         Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
     }
+
+    public void Move(Vector3 target)
+    {
+        TargetPosition = target;
+    }
 }

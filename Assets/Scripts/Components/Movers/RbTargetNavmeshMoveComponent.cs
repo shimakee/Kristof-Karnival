@@ -102,4 +102,9 @@ public class RbTargetNavmeshMoveComponent : MonoBehaviour, ITargetMoverComponent
         _agent.path.ClearCorners();
 
     }
+
+    public void Move(Vector3 target)
+    {
+        TargetPosition = target;
+    }
 }

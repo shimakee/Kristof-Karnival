@@ -124,16 +124,10 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
             var isHit = Physics.Raycast(_rb.position, direction, out hitInfo, Mathf.Infinity, mask.value, QueryTriggerInteraction.Ignore);
 
             if (!isHit)
-            {
-                Debug.Log("no hit");
                 return false;
-            }
 
             if (hitInfo.collider.gameObject != gameObject)
-            {
-                Debug.Log($"hit {hitInfo.collider.gameObject.name} instead of {gameObject.name} ");
                 return false;
-            }
 
             return true;
         }

@@ -27,4 +27,9 @@ public class RbFreeMove2DComponent : MonoBehaviour, IMoverComponent
         _movement.AssignVelocity2D(_rb, Direction);
     }
 
+
+    public void Move(Vector3 direction)
+    {
+        Direction = direction;
+    }
 }

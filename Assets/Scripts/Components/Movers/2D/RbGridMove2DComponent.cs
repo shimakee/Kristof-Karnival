@@ -47,4 +47,9 @@ public class RbGridMove2DComponent : MonoBehaviour, IMoverComponent
 
         _movement.MoveTowards2D(_rb, TargetPosition, Time.fixedDeltaTime * speed);
     }
+
+    public void Move(Vector3 target)
+    {
+        TargetPosition = target;
+    }
 }

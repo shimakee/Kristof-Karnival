@@ -54,6 +54,9 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
                 if (hasHit)
                 {
                     _mover.TargetPosition = hitInfo.point;
+
+                    //TODO:
+                    _mover.Move(hitInfo.point);
                 }
                 else
                     Debug.Log("no hit");

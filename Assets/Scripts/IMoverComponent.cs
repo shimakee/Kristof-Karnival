@@ -4,6 +4,7 @@ public interface IMoverComponent
 {
     Vector3 CurrentPosition { get; }
     Vector3 LastDirectionFacing { get; }
+    void Move(Vector3 movement);
 }
 
 public interface IDirectionMoverComponent : IMoverComponent

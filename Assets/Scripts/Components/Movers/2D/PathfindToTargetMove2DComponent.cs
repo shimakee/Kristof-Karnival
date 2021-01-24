@@ -76,4 +76,9 @@ public class PathfindToTargetMove2DComponent : MonoBehaviour, ITargetMoverCompon
             route.RemoveAt(0);
         }
     }
+
+    public void Move(Vector3 target)
+    {
+        TargetPosition = target;
+    }
 }
