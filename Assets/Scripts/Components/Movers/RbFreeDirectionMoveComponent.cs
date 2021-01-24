@@ -8,7 +8,6 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
     [SerializeField] float maxSpeed = 1;
     [SerializeField] bool ZAsY;
 
-    //public Vector3 TargetPosition { get { return _movement.DesiredPosition; } set { _movement.DesiredPosition = value; } }
     public Vector3 Direction
     { 
         get { return _movement.Direction; } 
@@ -30,6 +29,7 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
         _rb = GetComponent<Rigidbody>();
         _movement = new Movement(maxSpeed);
         _movement.DesiredPosition = _rb.position;
+        _movement.LastDirectionFacing = _rb.transform.forward;
     }
 
     private void FixedUpdate()

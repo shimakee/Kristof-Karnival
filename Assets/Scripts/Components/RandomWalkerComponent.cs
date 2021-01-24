@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //TODO: require mover component based on velocity? or target? or direction?
-[RequireComponent(typeof(IDirectionMoverComponent))]
+[RequireComponent(typeof(ITargetMoverComponent))]
 public class RandomWalkerComponent : MonoBehaviour
 {
-    [Range(0, 360)] [SerializeField] float maxDirectionAngleRange;
-    [Range(.1f, 20f)][SerializeField] float radius = 1;
-    [Range(.1f, 20f)] [SerializeField] float distanceAheadToCheck = 1;
+    [Range(-360, 360)] [SerializeField] float maxDirectionAngleRange;
+    [Range(.1f, 20f)][SerializeField] float radius;
+    [Range(0, 20f)] [SerializeField] float distanceAheadToCheck;
     [SerializeField] bool enableDebugDraw = false;
-    [Range(.1f, 20f)] [SerializeField] float timeInterval = 1;
+    [Range(.1f, 20f)] [SerializeField] float timeInterval;
 
-    IDirectionMoverComponent _mover;
+    ITargetMoverComponent _mover;
 
     Vector3 _centerPoint;
     Vector3 _destination;
@@ -20,7 +20,7 @@ public class RandomWalkerComponent : MonoBehaviour
 
     private void Awake()
     {
-        _mover = GetComponent<IDirectionMoverComponent>();
+        _mover = GetComponent<ITargetMoverComponent>();
     }
 
     // Start is called before the first frame update
@@ -61,13 +61,13 @@ public class RandomWalkerComponent : MonoBehaviour
 
             Debug.DrawLine(_mover.CurrentPosition, _destination);
             //_mover.Move(_destination);
-            _mover.MoveDirection(_destination);
+            _mover.SetTargetPosition(_destination);
         }
     }
 
     Vector3 GetPointWithinACircle(Vector3 center, float radius)
     {
-        float randomAngle = Random.Range(0, maxDirectionAngleRange);
+        float randomAngle = Random.Range(-360, maxDirectionAngleRange);
 
         float x =center.x + Mathf.Cos(randomAngle * Mathf.Deg2Rad) * radius;
         float z =center.z + Mathf.Sin(randomAngle * Mathf.Deg2Rad) * radius;
