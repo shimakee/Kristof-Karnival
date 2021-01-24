@@ -29,7 +29,8 @@ public class InputHandlerMoveByDirectionComponent : InputHandlerComponent, IInpu
             if (restrictDiagonal)
                 _inputDirection = InputHandlerUtils.RemoveDiagonalInputDirection(_inputDirection);
 
-            _mover.Direction = _inputDirection;
+            //_mover.Direction = _inputDirection;
+            _mover.MoveDirection(_inputDirection);
 
             //Debug.Log($"performed {_inputDirection}");
 
@@ -40,7 +41,9 @@ public class InputHandlerMoveByDirectionComponent : InputHandlerComponent, IInpu
             _inputDirection = ctx.ReadValue<Vector2>().normalized;
             //if (restrictDiagonal)
             //    _inputDirection = InputHandlerUtils.RemoveDiagonalInputDirection(_inputDirection);
-            _mover.Direction = _inputDirection;
+            //_mover.Direction = _inputDirection;
+            _mover.MoveDirection(_inputDirection);
+
         }
     }
 }

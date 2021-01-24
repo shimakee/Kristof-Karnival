@@ -103,7 +103,7 @@ public class RbTargetNavmeshMoveComponent : MonoBehaviour, ITargetMoverComponent
 
     }
 
-    public void Move(Vector3 target)
+    public void SetTargetPosition(Vector3 target)
     {
         TargetPosition = target;
     }

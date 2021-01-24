@@ -2,17 +2,19 @@
 
 public interface IMoverComponent
 {
+    //Vector3 RigidBody { get; }
     Vector3 CurrentPosition { get; }
     Vector3 LastDirectionFacing { get; }
-    void Move(Vector3 movement);
 }
 
 public interface IDirectionMoverComponent : IMoverComponent
 {
-    Vector3 Direction { get; set; }
+    Vector3 Direction { get;}
+    void MoveDirection(Vector3 direction);
 }
 
 public interface ITargetMoverComponent : IMoverComponent
 {
-    Vector3 TargetPosition { get; set; }
+    Vector3 TargetPosition { get;}
+    void SetTargetPosition(Vector3 target);
 }

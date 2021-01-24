@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //TODO: require mover component based on velocity? or target? or direction?
-[RequireComponent(typeof(IMoverComponent))]
+[RequireComponent(typeof(IDirectionMoverComponent))]
 public class RandomWalkerComponent : MonoBehaviour
 {
     [Range(0, 360)] [SerializeField] float maxDirectionAngleRange;
@@ -12,7 +12,7 @@ public class RandomWalkerComponent : MonoBehaviour
     [SerializeField] bool enableDebugDraw = false;
     [Range(.1f, 20f)] [SerializeField] float timeInterval = 1;
 
-    IMoverComponent _mover;
+    IDirectionMoverComponent _mover;
 
     Vector3 _centerPoint;
     Vector3 _destination;
@@ -20,7 +20,7 @@ public class RandomWalkerComponent : MonoBehaviour
 
     private void Awake()
     {
-        _mover = GetComponent<IMoverComponent>();
+        _mover = GetComponent<IDirectionMoverComponent>();
     }
 
     // Start is called before the first frame update
@@ -60,7 +60,8 @@ public class RandomWalkerComponent : MonoBehaviour
             _destination = GetPointWithinACircle(_centerPoint, radius);
 
             Debug.DrawLine(_mover.CurrentPosition, _destination);
-            _mover.Move(_destination);
+            //_mover.Move(_destination);
+            _mover.MoveDirection(_destination);
         }
     }
 

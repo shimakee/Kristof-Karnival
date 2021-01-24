@@ -27,14 +27,14 @@ public class Movement
     {
             rb.MovePosition(position);
     }
-    public void AddForce(Rigidbody rb, Vector3 direction, float deltaTime)
+    public void AddForce(Rigidbody rb, Vector3 direction)
     {
-        rb.AddForce(Calculate(direction, deltaTime));
+        rb.AddForce(direction);
     }
 
-    public void AddForce2D(Rigidbody2D rb, Vector2 direction, float deltaTime)
+    public void AddForce2D(Rigidbody2D rb, Vector2 direction)
     {
-        rb.AddForce(Calculate2D(direction, deltaTime));
+        rb.AddForce(direction);
     }
     public void AssignVelocity(Rigidbody rb, Vector3 direction)
     {

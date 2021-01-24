@@ -34,7 +34,8 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
             if (isOrthographic)
             {
                 Vector2 worldPos = Camera.main.ScreenToWorldPoint(_inputHandlerMousePosition.MousePosition);
-                _mover.TargetPosition = worldPos;
+                //_mover.TargetPosition = worldPos;
+                _mover.SetTargetPosition(worldPos);
             }
             else
             {
@@ -53,10 +54,10 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
 
                 if (hasHit)
                 {
-                    _mover.TargetPosition = hitInfo.point;
+                    //_mover.TargetPosition = hitInfo.point;
 
                     //TODO:
-                    _mover.Move(hitInfo.point);
+                    _mover.SetTargetPosition(hitInfo.point);
                 }
                 else
                     Debug.Log("no hit");

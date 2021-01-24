@@ -77,7 +77,7 @@ public class PathfindToTargetMove2DComponent : MonoBehaviour, ITargetMoverCompon
         }
     }
 
-    public void Move(Vector3 target)
+    public void SetTargetPosition(Vector3 target)
     {
         TargetPosition = target;
     }

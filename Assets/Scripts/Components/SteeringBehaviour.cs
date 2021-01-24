@@ -2,21 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(IDirectionMoverComponent))]
 public class SteeringBehaviour : MonoBehaviour
 {
 
     [SerializeField] GameObject target;
-    [SerializeField] float maxSpeed;
-    [SerializeField] 
-    // Start is called before the first frame update
-    void Start()
+
+    IDirectionMoverComponent _rb;
+    private void FixedUpdate()
     {
-        
+        //_rb.AddForce()
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
