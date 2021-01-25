@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public abstract class InputHandlerComponent : MonoBehaviour, IInputHandlerComponent
 {
     [SerializeField] string actionName = "default";
+    [SerializeField] protected bool ZasY;
     public string ActionName { get { return actionName; } set { actionName = value; } }
 
     protected PlayerInput _playerInput;

@@ -6,7 +6,6 @@ using UnityEngine;
 public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverComponent, ITargetMoverComponent
 {
     [SerializeField] float maxSpeed = 1;
-    [SerializeField] bool ZAsY;
 
     public Vector3 Direction
     { 
@@ -34,12 +33,9 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
 
     private void FixedUpdate()
     {
-        if (ZAsY)
-            _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(_movement.SwitchZandY(Direction), maxSpeed));
-        else
-            _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(Direction, maxSpeed));
-
+        _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(Direction, maxSpeed));
         _movement.RotateForwardDirectionInYAxis(_rb, _movement.LastDirectionFacing);
+
         Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
     }
 
@@ -48,12 +44,7 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
         Direction = direction;
 
         if (direction.magnitude != 0)
-        {
-            if (ZAsY)
-                _movement.LastDirectionFacing = _movement.SwitchZandY(direction.normalized);
-            else
-                _movement.LastDirectionFacing = direction.normalized;
-        }
+            _movement.LastDirectionFacing = direction.normalized;
     }
 
     public void SetTargetPosition(Vector3 target)

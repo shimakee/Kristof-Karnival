@@ -18,3 +18,10 @@ public interface ITargetMoverComponent : IMoverComponent
     Vector3 TargetPosition { get;}
     void SetTargetPosition(Vector3 target);
 }
+
+public interface IForceMoverComponent : IMoverComponent
+{
+    Rigidbody Rigidbody { get; }
+    void AddForce(Vector3 force);
+    void AssignVelocity(Vector3 velocity);
+}

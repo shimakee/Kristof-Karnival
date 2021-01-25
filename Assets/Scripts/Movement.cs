@@ -29,12 +29,17 @@ public class Movement
     }
     public void AddForce(Rigidbody rb, Vector3 direction)
     {
-        rb.AddForce(direction);
+        rb.AddForce(direction * Speed);
     }
 
     public void AddForce2D(Rigidbody2D rb, Vector2 direction)
     {
-        rb.AddForce(direction);
+        rb.AddForce(direction * Speed);
+    }
+
+    public void AddVelocity(Rigidbody rb, Vector3 direction)
+    {
+        rb.velocity = rb.velocity + direction;
     }
     public void AssignVelocity(Rigidbody rb, Vector3 direction)
     {

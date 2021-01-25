@@ -9,7 +9,7 @@ public class InputHandlerMoveByDirectionComponent : InputHandlerComponent, IInpu
     [SerializeField] bool normalizeDirection;
     [SerializeField] bool restrictDiagonal;
     //bool _hasMovementInput;
-    Vector2 _inputDirection;
+    Vector3 _inputDirection;
     IDirectionMoverComponent _mover;
 
     protected override void InitializeOnAwake()
@@ -29,19 +29,18 @@ public class InputHandlerMoveByDirectionComponent : InputHandlerComponent, IInpu
             if (restrictDiagonal)
                 _inputDirection = InputHandlerUtils.RemoveDiagonalInputDirection(_inputDirection);
 
-            //_mover.Direction = _inputDirection;
+            if(ZasY)
+                _inputDirection = new Vector3(_inputDirection.x, 0, _inputDirection.y);
+
+            Debug.Log(_inputDirection);
             _mover.MoveDirection(_inputDirection);
 
-            //Debug.Log($"performed {_inputDirection}");
 
         }
 
         if (ctx.canceled)
         {
             _inputDirection = ctx.ReadValue<Vector2>().normalized;
-            //if (restrictDiagonal)
-            //    _inputDirection = InputHandlerUtils.RemoveDiagonalInputDirection(_inputDirection);
-            //_mover.Direction = _inputDirection;
             _mover.MoveDirection(_inputDirection);
 
         }
