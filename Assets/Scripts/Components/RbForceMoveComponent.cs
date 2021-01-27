@@ -9,7 +9,7 @@ public class RbForceMoveComponent : MonoBehaviour, IForceMoverComponent
     [Range(0, 100)][SerializeField] float maxForceApplied;
 
 
-    public Vector3 Direction { get { return _mover.Direction; } private set { _mover.Direction = value; } }
+    public Vector3 Direction { get { return _mover.Direction; } set { _mover.Direction = value; } }
 
     public Vector3 CurrentPosition { get { return _rb.position; } }
 

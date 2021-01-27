@@ -5177,7 +5177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxSpeed: 0
+  maxForceApplied: 0
 --- !u!54 &753742290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5209,7 +5209,7 @@ MonoBehaviour:
   target: {fileID: 992549707}
   maxTravelSpeed: 0
   maxSteeringForce: 0
-  interval: 1
+  arrivingDistance: 0
 --- !u!65 &753742292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8670,7 +8670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992549707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.76, y: 0.5, z: -11.6}
+  m_LocalPosition: {x: 10.76, y: 0.5, z: -15.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9736,7 +9736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1391870790
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9766,9 +9766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 992549707}
-  maxTravelSpeed: 99999
+  maxTravelSpeed: 10
   maxSteeringForce: 10
-  interval: 1
+  arrivingDistance: 3
 --- !u!135 &1391870792
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9858,7 +9858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxSpeed: 5
+  maxForceApplied: 2
 --- !u!1 &1392099208
 GameObject:
   m_ObjectHideFlags: 0
@@ -14892,7 +14892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2
+  maxSpeed: 3
 --- !u!54 &1988742773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14916,15 +14916,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988742771}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5430e6fb717bea74ea34c704418596ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 992549707}
-  maxTravelSpeed: 1
-  maxSteeringForce: 10
-  interval: 1
+  maxTravelSpeed: 3
+  maxSteeringForce: 3
+  arrivingDistance: 3
 --- !u!135 &1988742775
 SphereCollider:
   m_ObjectHideFlags: 0

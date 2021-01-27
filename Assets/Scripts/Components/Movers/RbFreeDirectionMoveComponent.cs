@@ -31,12 +31,16 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
         _movement.LastDirectionFacing = _rb.transform.forward;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(Direction, maxSpeed));
         _movement.RotateForwardDirectionInYAxis(_rb, _movement.LastDirectionFacing);
 
         Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
+    }
+
+    private void FixedUpdate()
+    {
     }
 
     public void MoveDirection(Vector3 direction)
