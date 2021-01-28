@@ -17976,6 +17976,12 @@ MonoBehaviour:
   path:
   - {fileID: 1830994053}
   - {fileID: 36517801}
+  - {fileID: 2043655137}
+  - {fileID: 905716096}
+  - {fileID: 1292618290}
+  - {fileID: 1205316175}
+  - {fileID: 1823667947}
+  - {fileID: 1363185625}
   pathRadius: 2
 --- !u!135 &1988742775
 SphereCollider:
