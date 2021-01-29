@@ -25,10 +25,10 @@ public class SteeringBehaviour : MonoBehaviour
 
     private void Update()
     {
-        _direction += Seek(target.transform.position) * Time.deltaTime;
-        //_direction += FollowPath(path[0].transform.position, path[1].transform.position);
+        //_direction += Seek(target.transform.position) * Time.deltaTime;
+        //_direction += FollowPath(path[0].transform.position, path[1].transform.position) * Time.deltaTime;
         _direction += FollowAlongPaths(path) * Time.deltaTime;
-        _direction = Arriving(_direction, target.transform.position, arrivingDistance);
+        //_direction = Arriving(_direction, target.transform.position, arrivingDistance);
 
         _mover.MoveDirection(_direction);
 
@@ -46,6 +46,8 @@ public class SteeringBehaviour : MonoBehaviour
 
         var steering = desired - _direction;
             steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
+
+        Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
 
         return steering;
     }
@@ -68,23 +70,27 @@ public class SteeringBehaviour : MonoBehaviour
             pathLocations[i] = gameObjects[i].transform.position;
         }
 
+        return FollowAlongPath(pathLocations);
+    }
+
+    private Vector3 FollowAlongPath(IList<Vector3> route)
+    {
         int shortestDistance = 0;
         float distance = 0f;
-        for (int i = 0; i < pathLocations.Length; i++)
+
+        for (int i = 0; i < route.Count; i++)
         {
             var firstPos = pathLocations[i];
-            var secondPos = (i >= pathLocations.Length -1) ? pathLocations[0] : pathLocations[i + 1];
+            var secondPos = (i >= pathLocations.Length - 1) ? pathLocations[0] : pathLocations[i + 1];
 
-            Vector3 path = secondPos - firstPos;
-            Vector3 playerPositionRelativeToPath = _mover.CurrentPosition - firstPos;
-            //Vector3 currentPositionAlongPath = path.normalized * Vector3.Dot(playerPositionRelativeToPath, path.normalized);
-            Vector3 playerFuturePosition = playerPositionRelativeToPath + _direction;
-            Vector3 futurePositionAlongPath = path.normalized * Vector3.Dot(playerFuturePosition, path.normalized);
+            Vector3 playerFuturePosition = PredictFuturePosition(_mover.CurrentPosition);
+            var futurePositionAlongPath = PredictFuturePositionAlongPath(firstPos, secondPos);
 
-            var distanceFromPath = Vector3.Distance(futurePositionAlongPath, playerFuturePosition); ;
+            var distanceFromPath = Vector3.Distance(futurePositionAlongPath, playerFuturePosition);
+
             if (i == 0)
                 distance = distanceFromPath;
-            else if ( distance > distanceFromPath)
+            else if (distance > distanceFromPath)
             {
                 shortestDistance = i;
                 distance = distanceFromPath;
@@ -99,21 +105,52 @@ public class SteeringBehaviour : MonoBehaviour
 
     private Vector3 FollowPath(Vector3 firstPos, Vector3 secondPos)
     {
-        Vector3 path = secondPos - firstPos;
-        Vector3 playerPositionRelativeToPath = _mover.CurrentPosition - firstPos;
-        Vector3 playerFuturePosition = playerPositionRelativeToPath + _direction;
-        //Vector3 currentPositionAlongPath = path.normalized * Vector3.Dot(player, path.normalized);
-        Vector3 futurePositionAlongPath = path.normalized * Vector3.Dot(playerFuturePosition, path.normalized);
+        //Vector3 path = secondPos - firstPos;
+        //Vector3 playerPositionRelativeToPath = _mover.CurrentPosition - firstPos;
+        ////Vector3 playerFuturePosition = playerPositionRelativeToPath + _direction;
+        //Vector3 playerFuturePosition = playerPositionRelativeToPath + (_mover.LastDirectionFacing.normalized * maxTravelSpeed);
+        //Vector3 futurePositionAlongPath = path.normalized * Vector3.Dot(playerFuturePosition, path.normalized);
+
+        //float dotProduct = Vector3.Dot(path, futurePositionAlongPath);
+
+        //futurePositionAlongPath = (dotProduct < 0) ? Vector3.ClampMagnitude(futurePositionAlongPath, 0) :
+        //                                            Vector3.ClampMagnitude(futurePositionAlongPath, path.magnitude);
+        Vector3 playerFuturePosition = PredictFuturePosition(_mover.CurrentPosition);
+        Vector3 futurePositionAlongPath = PredictFuturePositionAlongPath(firstPos, secondPos);
+
 
         float distance = Vector3.Distance(futurePositionAlongPath, playerFuturePosition);
 
-        Debug.DrawLine(firstPos, futurePositionAlongPath + firstPos);
-        Debug.DrawLine(futurePositionAlongPath + firstPos, playerFuturePosition + firstPos);
+        Debug.DrawLine(firstPos, futurePositionAlongPath);
+        Debug.DrawLine(firstPos, secondPos);
+        Debug.DrawLine(futurePositionAlongPath, playerFuturePosition);
 
         if (distance > pathRadius)
-            return Seek(futurePositionAlongPath + firstPos);
+            return Seek(futurePositionAlongPath);
         else
             return Vector3.zero;
+    }
+
+    private Vector3 PredictFuturePositionAlongPath(Vector3 firstPos, Vector3 secondPos)
+    {
+        Vector3 path = secondPos - firstPos;
+        Vector3 playerPositionRelativeToPath = _mover.CurrentPosition - firstPos;
+        //Vector3 playerFuturePosition = playerPositionRelativeToPath + _direction;
+        Vector3 playerFuturePosition = PredictFuturePosition(playerPositionRelativeToPath);
+        Vector3 futurePositionAlongPath = path.normalized * Vector3.Dot(playerFuturePosition, path.normalized);
+
+        float dotProduct = Vector3.Dot(path, futurePositionAlongPath);
+
+        futurePositionAlongPath = (dotProduct < 0) ? Vector3.ClampMagnitude(futurePositionAlongPath, 0) :
+                                                    Vector3.ClampMagnitude(futurePositionAlongPath, path.magnitude);
+
+        return futurePositionAlongPath + firstPos;
+    }
+
+    private Vector3 PredictFuturePosition(Vector3 currentPosition)
+    {
+        //return playerPositionRelativeToPath + _direction;
+        return currentPosition + (_mover.LastDirectionFacing.normalized * maxTravelSpeed);
     }
     #endregion
 }
