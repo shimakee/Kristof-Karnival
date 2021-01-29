@@ -92,7 +92,9 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
                 Gizmos.DrawLine(_rb.position, leftSide);
 
                 Gizmos.DrawWireSphere(_rb.position, radius);
-                
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawLine(_rb.position, (_rb.transform.forward * radius) + _rb.position);
+
                 //draw a line to each item seen
                 foreach (var item in GameObjectsInSurroundings)
                 {
@@ -118,10 +120,10 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
             return false;
         else
         {
-            Vector3 direction = gameObject.transform.position - _rb.position;
+            //Vector3 direction = gameObject.transform.position - _rb.position;
 
             RaycastHit hitInfo;
-            var isHit = Physics.Raycast(_rb.position, direction, out hitInfo, Mathf.Infinity, mask.value, QueryTriggerInteraction.Ignore);
+            var isHit = Physics.Raycast(_rb.position, adjustedGameObjectPosition, out hitInfo, Mathf.Infinity, mask.value, QueryTriggerInteraction.Ignore);
 
             if (!isHit)
                 return false;

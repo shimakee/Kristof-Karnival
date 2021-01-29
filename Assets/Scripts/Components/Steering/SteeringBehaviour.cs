@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(IDirectionMoverComponent))]
+[RequireComponent(typeof(IDirectionMoverComponent), typeof(IFieldOfView))]
 public class SteeringBehaviour : MonoBehaviour
 {
 
+    [Header("Seek behaviour:")]
     [SerializeField] GameObject target;
     [Range(0, 50)][SerializeField] float maxTravelSpeed;
     [Range(0, 50)] [SerializeField] float maxSteeringForce;
     [SerializeField] float arrivingDistance;
 
+    [Header("Path finding behaviour:")]
     [SerializeField] GameObject[] path;
     [SerializeField] float pathRadius;
     [SerializeField] bool loopPath = false;
     Vector3[] pathLocations;
 
+    IFieldOfView _fieldOfView;
     IDirectionMoverComponent _mover;
     Vector3 _direction;
     private void Awake()
     {
+        _fieldOfView = GetComponent<IFieldOfView>();
         _mover = GetComponent<IDirectionMoverComponent>();
         _direction = Vector3.zero;
     }
@@ -27,14 +31,18 @@ public class SteeringBehaviour : MonoBehaviour
     private void Update()
     {
         _direction += Seek(target.transform.position) * Time.deltaTime;
-        _direction += FollowAlongPaths(path) * Time.deltaTime;
+        //_direction += Flee(target.transform.position) * Time.deltaTime;
+        //_direction += FollowAlongPaths(path) * Time.deltaTime;
+
+        //_direction += Align(_fieldOfView.GameObjectsInView);
+
         _direction = Arriving(_direction, target.transform.position, arrivingDistance);
 
         _mover.MoveDirection(_direction);
 
     }
 
-    #region Seek
+    #region Seek and Flee
     private Vector3 Seek(Vector3 targetPosition)
     {
         var desired = targetPosition - _mover.CurrentPosition;
@@ -42,6 +50,19 @@ public class SteeringBehaviour : MonoBehaviour
 
         var steering = desired - _direction;
             steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
+
+        Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
+
+        return steering;
+    }
+
+    private Vector3 Flee(Vector3 targetPosition)
+    {
+        var desired = (targetPosition - _mover.CurrentPosition) * -1;
+        desired = desired.normalized * maxTravelSpeed;
+
+        var steering = desired - _direction;
+        steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
 
         Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
 
@@ -144,5 +165,32 @@ public class SteeringBehaviour : MonoBehaviour
         //return playerPositionRelativeToPath + _direction;
         return currentPosition + (_mover.LastDirectionFacing.normalized * maxTravelSpeed);
     }
+    #endregion
+
+    #region Separation
+
+
+
+    #endregion
+
+    #region Alignment
+    private Vector3 Align(IList<GameObject> objectsInView)
+    {
+        Vector3 direction = Vector3.zero;
+
+        for (int i = 0; i < objectsInView.Count; i++)
+        {
+            var component = objectsInView[i].GetComponent<IMoverComponent>();
+            if(component != null)
+            direction += component.LastDirectionFacing * maxTravelSpeed;
+        }
+
+        if(objectsInView.Count > 0)
+            direction = direction / objectsInView.Count;
+
+        return direction;
+    }
+        
+
     #endregion
 }

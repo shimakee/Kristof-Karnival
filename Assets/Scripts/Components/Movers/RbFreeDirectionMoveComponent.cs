@@ -6,6 +6,8 @@ using UnityEngine;
 public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverComponent, ITargetMoverComponent
 {
     [SerializeField] float maxSpeed = 1;
+    [SerializeField] bool ignoreYAxisDirection;
+    [SerializeField] bool rotateForwardToDirection;
 
     public Vector3 Direction
     { 
@@ -34,17 +36,18 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
     private void Update()
     {
         _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(Direction, maxSpeed));
-        _movement.RotateForwardDirectionInYAxis(_rb, _movement.LastDirectionFacing);
+
+        if(rotateForwardToDirection)
+            _rb.transform.LookAt(_movement.LastDirectionFacing + _rb.position, Vector3.up);
 
         Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
     }
 
-    private void FixedUpdate()
-    {
-    }
-
     public void MoveDirection(Vector3 direction)
     {
+        if (ignoreYAxisDirection)
+            direction.y = 0;
+
         Direction = direction;
 
         if (direction.magnitude != 0)
