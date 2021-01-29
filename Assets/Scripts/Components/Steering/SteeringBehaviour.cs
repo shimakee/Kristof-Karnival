@@ -10,17 +10,21 @@ public class SteeringBehaviour : MonoBehaviour
     [SerializeField] GameObject target;
     [Range(0, 50)][SerializeField] float maxTravelSpeed;
     [Range(0, 50)] [SerializeField] float maxSteeringForce;
+    [Space(10)]
 
     [Header("Arriving behaviour:")]
     [SerializeField] float distanceFromTargetToReduceSpeed;
     [SerializeField] float distanceFromTargetToStop;
+    [Space(10)]
 
     [Header("Path finding behaviour:")]
     [SerializeField] GameObject[] path;
     [SerializeField] float pathRadius;
     [SerializeField] bool loopPath = false;
-    Vector3[] pathLocations;
+    [Space(10)]
 
+
+    Vector3[] pathLocations;
     IFieldOfView _fieldOfView;
     IDirectionMoverComponent _mover;
     Vector3 _direction;
@@ -38,6 +42,7 @@ public class SteeringBehaviour : MonoBehaviour
         //_direction += FollowAlongPaths(path) * Time.deltaTime;
 
         _direction += Align(_fieldOfView.GameObjectsInView) * Time.deltaTime;
+        _direction += Cohesion(_fieldOfView.GameObjectsInView) * Time.deltaTime;
 
         //_direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
 
@@ -171,7 +176,7 @@ public class SteeringBehaviour : MonoBehaviour
     }
     #endregion
 
-    #region Separation
+    #region Separation and Collision avoidance
 
 
 
@@ -196,6 +201,26 @@ public class SteeringBehaviour : MonoBehaviour
         Debug.Log(direction);
         //return direction;
         return direction.normalized * maxTravelSpeed;
+    }
+
+    private Vector3 Cohesion(IList<GameObject> objectsInView)
+    {
+        Vector3 direction = Vector3.zero;
+
+        for (int i = 0; i < objectsInView.Count; i++)
+        {
+            var component = objectsInView[i].GetComponent<IMoverComponent>();
+
+            if (component != null)
+                direction += component.CurrentPosition - _mover.CurrentPosition;
+        }
+
+        if (objectsInView.Count > 0)
+            direction = direction / objectsInView.Count;
+
+        Debug.Log(direction);
+        return direction;
+        //return direction.normalized * maxTravelSpeed;
     }
         
 

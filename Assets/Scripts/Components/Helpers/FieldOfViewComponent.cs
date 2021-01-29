@@ -27,43 +27,10 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
         GameObjectsInView = new List<GameObject>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         CheckSurroundings();
-        //foreach (var item in GameObjectsInSurroundings)
-        //{
-        //    if (IsInView(item))
-        //    {  
-        //        if (!GameObjectsInView.Contains(item))
-        //            GameObjectsInView.Add(item);
-        //    }
-        //    else
-        //    {
-        //        if (GameObjectsInView.Contains(item))
-        //            GameObjectsInView.Remove(item);
-        //    }
-
-        //}
     }
-
-    //private void OnTriggerEnter(Collider collider)
-    //{
-    //    int gameObjectLayer = collider.gameObject.layer;
-    //    int layerMask =(gameObjectLayer > 0)  ? 1 << gameObjectLayer : gameObjectLayer;
-
-    //    bool isInLayerMask = (mask.value & layerMask) == layerMask;
-    //    if (!GameObjectsInSurroundings.Contains(collider.gameObject) && isInLayerMask)
-    //        GameObjectsInSurroundings.Add(collider.gameObject);
-    //}
-
-    //private void OnTriggerExit(Collider collider)
-    //{
-    //    GameObject gameObject = collider.gameObject;
-    //    if (GameObjectsInSurroundings.Contains(gameObject))
-    //        GameObjectsInSurroundings.Remove(gameObject);
-    //    if (GameObjectsInView.Contains(gameObject))
-    //        GameObjectsInView.Remove(gameObject);
-    //}
 
     private void CheckSurroundings()
     {
@@ -95,20 +62,8 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
                 if (GameObjectsInView.Contains(item))
                     GameObjectsInView.Remove(item);
             }
-
         }
-
     }
-
-    //private void OnEnable()
-    //{
-    //    _sphereTrigger.enabled = true;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    _sphereTrigger.enabled = false;
-    //}
 
     private void OnDrawGizmos()
     {
@@ -156,8 +111,6 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
             return false;
         else
         {
-            //Vector3 direction = gameObject.transform.position - _rb.position;
-
             RaycastHit hitInfo;
             var isHit = Physics.Raycast(_rb.position, adjustedGameObjectPosition, out hitInfo, Mathf.Infinity, mask.value, QueryTriggerInteraction.Ignore);
 

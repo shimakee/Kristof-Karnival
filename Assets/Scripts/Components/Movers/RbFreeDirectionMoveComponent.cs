@@ -17,15 +17,8 @@ public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverCompo
             _movement.Direction = value; 
         } 
     }
-    //public Rigidbody RigidBody { get { return _rb; } }
-    //public Vector3 CurrentVelocity { get { return _rb.velocity; } }
-    //public Vector3 CurrentPosition { get { return _rb.position; } }
-    //public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
 
     public Vector3 TargetPosition { get { return _movement.DesiredPosition; } private set { _movement.DesiredPosition = value; } }
-
-    //Movement _movement;
-    //Rigidbody _rb;
 
     private void Awake()
     {
@@ -59,10 +52,14 @@ public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverCompo
     public void SetTargetPosition(Vector3 target)
     {
         TargetPosition = target;
+        var direction = (target - _rb.position);
 
-        Direction = (target - _rb.position);
+        if (ignoreYAxisDirection)
+            direction.y = 0;
 
-        if (Direction.magnitude != 0)
+        Direction = direction;
+
+        if (direction.magnitude != 0)
             _movement.LastDirectionFacing = Direction.normalized;
     }
 }

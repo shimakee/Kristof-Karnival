@@ -8,7 +8,7 @@ public class InputHandlerMoveByDirectionComponent : InputHandlerComponent, IInpu
 {
     [SerializeField] bool normalizeDirection;
     [SerializeField] bool restrictDiagonal;
-    //bool _hasMovementInput;
+
     Vector3 _inputDirection;
     IDirectionMoverComponent _mover;
 
