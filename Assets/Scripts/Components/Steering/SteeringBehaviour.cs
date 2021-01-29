@@ -33,16 +33,15 @@ public class SteeringBehaviour : MonoBehaviour
 
     private void Update()
     {
-        _direction += Seek(target.transform.position) * Time.deltaTime;
+        //_direction += Seek(target.transform.position) * Time.deltaTime;
         //_direction += Flee(target.transform.position) * Time.deltaTime;
         //_direction += FollowAlongPaths(path) * Time.deltaTime;
 
-        //_direction += Align(_fieldOfView.GameObjectsInView);
+        _direction += Align(_fieldOfView.GameObjectsInView) * Time.deltaTime;
 
-        _direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
+        //_direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
 
         _mover.MoveDirection(_direction);
-
     }
 
     #region Seek and Flee
@@ -178,7 +177,7 @@ public class SteeringBehaviour : MonoBehaviour
 
     #endregion
 
-    #region Alignment
+    #region Alignment & Cohesion
     private Vector3 Align(IList<GameObject> objectsInView)
     {
         Vector3 direction = Vector3.zero;
@@ -186,14 +185,17 @@ public class SteeringBehaviour : MonoBehaviour
         for (int i = 0; i < objectsInView.Count; i++)
         {
             var component = objectsInView[i].GetComponent<IMoverComponent>();
+
             if(component != null)
-            direction += component.LastDirectionFacing * maxTravelSpeed;
+                direction += component.CurrentVelocity;
         }
 
         if(objectsInView.Count > 0)
             direction = direction / objectsInView.Count;
 
-        return direction;
+        Debug.Log(direction);
+        //return direction;
+        return direction.normalized * maxTravelSpeed;
     }
         
 

@@ -19,20 +19,74 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _sphereTrigger = gameObject.AddComponent<SphereCollider>();
-        _sphereTrigger.isTrigger = true;
-        _sphereTrigger.radius = radius;
+        //_sphereTrigger = gameObject.AddComponent<SphereCollider>();
+        //_sphereTrigger.isTrigger = true;
+        //_sphereTrigger.radius = radius;
 
         GameObjectsInSurroundings = new List<GameObject>();
         GameObjectsInView = new List<GameObject>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        CheckSurroundings();
+        //foreach (var item in GameObjectsInSurroundings)
+        //{
+        //    if (IsInView(item))
+        //    {  
+        //        if (!GameObjectsInView.Contains(item))
+        //            GameObjectsInView.Add(item);
+        //    }
+        //    else
+        //    {
+        //        if (GameObjectsInView.Contains(item))
+        //            GameObjectsInView.Remove(item);
+        //    }
+
+        //}
+    }
+
+    //private void OnTriggerEnter(Collider collider)
+    //{
+    //    int gameObjectLayer = collider.gameObject.layer;
+    //    int layerMask =(gameObjectLayer > 0)  ? 1 << gameObjectLayer : gameObjectLayer;
+
+    //    bool isInLayerMask = (mask.value & layerMask) == layerMask;
+    //    if (!GameObjectsInSurroundings.Contains(collider.gameObject) && isInLayerMask)
+    //        GameObjectsInSurroundings.Add(collider.gameObject);
+    //}
+
+    //private void OnTriggerExit(Collider collider)
+    //{
+    //    GameObject gameObject = collider.gameObject;
+    //    if (GameObjectsInSurroundings.Contains(gameObject))
+    //        GameObjectsInSurroundings.Remove(gameObject);
+    //    if (GameObjectsInView.Contains(gameObject))
+    //        GameObjectsInView.Remove(gameObject);
+    //}
+
+    private void CheckSurroundings()
+    {
+        Collider[] hit = Physics.OverlapSphere(_rb.position, radius);
+
+        GameObjectsInSurroundings.Clear();
+        GameObjectsInView.Clear();
+
+        for (int i = 0; i < hit.Length; i++)
+        {
+            var collider = hit[i];
+            int gameObjectLayer = collider.gameObject.layer;
+            int layerMask = (gameObjectLayer > 0) ? 1 << gameObjectLayer : gameObjectLayer;
+
+            bool isInLayerMask = (mask.value & layerMask) == layerMask;
+            if (!GameObjectsInSurroundings.Contains(collider.gameObject) && isInLayerMask)
+                GameObjectsInSurroundings.Add(collider.gameObject);
+        }
+
         foreach (var item in GameObjectsInSurroundings)
         {
             if (IsInView(item))
-            {  
+            {
                 if (!GameObjectsInView.Contains(item))
                     GameObjectsInView.Add(item);
             }
@@ -43,36 +97,18 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
             }
 
         }
+
     }
 
-    private void OnTriggerEnter(Collider collider)
-    {
-        int gameObjectLayer = collider.gameObject.layer;
-        int layerMask =(gameObjectLayer > 0)  ? 1 << gameObjectLayer : gameObjectLayer;
+    //private void OnEnable()
+    //{
+    //    _sphereTrigger.enabled = true;
+    //}
 
-        bool isInLayerMask = (mask.value & layerMask) == layerMask;
-        if (!GameObjectsInSurroundings.Contains(collider.gameObject) && isInLayerMask)
-            GameObjectsInSurroundings.Add(collider.gameObject);
-    }
-
-    private void OnTriggerExit(Collider collider)
-    {
-        GameObject gameObject = collider.gameObject;
-        if (GameObjectsInSurroundings.Contains(gameObject))
-            GameObjectsInSurroundings.Remove(gameObject);
-        if (GameObjectsInView.Contains(gameObject))
-            GameObjectsInView.Remove(gameObject);
-    }
-
-    private void OnEnable()
-    {
-        _sphereTrigger.enabled = true;
-    }
-
-    private void OnDisable()
-    {
-        _sphereTrigger.enabled = false;
-    }
+    //private void OnDisable()
+    //{
+    //    _sphereTrigger.enabled = false;
+    //}
 
     private void OnDrawGizmos()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
-public class RbTargetMoveComponent : MonoBehaviour, ITargetMoverComponent
+public class RbTargetMoveComponent : MoverComponent, ITargetMoverComponent
 {
     [SerializeField] float speed = 1;
     [SerializeField] bool ignoreY;
@@ -16,12 +16,12 @@ public class RbTargetMoveComponent : MonoBehaviour, ITargetMoverComponent
             _movement.DesiredPosition = value;
         } 
     }
-    public Vector3 CurrentPosition { get { return _rb.position; } }
-    public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
+    //public Vector3 CurrentPosition { get { return _rb.position; } }
+    //public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
 
 
-    Movement _movement;
-    Rigidbody _rb;
+    //Movement _movement;
+    //Rigidbody _rb;
     Vector3 _targetAdjusted;
 
     private void Awake()

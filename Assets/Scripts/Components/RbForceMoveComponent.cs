@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class RbForceMoveComponent : MonoBehaviour, IForceMoverComponent
+public class RbForceMoveComponent : MonoBehaviour
 {
     [Range(0, 100)][SerializeField] float speed;
     [Range(0, 100)][SerializeField] float maxForceApplied;

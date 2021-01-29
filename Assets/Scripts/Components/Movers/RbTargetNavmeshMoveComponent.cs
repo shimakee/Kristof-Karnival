@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(Rigidbody))]
-public class RbTargetNavmeshMoveComponent : MonoBehaviour, ITargetMoverComponent
+public class RbTargetNavmeshMoveComponent : MoverComponent, ITargetMoverComponent
 {
     [SerializeField] float speed = 1;
     [SerializeField] bool ignoreY;
@@ -22,12 +22,12 @@ public class RbTargetNavmeshMoveComponent : MonoBehaviour, ITargetMoverComponent
                 StartCoroutine(ProcessPath(value));
         }
     }
-    public Vector3 CurrentPosition { get { return _rb.position; } }
-    public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
+    //public Vector3 CurrentPosition { get { return _rb.position; } }
+    //public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
 
 
-    Movement _movement;
-    Rigidbody _rb;
+    //Movement _movement;
+    //Rigidbody _rb;
     Vector3 _targetAdjusted;
 
     NavMeshAgent _agent;

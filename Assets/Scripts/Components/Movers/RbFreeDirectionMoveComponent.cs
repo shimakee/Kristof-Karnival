@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverComponent, ITargetMoverComponent
+public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverComponent, ITargetMoverComponent
 {
     [SerializeField] float maxSpeed = 1;
     [SerializeField] bool ignoreYAxisDirection;
@@ -17,13 +17,15 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
             _movement.Direction = value; 
         } 
     }
-    public Vector3 CurrentPosition { get { return _rb.position; } }
-    public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
+    //public Rigidbody RigidBody { get { return _rb; } }
+    //public Vector3 CurrentVelocity { get { return _rb.velocity; } }
+    //public Vector3 CurrentPosition { get { return _rb.position; } }
+    //public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
 
     public Vector3 TargetPosition { get { return _movement.DesiredPosition; } private set { _movement.DesiredPosition = value; } }
 
-    Movement _movement;
-    Rigidbody _rb;
+    //Movement _movement;
+    //Rigidbody _rb;
 
     private void Awake()
     {
@@ -59,5 +61,8 @@ public class RbFreeDirectionMoveComponent : MonoBehaviour, IDirectionMoverCompon
         TargetPosition = target;
 
         Direction = (target - _rb.position);
+
+        if (Direction.magnitude != 0)
+            _movement.LastDirectionFacing = Direction.normalized;
     }
 }

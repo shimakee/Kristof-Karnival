@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PathfindToTargetMove2DComponent : MonoBehaviour, ITargetMoverComponent
+public class PathfindToTargetMove2DComponent : MoverComponent, ITargetMoverComponent
 {
     [SerializeField] float speed = 1;
     [SerializeField] float tileIdleTime = .5f;
@@ -11,9 +11,9 @@ public class PathfindToTargetMove2DComponent : MonoBehaviour, ITargetMoverCompon
     [SerializeField] LayerMask pathMask;
 
 
-    public Vector3 CurrentPosition { get { return _rb.position; } }
-    //public Vector3 Direction { get { return _movement.Direction; } set { _movement.Direction = value; } }
-    public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
+    //public Vector3 CurrentPosition { get { return _rb.position; } }
+    ////public Vector3 Direction { get { return _movement.Direction; } set { _movement.Direction = value; } }
+    //public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
     public Vector3 TargetPosition
     { 
         get { return _movement.DesiredPosition; } 
@@ -24,8 +24,8 @@ public class PathfindToTargetMove2DComponent : MonoBehaviour, ITargetMoverCompon
         } 
     }
 
-    Movement _movement;
-    Rigidbody2D _rb;
+    //Movement _movement;
+    new Rigidbody2D _rb;
 
     IPathfinding _pathfinding;
     List<IUnityPathNode> _route;

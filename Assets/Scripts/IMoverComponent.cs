@@ -2,9 +2,20 @@
 
 public interface IMoverComponent
 {
-    //Vector3 RigidBody { get; }
+    Rigidbody RigidBody { get; }
+    Vector3 CurrentVelocity { get; }
     Vector3 CurrentPosition { get; }
     Vector3 LastDirectionFacing { get; }
+}
+
+public class MoverComponent : MonoBehaviour, IMoverComponent
+{
+    protected Rigidbody _rb;
+    protected Movement _movement;
+    public Rigidbody RigidBody { get { return _rb; } }
+    public Vector3 CurrentVelocity { get { return _rb.velocity; } }
+    public Vector3 CurrentPosition { get { return _rb.position; } }
+    public Vector3 LastDirectionFacing { get { return _movement.LastDirectionFacing; } }
 }
 
 public interface IDirectionMoverComponent : IMoverComponent
@@ -17,11 +28,4 @@ public interface ITargetMoverComponent : IMoverComponent
 {
     Vector3 TargetPosition { get;}
     void SetTargetPosition(Vector3 target);
-}
-
-public interface IForceMoverComponent : IMoverComponent
-{
-    Rigidbody Rigidbody { get; }
-    void AddForce(Vector3 force);
-    void AssignVelocity(Vector3 velocity);
 }
