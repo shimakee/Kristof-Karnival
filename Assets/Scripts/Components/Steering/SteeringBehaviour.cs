@@ -13,6 +13,7 @@ public class SteeringBehaviour : MonoBehaviour
 
     [SerializeField] GameObject[] path;
     [SerializeField] float pathRadius;
+    [SerializeField] bool loopPath = false;
     Vector3[] pathLocations;
 
     IDirectionMoverComponent _mover;
@@ -25,17 +26,12 @@ public class SteeringBehaviour : MonoBehaviour
 
     private void Update()
     {
-        //_direction += Seek(target.transform.position) * Time.deltaTime;
-        //_direction += FollowPath(path[0].transform.position, path[1].transform.position) * Time.deltaTime;
+        _direction += Seek(target.transform.position) * Time.deltaTime;
         _direction += FollowAlongPaths(path) * Time.deltaTime;
-        //_direction = Arriving(_direction, target.transform.position, arrivingDistance);
+        _direction = Arriving(_direction, target.transform.position, arrivingDistance);
 
         _mover.MoveDirection(_direction);
 
-    }
-
-    private void FixedUpdate()
-    {
     }
 
     #region Seek
@@ -51,7 +47,9 @@ public class SteeringBehaviour : MonoBehaviour
 
         return steering;
     }
+    #endregion
 
+    #region Arriving behaviour
     private Vector3 Arriving(Vector3 velocity, Vector3 target, float arrivingDistanceToTarget)
     {
         var distance = Vector3.Distance(target, _mover.CurrentPosition);
@@ -60,7 +58,10 @@ public class SteeringBehaviour : MonoBehaviour
         return Vector3.ClampMagnitude(velocity, maxTravelSpeed * multiplier);
 
     }
+    #endregion
 
+    #region Path following
+    //TODO: remove this to give actual node paths
     private Vector3 FollowAlongPaths(GameObject[] gameObjects)
     {
         pathLocations = new Vector3[gameObjects.Length];
@@ -80,6 +81,9 @@ public class SteeringBehaviour : MonoBehaviour
 
         for (int i = 0; i < route.Count; i++)
         {
+            if (!loopPath && i == route.Count - 2)
+                break;
+
             var firstPos = pathLocations[i];
             var secondPos = (i >= pathLocations.Length - 1) ? pathLocations[0] : pathLocations[i + 1];
 
@@ -105,19 +109,8 @@ public class SteeringBehaviour : MonoBehaviour
 
     private Vector3 FollowPath(Vector3 firstPos, Vector3 secondPos)
     {
-        //Vector3 path = secondPos - firstPos;
-        //Vector3 playerPositionRelativeToPath = _mover.CurrentPosition - firstPos;
-        ////Vector3 playerFuturePosition = playerPositionRelativeToPath + _direction;
-        //Vector3 playerFuturePosition = playerPositionRelativeToPath + (_mover.LastDirectionFacing.normalized * maxTravelSpeed);
-        //Vector3 futurePositionAlongPath = path.normalized * Vector3.Dot(playerFuturePosition, path.normalized);
-
-        //float dotProduct = Vector3.Dot(path, futurePositionAlongPath);
-
-        //futurePositionAlongPath = (dotProduct < 0) ? Vector3.ClampMagnitude(futurePositionAlongPath, 0) :
-        //                                            Vector3.ClampMagnitude(futurePositionAlongPath, path.magnitude);
         Vector3 playerFuturePosition = PredictFuturePosition(_mover.CurrentPosition);
         Vector3 futurePositionAlongPath = PredictFuturePositionAlongPath(firstPos, secondPos);
-
 
         float distance = Vector3.Distance(futurePositionAlongPath, playerFuturePosition);
 
@@ -135,7 +128,6 @@ public class SteeringBehaviour : MonoBehaviour
     {
         Vector3 path = secondPos - firstPos;
         Vector3 playerPositionRelativeToPath = _mover.CurrentPosition - firstPos;
-        //Vector3 playerFuturePosition = playerPositionRelativeToPath + _direction;
         Vector3 playerFuturePosition = PredictFuturePosition(playerPositionRelativeToPath);
         Vector3 futurePositionAlongPath = path.normalized * Vector3.Dot(playerFuturePosition, path.normalized);
 
