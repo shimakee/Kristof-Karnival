@@ -10,7 +10,10 @@ public class SteeringBehaviour : MonoBehaviour
     [SerializeField] GameObject target;
     [Range(0, 50)][SerializeField] float maxTravelSpeed;
     [Range(0, 50)] [SerializeField] float maxSteeringForce;
-    [SerializeField] float arrivingDistance;
+
+    [Header("Arriving behaviour:")]
+    [SerializeField] float distanceFromTargetToReduceSpeed;
+    [SerializeField] float distanceFromTargetToStop;
 
     [Header("Path finding behaviour:")]
     [SerializeField] GameObject[] path;
@@ -36,7 +39,7 @@ public class SteeringBehaviour : MonoBehaviour
 
         //_direction += Align(_fieldOfView.GameObjectsInView);
 
-        _direction = Arriving(_direction, target.transform.position, arrivingDistance);
+        _direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
 
         _mover.MoveDirection(_direction);
 
@@ -73,7 +76,9 @@ public class SteeringBehaviour : MonoBehaviour
     #region Arriving behaviour
     private Vector3 Arriving(Vector3 velocity, Vector3 target, float arrivingDistanceToTarget)
     {
-        var distance = Vector3.Distance(target, _mover.CurrentPosition);
+        var distance = Vector3.Distance(target, _mover.CurrentPosition) - distanceFromTargetToStop;
+        if (distance < 0)
+            distance = 0;
         float multiplier = (distance < arrivingDistanceToTarget) ? distance / arrivingDistanceToTarget : 1;
 
         return Vector3.ClampMagnitude(velocity, maxTravelSpeed * multiplier);
