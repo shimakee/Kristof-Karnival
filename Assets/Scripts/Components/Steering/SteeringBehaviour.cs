@@ -7,21 +7,42 @@ public class SteeringBehaviour : MonoBehaviour
 {
 
     [Header("Seek behaviour:")]
+    [SerializeField] bool enableSeekBehaviour;
+    [SerializeField] float seekWeight;
     [SerializeField] GameObject target;
     [Range(0, 50)][SerializeField] float maxTravelSpeed;
     [Range(0, 50)] [SerializeField] float maxSteeringForce;
     [Space(10)]
 
     [Header("Arriving behaviour:")]
+    [SerializeField] bool enableArrivingBehaviour;
     [SerializeField] float distanceFromTargetToReduceSpeed;
     [SerializeField] float distanceFromTargetToStop;
     [Space(10)]
 
+    [Header("Separation behaviour:")]
+    [SerializeField] bool enableSeparationBehaviour;
+    [SerializeField] float separationWeight;
+    [SerializeField] float distanceToSeparate;
+    [Space(10)]
+
+
     [Header("Path finding behaviour:")]
+    [SerializeField] bool enablePathFollowingBehaviour;
+    [SerializeField] float pathFollowingWeight;
     [SerializeField] GameObject[] path;
     [SerializeField] float pathRadius;
     [SerializeField] bool loopPath = false;
     [Space(10)]
+
+    [SerializeField] bool enableAlignmentBehaviour;
+    [SerializeField] float alignmentWeight;
+    [SerializeField] bool enableCohesionBehaviour;
+    [SerializeField] float cohesionWeight;
+    [SerializeField] bool enableFleeBehaviour;
+    [SerializeField] float fleeWeight;
+
+
 
 
     Vector3[] pathLocations;
@@ -37,14 +58,26 @@ public class SteeringBehaviour : MonoBehaviour
 
     private void Update()
     {
-        //_direction += Seek(target.transform.position) * Time.deltaTime;
-        //_direction += Flee(target.transform.position) * Time.deltaTime;
-        //_direction += FollowAlongPaths(path) * Time.deltaTime;
+        if(enableSeekBehaviour)
+            _direction += Seek(target.transform.position) * Time.deltaTime * seekWeight;
 
-        _direction += Align(_fieldOfView.GameObjectsInView) * Time.deltaTime;
-        _direction += Cohesion(_fieldOfView.GameObjectsInView) * Time.deltaTime;
+        if(enableFleeBehaviour)
+            _direction += Flee(target.transform.position) * Time.deltaTime * fleeWeight;
 
-        //_direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
+        if (enablePathFollowingBehaviour)
+            _direction += FollowAlongPaths(path) * Time.deltaTime * pathFollowingWeight;
+
+        if(enableAlignmentBehaviour)
+            _direction += Align(_fieldOfView.GameObjectsInView) * Time.deltaTime * alignmentWeight;
+
+        if(enableCohesionBehaviour)
+            _direction += Cohesion(_fieldOfView.GameObjectsInView) * Time.deltaTime * cohesionWeight;
+
+        if(enableSeparationBehaviour)
+            _direction += Separation(_fieldOfView.GameObjectsInSurroundings) * Time.deltaTime * separationWeight;
+
+        if(enableArrivingBehaviour)
+         _direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
 
         _mover.MoveDirection(_direction);
     }
@@ -58,7 +91,7 @@ public class SteeringBehaviour : MonoBehaviour
         var steering = desired - _direction;
             steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
 
-        Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
+        //Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
 
         return steering;
     }
@@ -71,7 +104,7 @@ public class SteeringBehaviour : MonoBehaviour
         var steering = desired - _direction;
         steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
 
-        Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
+        //Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
 
         return steering;
     }
@@ -144,9 +177,9 @@ public class SteeringBehaviour : MonoBehaviour
 
         float distance = Vector3.Distance(futurePositionAlongPath, playerFuturePosition);
 
-        Debug.DrawLine(firstPos, futurePositionAlongPath);
-        Debug.DrawLine(firstPos, secondPos);
-        Debug.DrawLine(futurePositionAlongPath, playerFuturePosition);
+        //Debug.DrawLine(firstPos, futurePositionAlongPath);
+        //Debug.DrawLine(firstPos, secondPos);
+        //Debug.DrawLine(futurePositionAlongPath, playerFuturePosition);
 
         if (distance > pathRadius)
             return Seek(futurePositionAlongPath);
@@ -178,6 +211,31 @@ public class SteeringBehaviour : MonoBehaviour
 
     #region Separation and Collision avoidance
 
+    private Vector3 Separation(IList<GameObject> gameObjects)
+    {
+        Vector3 direction = Vector3.zero;
+        int count = 0;
+        for (int i = 0; i < gameObjects.Count; i++)
+        {
+            //var component = gameObjects[i].GetComponent<IMoverComponent>();
+            Vector3 objectPosition = gameObjects[i].transform.position;
+            Vector3 directionToObject = objectPosition - _mover.CurrentPosition;
+            float distance = directionToObject.magnitude;
+
+            if (distanceToSeparate > distance && distance > 0)
+            {
+                count++;
+                direction += (Flee(objectPosition) / distance);
+            }
+        }
+
+        if (count > 0)
+            direction = direction / count;
+
+        return direction;
+        //return direction.normalized * maxTravelSpeed;
+
+    }
 
 
     #endregion
@@ -186,40 +244,47 @@ public class SteeringBehaviour : MonoBehaviour
     private Vector3 Align(IList<GameObject> objectsInView)
     {
         Vector3 direction = Vector3.zero;
-
+        int count = 0;
         for (int i = 0; i < objectsInView.Count; i++)
         {
             var component = objectsInView[i].GetComponent<IMoverComponent>();
 
             if(component != null)
+            {
+                count++;
                 direction += component.CurrentVelocity;
+            }
         }
 
-        if(objectsInView.Count > 0)
-            direction = direction / objectsInView.Count;
+        if(count > 0)
+            direction = direction / count;
 
-        Debug.Log(direction);
-        //return direction;
-        return direction.normalized * maxTravelSpeed;
+        //Debug.Log(direction);
+        return direction;
+        //return direction.normalized * maxTravelSpeed;
     }
 
     private Vector3 Cohesion(IList<GameObject> objectsInView)
     {
         Vector3 direction = Vector3.zero;
-
+        int count = 0;
         for (int i = 0; i < objectsInView.Count; i++)
         {
             var component = objectsInView[i].GetComponent<IMoverComponent>();
 
             if (component != null)
-                direction += component.CurrentPosition - _mover.CurrentPosition;
+            {
+                count++;
+                //direction += component.CurrentPosition - _mover.CurrentPosition;
+                direction += component.CurrentPosition;
+            }
         }
 
-        if (objectsInView.Count > 0)
-            direction = direction / objectsInView.Count;
+        if (count > 0)
+            direction = direction / count;
 
-        Debug.Log(direction);
-        return direction;
+        //Debug.Log(direction);
+        return Seek(direction);
         //return direction.normalized * maxTravelSpeed;
     }
         
