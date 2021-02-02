@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(IDirectionMoverComponent), typeof(IFieldOfView))]
@@ -41,9 +42,10 @@ public class SteeringBehaviour : MonoBehaviour
     [SerializeField] float cohesionWeight;
     [SerializeField] bool enableFleeBehaviour;
     [SerializeField] float fleeWeight;
-
-
-
+    [SerializeField] bool enableCollisionAvoidance;
+    [SerializeField] float collisionAvoidanceWeight;
+    [SerializeField] LayerMask collisionDetectionMask;
+    [SerializeField] float distanceAhead;
 
     Vector3[] pathLocations;
     IFieldOfView _fieldOfView;
@@ -58,29 +60,45 @@ public class SteeringBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if(enableSeekBehaviour)
+
+        if (enableSeekBehaviour)
             _direction += Seek(target.transform.position) * Time.deltaTime * seekWeight;
 
-        if(enableFleeBehaviour)
+        if (enableFleeBehaviour)
             _direction += Flee(target.transform.position) * Time.deltaTime * fleeWeight;
 
         if (enablePathFollowingBehaviour)
             _direction += FollowAlongPaths(path) * Time.deltaTime * pathFollowingWeight;
 
-        if(enableAlignmentBehaviour)
+        if (enableAlignmentBehaviour)
             _direction += Align(_fieldOfView.GameObjectsInView) * Time.deltaTime * alignmentWeight;
 
-        if(enableCohesionBehaviour)
+        if (enableCohesionBehaviour)
             _direction += Cohesion(_fieldOfView.GameObjectsInView) * Time.deltaTime * cohesionWeight;
 
-        if(enableSeparationBehaviour)
+        if (enableSeparationBehaviour)
             _direction += Separation(_fieldOfView.GameObjectsInSurroundings) * Time.deltaTime * separationWeight;
 
-        if(enableArrivingBehaviour)
-         _direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
+        if (enableCollisionAvoidance)
+            _direction += CheckForCollision(distanceAhead, 90, 5) * Time.deltaTime * collisionAvoidanceWeight;
 
+        if (enableArrivingBehaviour)
+            _direction = Arriving(_direction, target.transform.position, distanceFromTargetToReduceSpeed);
+
+        //_direction = Vector3.ClampMagnitude(_direction, maxTravelSpeed);
+        //Debug.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + _direction);
         _mover.MoveDirection(_direction);
     }
+
+    #region Steering
+    private Vector3 Steer(Vector3 desiredDirection)
+    {
+        var steering = desiredDirection - _direction;
+        steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
+
+        return steering;
+    }
+    #endregion
 
     #region Seek and Flee
     private Vector3 Seek(Vector3 targetPosition)
@@ -88,12 +106,12 @@ public class SteeringBehaviour : MonoBehaviour
         var desired = targetPosition - _mover.CurrentPosition;
             desired = desired.normalized * maxTravelSpeed;
 
-        var steering = desired - _direction;
-            steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
+        //var steering = desired - _direction;
+        //    steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
 
         //Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
 
-        return steering;
+        return Steer(desired);
     }
 
     private Vector3 Flee(Vector3 targetPosition)
@@ -182,7 +200,7 @@ public class SteeringBehaviour : MonoBehaviour
         //Debug.DrawLine(futurePositionAlongPath, playerFuturePosition);
 
         if (distance > pathRadius)
-            return Seek(futurePositionAlongPath);
+            return Steer(futurePositionAlongPath - _mover.CurrentPosition);
         else
             return Vector3.zero;
     }
@@ -209,7 +227,7 @@ public class SteeringBehaviour : MonoBehaviour
     }
     #endregion
 
-    #region Separation and Collision avoidance
+    #region Separation
 
     private Vector3 Separation(IList<GameObject> gameObjects)
     {
@@ -220,7 +238,8 @@ public class SteeringBehaviour : MonoBehaviour
             //var component = gameObjects[i].GetComponent<IMoverComponent>();
             Vector3 objectPosition = gameObjects[i].transform.position;
             Vector3 directionToObject = objectPosition - _mover.CurrentPosition;
-            float distance = directionToObject.magnitude;
+            //float distance = directionToObject.magnitude;
+            float distance = Vector3.Distance(objectPosition, _mover.CurrentPosition);
 
             if (distanceToSeparate > distance && distance > 0)
             {
@@ -284,10 +303,99 @@ public class SteeringBehaviour : MonoBehaviour
             direction = direction / count;
 
         //Debug.Log(direction);
-        return Seek(direction);
+        //return Seek(direction);
+        return Steer(direction - _mover.CurrentPosition);
         //return direction.normalized * maxTravelSpeed;
     }
-        
+
 
     #endregion
+
+    #region Collision Avoidance
+
+    private Vector3 CheckForCollision(float distance, float angle, int step)
+    {
+        Vector3 direction = _mover.CurrentVelocity;
+        //Vector3 direction = _mover.LastDirectionFacing;
+        //RaycastHit hitInfo;
+        var dynamicLength = _mover.CurrentVelocity.magnitude / maxTravelSpeed;
+        var directionAhead = direction;
+
+        List<Vector3> directionsWithHit = new List<Vector3>();
+        Vector3 summedDirection = Vector3.zero;
+        for (int i = 0; i < step; i++)
+        {
+            float stepAngle = angle/step * i;
+
+            var tempDirection = TransformVector(directionAhead, stepAngle);
+            var tempDirectionMirrored = TransformVector(directionAhead, -stepAngle);
+            Debug.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + tempDirection);
+            Debug.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + tempDirectionMirrored);
+
+
+            RaycastHit hitInfo;
+            //bool isHit = Physics.Raycast(_mover.CurrentPosition, tempDirection, out hitInfo, distance, collisionDetectionMask);
+            bool isHit = Physics.SphereCast(_mover.CurrentPosition, 1, tempDirection, out hitInfo, distance * dynamicLength, collisionDetectionMask);
+
+            RaycastHit hitInfoMirrored;
+            //bool isHitMirrored = Physics.Raycast(_mover.CurrentPosition, tempDirectionMirrored, out hitInfoMirrored, distance, collisionDetectionMask);
+            bool isHitMirrored = Physics.SphereCast(_mover.CurrentPosition, 1, tempDirectionMirrored, out hitInfoMirrored, distance * dynamicLength, collisionDetectionMask);
+
+
+            if (isHit)
+                directionsWithHit.Add(hitInfo.point - _mover.CurrentPosition);
+            if (isHitMirrored)
+                directionsWithHit.Add(hitInfoMirrored.point - _mover.CurrentPosition);
+
+            if(!isHit)
+            {
+                summedDirection += Steer(tempDirection.normalized * distance);
+                break;
+            }
+            if (!isHitMirrored)
+            {
+                summedDirection += Steer(tempDirectionMirrored.normalized * distance);
+                break;
+            }
+        }
+
+        //directionsWithHit.Max<Vector3>(item => item.magnitude);
+        if(directionsWithHit.Count > 0)
+        {
+            var lowestMagnitudeVector = directionsWithHit.Aggregate((agg, next) => next.magnitude > agg.magnitude ? agg : next);
+            summedDirection += Flee(lowestMagnitudeVector + _mover.CurrentPosition);
+
+            //if (directionsWithHit.Count >= (step * 2) - 1)
+            //{
+            //    var highestMagnitudeVector = directionsWithHit.Aggregate((agg, next) => next.magnitude > agg.magnitude ? next : agg);
+            //    summedDirection += Seek(highestMagnitudeVector + _mover.CurrentPosition);
+            //}
+        }
+        //Debug.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + summedDirection);
+
+        //return summedDirection.normalized * maxTravelSpeed;
+        return summedDirection;
+        //return Steer(direction);
+    }
+
+    private Vector3 TransformVector(Vector3 vector, float angle) //TODO: make based on angle
+    {
+        float cosin = Mathf.Cos(Mathf.Deg2Rad * angle);
+        float sin = Mathf.Sin(Mathf.Deg2Rad * angle);
+
+        float x = (vector.x * cosin) + (vector.z * -sin);
+        float z = (vector.x * sin) + (vector.z * cosin);
+
+        return new Vector3(x, vector.y, z);
+    }
+    #endregion
+
+    private void OnDrawGizmos()
+    {
+        if(_mover != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + _direction);
+        }
+    }
 }
