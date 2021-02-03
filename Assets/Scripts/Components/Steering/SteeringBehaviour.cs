@@ -15,6 +15,32 @@ public class SteeringBehaviour : MonoBehaviour
     [Range(0, 50)] [SerializeField] float maxSteeringForce;
     [Space(10)]
 
+    [Header("Flee behaviour:")]
+    [SerializeField] bool enableFleeBehaviour;
+    [SerializeField] float fleeWeight;
+    [Space(10)]
+
+    [Header("Evade behaviour:")]
+    [SerializeField] bool enableEvadeBehaviour;
+    [SerializeField] float evadeWeight;
+    [Space(10)]
+
+    [Header("Pursiut behaviour:")]
+    [SerializeField] bool enablePursuitBehaviour;
+    [SerializeField] float pursuitWeight;
+    [SerializeField] float distanceAheadCutOff;
+    [Space(10)]
+
+    [Header("Wander behaviour:")]
+    [SerializeField] bool enableWanderBehaviour;
+    [SerializeField] float wanderWeight;
+    [Range(0, 20)] [SerializeField] float wanderRadius;
+    [Range(0, 20)] [SerializeField] float wanderDistance;
+    [Range(0, 360)][SerializeField] float wanderAngle;
+    [SerializeField] float wanderInterval;
+    float _time;
+    [Space(10)]
+
     [Header("Arriving behaviour:")]
     [SerializeField] bool enableArrivingBehaviour;
     [SerializeField] float distanceFromTargetToReduceSpeed;
@@ -36,16 +62,22 @@ public class SteeringBehaviour : MonoBehaviour
     [SerializeField] bool loopPath = false;
     [Space(10)]
 
+    [Header("Alignment behaviour:")]
+    [Space(10)]
     [SerializeField] bool enableAlignmentBehaviour;
     [SerializeField] float alignmentWeight;
+
+    [Header("Cohesion behaviour:")]
     [SerializeField] bool enableCohesionBehaviour;
     [SerializeField] float cohesionWeight;
-    [SerializeField] bool enableFleeBehaviour;
-    [SerializeField] float fleeWeight;
+    [Space(10)]
+
+    [Header("Collision avoidance behaviour:")]
     [SerializeField] bool enableCollisionAvoidance;
     [SerializeField] float collisionAvoidanceWeight;
     [SerializeField] LayerMask collisionDetectionMask;
     [SerializeField] float distanceAhead;
+    [Space(10)]
 
     Vector3[] pathLocations;
     IFieldOfView _fieldOfView;
@@ -66,6 +98,15 @@ public class SteeringBehaviour : MonoBehaviour
 
         if (enableFleeBehaviour)
             _direction += Flee(target.transform.position) * Time.deltaTime * fleeWeight;
+
+        if (enableEvadeBehaviour)
+            _direction += Evade(target) * Time.deltaTime * evadeWeight;
+
+        if (enableWanderBehaviour)
+            _direction += WanderStart(wanderInterval, Time.deltaTime) * Time.deltaTime * wanderWeight;
+
+        if (enablePursuitBehaviour)
+            _direction += Pursuit(target, distanceAheadCutOff) * Time.deltaTime * pursuitWeight;
 
         if (enablePathFollowingBehaviour)
             _direction += FollowAlongPaths(path) * Time.deltaTime * pathFollowingWeight;
@@ -316,10 +357,7 @@ public class SteeringBehaviour : MonoBehaviour
     private Vector3 CheckForCollision(float distance, float angle, int step)
     {
         Vector3 direction = _mover.CurrentVelocity;
-        //Vector3 direction = _mover.LastDirectionFacing;
-        //RaycastHit hitInfo;
         var dynamicLength = _mover.CurrentVelocity.magnitude / maxTravelSpeed;
-        var directionAhead = direction;
 
         List<Vector3> directionsWithHit = new List<Vector3>();
         Vector3 summedDirection = Vector3.zero;
@@ -327,8 +365,8 @@ public class SteeringBehaviour : MonoBehaviour
         {
             float stepAngle = angle/step * i;
 
-            var tempDirection = TransformVector(directionAhead, stepAngle);
-            var tempDirectionMirrored = TransformVector(directionAhead, -stepAngle);
+            var tempDirection = TransformVector(direction, stepAngle);
+            var tempDirectionMirrored = TransformVector(direction, -stepAngle);
             Debug.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + tempDirection);
             Debug.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + tempDirectionMirrored);
 
@@ -359,7 +397,6 @@ public class SteeringBehaviour : MonoBehaviour
             }
         }
 
-        //directionsWithHit.Max<Vector3>(item => item.magnitude);
         if(directionsWithHit.Count > 0)
         {
             var lowestMagnitudeVector = directionsWithHit.Aggregate((agg, next) => next.magnitude > agg.magnitude ? agg : next);
@@ -371,11 +408,9 @@ public class SteeringBehaviour : MonoBehaviour
             //    summedDirection += Seek(highestMagnitudeVector + _mover.CurrentPosition);
             //}
         }
-        //Debug.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + summedDirection);
 
         //return summedDirection.normalized * maxTravelSpeed;
         return summedDirection;
-        //return Steer(direction);
     }
 
     private Vector3 TransformVector(Vector3 vector, float angle) //TODO: make based on angle
@@ -390,12 +425,68 @@ public class SteeringBehaviour : MonoBehaviour
     }
     #endregion
 
-    private void OnDrawGizmos()
+    #region Pursuit
+
+    private Vector3 Pursuit(GameObject targetObject, float distanceAhead)
     {
-        if(_mover != null)
+        var component = targetObject.GetComponent<IMoverComponent>();
+
+        if(component != null)
         {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawLine(_mover.CurrentPosition, _mover.CurrentPosition + _direction);
+            var target = component.CurrentPosition + component.RigidBody.velocity.normalized * distanceAhead;
+            return Seek(target);
         }
+
+        return Vector3.zero;
     }
+    #endregion
+
+    #region Evade
+    private Vector3 Evade(GameObject targetObject)
+    {
+        var component = targetObject.GetComponent<IMoverComponent>();
+
+        if (component != null)
+        {
+            var target = component.CurrentPosition + component.RigidBody.velocity;
+            return Flee(target);
+        }
+
+        return Vector3.zero;
+    }
+    #endregion
+
+    #region Wander
+
+    private Vector3 WanderStart(float interval, float deltaTime)
+    {
+        _time += deltaTime;
+
+        if (_time > interval)
+        {
+            _time = 0;
+            return Wander(wanderDistance, wanderRadius, wanderAngle);
+        }
+        return Vector3.zero;
+    }
+
+    private Vector3 Wander(float distanceAhead, float radius, float angle)
+    {
+        var centerPoint = _mover.CurrentPosition + (_mover.LastDirectionFacing.normalized * distanceAhead);
+        var destination = GetPointWithinACircle(centerPoint, radius, angle);
+
+        Debug.DrawLine(_mover.CurrentPosition, destination);
+        return Seek(destination);
+    }
+
+    Vector3 GetPointWithinACircle(Vector3 center, float radius, float maxAngle)
+    {
+        float randomAngle = Random.Range(-360, maxAngle);
+
+        float x = center.x + Mathf.Cos(randomAngle * Mathf.Deg2Rad) * radius;
+        float z = center.z + Mathf.Sin(randomAngle * Mathf.Deg2Rad) * radius;
+
+        return new Vector3(x, center.y, z);
+    }
+    #endregion
 }
