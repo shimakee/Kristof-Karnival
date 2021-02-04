@@ -1605,11 +1605,17 @@ MonoBehaviour:
   maxSteeringForce: 5
   enableFleeBehaviour: 0
   fleeWeight: 0
-  enableEvadeBehaviour: 1
+  enableEvadeBehaviour: 0
   evadeWeight: 1
   enablePursuitBehaviour: 0
   pursuitWeight: 1
   distanceAheadCutOff: 0
+  enableWanderBehaviour: 1
+  wanderWeight: 1
+  wanderRadius: 8
+  wanderDistance: 1
+  wanderAngle: 360
+  wanderInterval: 0.5
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 5
   distanceFromTargetToStop: 3
@@ -1633,7 +1639,7 @@ MonoBehaviour:
   alignmentWeight: 0
   enableCohesionBehaviour: 0
   cohesionWeight: 0
-  enableCollisionAvoidance: 1
+  enableCollisionAvoidance: 0
   collisionAvoidanceWeight: 1
   collisionDetectionMask:
     serializedVersion: 2
@@ -11001,7 +11007,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17880
+  m_Name: pb_Mesh17910
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11563,6 +11569,12 @@ MonoBehaviour:
   enablePursuitBehaviour: 0
   pursuitWeight: 0
   distanceAheadCutOff: 0
+  enableWanderBehaviour: 0
+  wanderWeight: 0
+  wanderRadius: 0
+  wanderDistance: 0
+  wanderAngle: 0
+  wanderInterval: 0
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 0
   distanceFromTargetToStop: 0
@@ -11756,6 +11768,12 @@ MonoBehaviour:
   enablePursuitBehaviour: 1
   pursuitWeight: 1
   distanceAheadCutOff: 2
+  enableWanderBehaviour: 0
+  wanderWeight: 0
+  wanderRadius: 0
+  wanderDistance: 0
+  wanderAngle: 0
+  wanderInterval: 0
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 5
   distanceFromTargetToStop: 3
@@ -13613,6 +13631,12 @@ MonoBehaviour:
   enablePursuitBehaviour: 0
   pursuitWeight: 0
   distanceAheadCutOff: 0
+  enableWanderBehaviour: 0
+  wanderWeight: 0
+  wanderRadius: 0
+  wanderDistance: 0
+  wanderAngle: 0
+  wanderInterval: 0
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 5
   distanceFromTargetToStop: 3
@@ -21873,7 +21897,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18174
+  m_Name: pb_Mesh18204
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23061,6 +23085,12 @@ MonoBehaviour:
   enablePursuitBehaviour: 0
   pursuitWeight: 0
   distanceAheadCutOff: 0
+  enableWanderBehaviour: 0
+  wanderWeight: 0
+  wanderRadius: 0
+  wanderDistance: 0
+  wanderAngle: 0
+  wanderInterval: 0
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 0
   distanceFromTargetToStop: 0
@@ -34967,7 +34997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1909967582
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37791,6 +37821,12 @@ MonoBehaviour:
   enablePursuitBehaviour: 0
   pursuitWeight: 0
   distanceAheadCutOff: 0
+  enableWanderBehaviour: 0
+  wanderWeight: 0
+  wanderRadius: 0
+  wanderDistance: 0
+  wanderAngle: 0
+  wanderInterval: 0
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 5
   distanceFromTargetToStop: 3
@@ -40570,6 +40606,12 @@ MonoBehaviour:
   enablePursuitBehaviour: 0
   pursuitWeight: 0
   distanceAheadCutOff: 0
+  enableWanderBehaviour: 0
+  wanderWeight: 0
+  wanderRadius: 0
+  wanderDistance: 0
+  wanderAngle: 0
+  wanderInterval: 0
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 5
   distanceFromTargetToStop: 3

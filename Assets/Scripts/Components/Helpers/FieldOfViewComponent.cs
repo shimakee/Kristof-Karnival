@@ -46,7 +46,7 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
             int layerMask = (gameObjectLayer > 0) ? 1 << gameObjectLayer : gameObjectLayer;
 
             bool isInLayerMask = (mask.value & layerMask) == layerMask;
-            if (!GameObjectsInSurroundings.Contains(collider.gameObject) && isInLayerMask)
+            if (!GameObjectsInSurroundings.Contains(collider.gameObject) && isInLayerMask && collider.gameObject != this.gameObject)
                 GameObjectsInSurroundings.Add(collider.gameObject);
         }
 

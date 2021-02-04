@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -134,7 +133,7 @@ public class SteeringBehaviour : MonoBehaviour
     #region Steering
     private Vector3 Steer(Vector3 desiredDirection)
     {
-        var steering = desiredDirection - _direction;
+        var steering = desiredDirection - _mover.CurrentVelocity;
         steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
 
         return steering;
@@ -160,12 +159,12 @@ public class SteeringBehaviour : MonoBehaviour
         var desired = (targetPosition - _mover.CurrentPosition) * -1;
         desired = desired.normalized * maxTravelSpeed;
 
-        var steering = desired - _direction;
-        steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
+        //var steering = desired - _direction;
+        //steering = Vector3.ClampMagnitude(steering, maxSteeringForce);
 
         //Debug.DrawLine(_mover.CurrentPosition, steering + _mover.CurrentPosition);
 
-        return steering;
+        return Steer(desired);
     }
     #endregion
 
