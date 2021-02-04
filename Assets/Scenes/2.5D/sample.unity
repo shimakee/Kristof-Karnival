@@ -1526,10 +1526,10 @@ GameObject:
   - component: {fileID: 55300524}
   - component: {fileID: 55300523}
   - component: {fileID: 55300522}
-  - component: {fileID: 55300521}
   - component: {fileID: 55300520}
   - component: {fileID: 55300519}
   - component: {fileID: 55300518}
+  - component: {fileID: 55300521}
   m_Layer: 15
   m_Name: Sphere (6)
   m_TagString: Untagged
@@ -1554,7 +1554,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 34816
-  enableDraw: 0
+  enableDraw: 1
 --- !u!114 &55300519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,65 +1586,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &55300521
-MonoBehaviour:
+--- !u!95 &55300521
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55300517}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5430e6fb717bea74ea34c704418596ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableSeekBehaviour: 0
-  seekWeight: 1
-  target: {fileID: 816525738}
-  maxTravelSpeed: 5
-  maxSteeringForce: 5
-  enableFleeBehaviour: 0
-  fleeWeight: 0
-  enableEvadeBehaviour: 0
-  evadeWeight: 1
-  enablePursuitBehaviour: 0
-  pursuitWeight: 1
-  distanceAheadCutOff: 0
-  enableWanderBehaviour: 1
-  wanderWeight: 1
-  wanderRadius: 8
-  wanderDistance: 1
-  wanderAngle: 360
-  wanderInterval: 0.5
-  enableArrivingBehaviour: 0
-  distanceFromTargetToReduceSpeed: 5
-  distanceFromTargetToStop: 3
-  enableSeparationBehaviour: 0
-  separationWeight: 0
-  distanceToSeparate: 3
-  enablePathFollowingBehaviour: 0
-  pathFollowingWeight: 1
-  path:
-  - {fileID: 1830994053}
-  - {fileID: 36517801}
-  - {fileID: 2043655137}
-  - {fileID: 905716096}
-  - {fileID: 1292618290}
-  - {fileID: 1205316175}
-  - {fileID: 1823667947}
-  - {fileID: 1363185625}
-  pathRadius: 2
-  loopPath: 1
-  enableAlignmentBehaviour: 0
-  alignmentWeight: 0
-  enableCohesionBehaviour: 0
-  cohesionWeight: 0
-  enableCollisionAvoidance: 0
-  collisionAvoidanceWeight: 1
-  collisionDetectionMask:
-    serializedVersion: 2
-    m_Bits: 34816
-  distanceAhead: 2
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f96ef05594ea21b469f65441c79a184a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!135 &55300522
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1715,7 +1675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55300517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.5, y: 0.5, z: -16.8}
+  m_LocalPosition: {x: 11.37, y: 0.63, z: -28.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40352,7 +40312,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18094
+  m_Name: pb_Mesh18128
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40522,17 +40482,17 @@ GameObject:
   - component: {fileID: 2146996154}
   - component: {fileID: 2146996153}
   - component: {fileID: 2146996152}
-  - component: {fileID: 2146996151}
   - component: {fileID: 2146996150}
   - component: {fileID: 2146996149}
   - component: {fileID: 2146996148}
+  - component: {fileID: 2146996151}
   m_Layer: 15
   m_Name: Sphere (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2146996148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40591,56 +40551,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146996147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5430e6fb717bea74ea34c704418596ea, type: 3}
+  m_Script: {fileID: 11500000, guid: bd32069f066218c428f50850062173ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableSeekBehaviour: 1
-  seekWeight: 1
-  target: {fileID: 759891876}
-  maxTravelSpeed: 5
-  maxSteeringForce: 5
-  enableFleeBehaviour: 0
-  fleeWeight: 0
-  enableEvadeBehaviour: 0
-  evadeWeight: 1
-  enablePursuitBehaviour: 0
-  pursuitWeight: 0
-  distanceAheadCutOff: 0
-  enableWanderBehaviour: 0
-  wanderWeight: 0
-  wanderRadius: 0
-  wanderDistance: 0
-  wanderAngle: 0
-  wanderInterval: 0
-  enableArrivingBehaviour: 0
-  distanceFromTargetToReduceSpeed: 5
-  distanceFromTargetToStop: 3
-  enableSeparationBehaviour: 0
-  separationWeight: 0
-  distanceToSeparate: 3
-  enablePathFollowingBehaviour: 0
-  pathFollowingWeight: 0
-  path:
-  - {fileID: 1830994053}
-  - {fileID: 36517801}
-  - {fileID: 2043655137}
-  - {fileID: 905716096}
-  - {fileID: 1292618290}
-  - {fileID: 1205316175}
-  - {fileID: 1823667947}
-  - {fileID: 1363185625}
-  pathRadius: 2
-  loopPath: 0
-  enableAlignmentBehaviour: 0
-  alignmentWeight: 0
-  enableCohesionBehaviour: 0
-  cohesionWeight: 0
-  enableCollisionAvoidance: 0
-  collisionAvoidanceWeight: 0
-  collisionDetectionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  distanceAhead: 1
+  state: 0
+  speed: 5
+  steering: 5
 --- !u!135 &2146996152
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -40711,7 +40627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146996147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.08, y: 0.5, z: -21.07}
+  m_LocalPosition: {x: 2.65, y: 0.5, z: -30.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
