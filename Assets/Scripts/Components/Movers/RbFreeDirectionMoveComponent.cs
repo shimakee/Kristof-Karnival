@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverComponent, ITargetMoverComponent
 {
-    [SerializeField] float maxSpeed = 1;
+    //[SerializeField] float _maxSpeed = 1;
     [SerializeField] bool ignoreYAxisDirection;
     [SerializeField] bool rotateForwardToDirection;
 
@@ -23,14 +23,14 @@ public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverCompo
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _movement = new Movement(maxSpeed);
+        _movement = new Movement(_maxSpeed);
         _movement.DesiredPosition = _rb.position;
         _movement.LastDirectionFacing = _rb.transform.forward;
     }
 
     private void Update()
     {
-        _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(Direction, maxSpeed));
+        _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(Direction, _maxSpeed));
 
         if(rotateForwardToDirection)
             _rb.transform.LookAt(_movement.LastDirectionFacing + _rb.position, Vector3.up);

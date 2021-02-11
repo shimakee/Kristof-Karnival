@@ -1567,7 +1567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  _maxSpeed: 3
+  _maxSteering: 1
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
 --- !u!54 &55300520
@@ -1675,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55300517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.37, y: 0.63, z: -28.93}
+  m_LocalPosition: {x: 10.28, y: 0.63, z: -30.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11685,7 +11686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  _maxSpeed: 1
+  _maxSteering: 1
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
 --- !u!54 &759891879
@@ -11728,12 +11730,12 @@ MonoBehaviour:
   enablePursuitBehaviour: 1
   pursuitWeight: 1
   distanceAheadCutOff: 2
-  enableWanderBehaviour: 0
-  wanderWeight: 0
-  wanderRadius: 0
-  wanderDistance: 0
-  wanderAngle: 0
-  wanderInterval: 0
+  enableWanderBehaviour: 1
+  wanderWeight: 1
+  wanderRadius: 5
+  wanderDistance: 2
+  wanderAngle: 180
+  wanderInterval: 0.5
   enableArrivingBehaviour: 0
   distanceFromTargetToReduceSpeed: 5
   distanceFromTargetToStop: 3
@@ -11757,7 +11759,7 @@ MonoBehaviour:
   alignmentWeight: 0
   enableCohesionBehaviour: 0
   cohesionWeight: 0
-  enableCollisionAvoidance: 1
+  enableCollisionAvoidance: 0
   collisionAvoidanceWeight: 1
   collisionDetectionMask:
     serializedVersion: 2
@@ -13548,7 +13550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2
+  _maxSpeed: 0
+  _maxSteering: 0
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
 --- !u!54 &905464681
@@ -37738,7 +37741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  _maxSpeed: 0
+  _maxSteering: 0
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
 --- !u!54 &1988742773
@@ -40312,7 +40316,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18128
+  m_Name: pb_Mesh18134
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40523,7 +40527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  _maxSpeed: 2
+  _maxSteering: 0.5
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
 --- !u!54 &2146996150
@@ -40554,9 +40559,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd32069f066218c428f50850062173ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
-  speed: 5
-  steering: 5
+  wanderState:
+    maxDirectionAngleRange: 360
+    radius: 5
+    distanceAheadToCheck: 2
+    minDirectionTimeInterval: 1
+    maxDirectionTimeInterval: 4
+    minIdleTime: 0
+    maxIdleTime: 0
+  enemyTags: []
+  neutralTags: []
+  friendlyTags: []
 --- !u!135 &2146996152
 SphereCollider:
   m_ObjectHideFlags: 0

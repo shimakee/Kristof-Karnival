@@ -135,9 +135,3 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
         return new Vector3(x, vector.y, z);
     }
 }
-
-public interface IFieldOfView
-{
-    List<GameObject> GameObjectsInView { get; }
-    List<GameObject> GameObjectsInSurroundings { get; }
-}

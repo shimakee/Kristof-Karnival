@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(IDirectionMoverComponent), typeof(IFieldOfView))]
-public class SteeringBehaviour : MonoBehaviour
+public class SteeringBehaviourComponent : MonoBehaviour
 {
 
     [Header("Seek behaviour:")]
@@ -104,8 +104,8 @@ public class SteeringBehaviour : MonoBehaviour
         if (enableWanderBehaviour)
             _direction += WanderStart(wanderInterval, Time.deltaTime) * Time.deltaTime * wanderWeight;
 
-        if (enablePursuitBehaviour)
-            _direction += Pursuit(target, distanceAheadCutOff) * Time.deltaTime * pursuitWeight;
+        //if (enablePursuitBehaviour)
+        //    _direction += Pursuit(target, distanceAheadCutOff) * Time.deltaTime * pursuitWeight;
 
         if (enablePathFollowingBehaviour)
             _direction += FollowAlongPaths(path) * Time.deltaTime * pathFollowingWeight;
@@ -430,7 +430,7 @@ public class SteeringBehaviour : MonoBehaviour
     {
         var component = targetObject.GetComponent<IMoverComponent>();
 
-        if(component != null)
+        if (component != null)
         {
             var target = component.CurrentPosition + component.RigidBody.velocity.normalized * distanceAhead;
             return Seek(target);
@@ -460,7 +460,7 @@ public class SteeringBehaviour : MonoBehaviour
     private Vector3 WanderStart(float interval, float deltaTime)
     {
         _time += deltaTime;
-
+        
         if (_time > interval)
         {
             _time = 0;

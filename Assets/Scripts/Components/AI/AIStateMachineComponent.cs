@@ -3,31 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(IDirectionMoverComponent), typeof(IFieldOfView))]
-public class AIStateMachineComponent : MonoBehaviour
+public class AIStateMachineComponent : MonoBehaviour, IAiStateMachine
 {
-    public int state = 0;
-    public float speed = 5;
-    public float steering = 5;
-    //public ISteeringBehaviour[] behaviours;
-    private IDirectionMoverComponent mover;
-    private IFieldOfView fieldOfView;
-    private ISteeringBehaviour seek;
-    Vector3 _direction = Vector3.zero;
+    public IAiState CurrentState { get { return _currentState; } }
+    public IDirectionMoverComponent MoverComponent { get { return _mover; } }
+    public IFieldOfView FieldOfViewComponent { get { return _fieldOfView; } }
+    public IAiState AttackState { get { return _attackState; } }
+    public IAiState WanderState { get { return wanderState; } }
+    public IAiState EngagedState { get { return _engagedState; } }
+    public IAiState FleeState { get { return _fleeState; } }
+
+    public string[] EnemyTags { get { return enemyTags; } }
+    public string[] NeutralTags { get { return neutralTags; } }
+    public string[] FriendlyTags { get { return friendlyTags; } }
+
+    private IAiState _currentState;
+    private IDirectionMoverComponent _mover;
+    private IFieldOfView _fieldOfView;
+
+    [SerializeField] private IAiState _attackState;
+    //[SerializeField] private WanderStateBehaviourComponent _wanderState;
+    public WanderStateBehaviourComponent wanderState;
+    [SerializeField] private IAiState _engagedState;
+    [SerializeField] private IAiState _fleeState;
+
+    [SerializeField] private string[] enemyTags;
+    [SerializeField] private string[] neutralTags;
+    [SerializeField] private string[] friendlyTags;
 
     private void Awake()
     {
-        fieldOfView = GetComponent<IFieldOfView>();
-        mover = GetComponent<IDirectionMoverComponent>();
-        seek = new SeekBehaviour(speed, steering);
+        _mover = GetComponent<IDirectionMoverComponent>();
+        _fieldOfView = GetComponent<IFieldOfView>();
+        _currentState = wanderState;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(state == 1)
-        {
-            _direction += seek.CalculateSteeringForce(mover, fieldOfView) * Time.deltaTime;
-        }
-        mover.MoveDirection(_direction);
+        _currentState = _currentState.Execute(this, Time.deltaTime);
     }
 }
+

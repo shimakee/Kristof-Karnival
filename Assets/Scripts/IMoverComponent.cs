@@ -2,6 +2,8 @@
 
 public interface IMoverComponent
 {
+    float MaxSpeed { get; }
+    float MaxSteering { get; }
     Rigidbody RigidBody { get; }
     Vector3 CurrentVelocity { get; }
     Vector3 CurrentPosition { get; }
@@ -12,6 +14,16 @@ public class MoverComponent : MonoBehaviour, IMoverComponent
 {
     protected Rigidbody _rb;
     protected Movement _movement;
+    [SerializeField] protected float _maxSpeed;
+    [SerializeField] protected float _maxSteering;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
+
+    public float MaxSpeed { get { return _maxSpeed; } }
+    public float MaxSteering { get { return _maxSteering; } }
     public Rigidbody RigidBody { get { return _rb; } }
     public Vector3 CurrentVelocity { get { return _rb.velocity; } }
     public Vector3 CurrentPosition { get { return _rb.position; } }
