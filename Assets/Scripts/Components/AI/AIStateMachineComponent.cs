@@ -10,7 +10,7 @@ public class AIStateMachineComponent : MonoBehaviour, IAiStateMachine
     public IFieldOfView FieldOfViewComponent { get { return _fieldOfView; } }
     public IAiState AttackState { get { return _attackState; } }
     public IAiState WanderState { get { return wanderState; } }
-    public IAiState EngagedState { get { return _engagedState; } }
+    public IAiState EngagedState { get { return engagedState; } }
     public IAiState FleeState { get { return _fleeState; } }
 
     public string[] EnemyTags { get { return enemyTags; } }
@@ -24,7 +24,7 @@ public class AIStateMachineComponent : MonoBehaviour, IAiStateMachine
     [SerializeField] private IAiState _attackState;
     //[SerializeField] private WanderStateBehaviourComponent _wanderState;
     public WanderStateBehaviourComponent wanderState;
-    [SerializeField] private IAiState _engagedState;
+    public SeekStateBehaviourComponent engagedState;
     [SerializeField] private IAiState _fleeState;
 
     [SerializeField] private string[] enemyTags;

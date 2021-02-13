@@ -1532,11 +1532,11 @@ GameObject:
   - component: {fileID: 55300521}
   m_Layer: 15
   m_Name: Sphere (6)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &55300518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 3
+  _maxSpeed: 1
   _maxSteering: 1
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
@@ -1676,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55300517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.28, y: 0.63, z: -30.86}
+  m_LocalPosition: {x: 7.11, y: 0.63, z: -32.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10968,7 +10968,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17910
+  m_Name: pb_Mesh17924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12361,41 +12361,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32769
   drawCastLines: 0
---- !u!114 &816525748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816525738}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74c3814ea2cf0c749bcbd3b39379cab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDirectionAngleRange: 184
-  radius: 2.1
-  distanceAheadToCheck: 6
-  enableDebugDraw: 1
-  timeInterval: 1
---- !u!114 &816525749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816525738}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ab0c4af38eb214ca3d4da460084d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 5
-  viewAngle: 70
-  mask:
-    serializedVersion: 2
-    m_Bits: 34816
-  enableDraw: 1
 --- !u!1 &826777061
 GameObject:
   m_ObjectHideFlags: 0
@@ -23850,8 +23815,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb403af34cf164ab81212badf1d71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 992549707}
-  offset: {x: 0, y: 3, z: -2}
+  Target: {fileID: 816525738}
+  offset: {x: 0, y: 4, z: 0}
 --- !u!114 &1428429238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23864,7 +23829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9b3caed889d9f4c8d8b1a0102fae39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 992549707}
+  target: {fileID: 816525738}
   clampX: 0
   clampY: 0
   clampZ: 1
@@ -23880,8 +23845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b7ae93c049b244eaf5c6b48b0a2218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToCircleAround: {fileID: 992549707}
-  Offset: {x: 0, y: 6, z: 0}
+  objectToCircleAround: {fileID: 816525738}
+  Offset: {x: 0, y: 8, z: 0}
   degreesPosition: 0
   automatic: 0
   speed: 2
@@ -40527,8 +40492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 2
-  _maxSteering: 0.5
+  _maxSpeed: 1
+  _maxSteering: 1
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
 --- !u!54 &2146996150
@@ -40565,9 +40530,12 @@ MonoBehaviour:
     distanceAheadToCheck: 2
     minDirectionTimeInterval: 1
     maxDirectionTimeInterval: 4
-    minIdleTime: 0
-    maxIdleTime: 0
-  enemyTags: []
+    numberOfDirectionChanges: 0
+  engagedState:
+    TargetPosition: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+  enemyTags:
+  - Enemy
   neutralTags: []
   friendlyTags: []
 --- !u!135 &2146996152
@@ -40640,7 +40608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146996147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 0.5, z: -30.45}
+  m_LocalPosition: {x: 2.65, y: 0.5, z: -31.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40681,9 +40649,17 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3025669645617993251, guid: 2686186b78847694590d28843abfec7e, type: 3}
+      propertyPath: _maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025669645617993251, guid: 2686186b78847694590d28843abfec7e, type: 3}
+      propertyPath: _maxSteering
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993254, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.14
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993254, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -40740,6 +40716,10 @@ PrefabInstance:
     - target: {fileID: 3025669645617993261, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025669645617993261, guid: 2686186b78847694590d28843abfec7e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645700770841, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_Layer
