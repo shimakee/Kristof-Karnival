@@ -10,6 +10,8 @@ public interface ISteeringBehaviour
 
 public interface IFieldOfView
 {
+    float Radius { get; }
+    float Angle { get; }
     List<GameObject> GameObjectsInView { get; }
     List<GameObject> GameObjectsInSurroundings { get; }
 }
@@ -22,6 +24,7 @@ public interface IAiStateMachine
 
     IAiState AttackState { get; }
     IAiState WanderState { get; }
+    //IAiState IdleState { get; }
     IAiState EngagedState { get; }
     IAiState FleeState { get; }
 

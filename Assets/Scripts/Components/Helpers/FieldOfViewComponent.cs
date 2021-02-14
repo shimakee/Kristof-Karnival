@@ -5,13 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
 {
-    [Range(.1f, 100)][SerializeField] float radius;
-    [Range(0, 180)][SerializeField] float viewAngle;
-    [SerializeField] LayerMask mask;
-    [SerializeField] bool enableDraw;
-
+    public float Radius { get { return viewRadius; } }
+    public float Angle { get { return viewAngle; } }
     public List<GameObject> GameObjectsInView { get; private set; }
     public List<GameObject> GameObjectsInSurroundings { get; private set; }
+
+
+    [Range(.1f, 100)] [SerializeField] float viewRadius;
+    [Range(0, 180)] [SerializeField] float viewAngle;
+    [SerializeField] LayerMask mask;
+    [SerializeField] bool enableDraw;
 
     SphereCollider _sphereTrigger;
     Rigidbody _rb;
@@ -34,7 +37,7 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
 
     private void CheckSurroundings()
     {
-        Collider[] hit = Physics.OverlapSphere(_rb.position, radius);
+        Collider[] hit = Physics.OverlapSphere(_rb.position, Radius);
 
         GameObjectsInSurroundings.Clear();
         GameObjectsInView.Clear();
@@ -73,8 +76,8 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
 
             if(_rb != null)
             {
-                var rightSide = TransformVector(_rb.transform.forward * radius, viewAngle) + _rb.position;
-                var leftSide = TransformVector(_rb.transform.forward * radius, -viewAngle) + _rb.position;
+                var rightSide = TransformVector(_rb.transform.forward * Radius, Angle) + _rb.position;
+                var leftSide = TransformVector(_rb.transform.forward * Radius, -Angle) + _rb.position;
                 rightSide.y = _rb.position.y;
                 leftSide.y = _rb.position.y;
 
@@ -82,9 +85,9 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
                 Gizmos.DrawLine(_rb.position, rightSide);
                 Gizmos.DrawLine(_rb.position, leftSide);
 
-                Gizmos.DrawWireSphere(_rb.position, radius);
+                Gizmos.DrawWireSphere(_rb.position, Radius);
                 Gizmos.color = Color.cyan;
-                Gizmos.DrawLine(_rb.position, (_rb.transform.forward * radius) + _rb.position);
+                Gizmos.DrawLine(_rb.position, (_rb.transform.forward * Radius) + _rb.position);
 
                 //draw a line to each item seen
                 foreach (var item in GameObjectsInSurroundings)
@@ -107,7 +110,7 @@ public class FieldOfViewComponent : MonoBehaviour, IFieldOfView
         Vector3 adjustedGameObjectPosition = gameObject.transform.position - _rb.position;
         float angle = Vector3.Angle(_rb.transform.forward, adjustedGameObjectPosition);
 
-        if (angle > viewAngle)
+        if (angle > Angle)
             return false;
         else
         {

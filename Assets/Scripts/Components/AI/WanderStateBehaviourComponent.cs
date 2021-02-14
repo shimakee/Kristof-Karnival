@@ -8,23 +8,48 @@ using UnityEngine;
 [Serializable]
 public class WanderStateBehaviourComponent : IAiState
 {
+    [Header("Wandering details:")]
     [Range(-360, 360)] [SerializeField] public float maxDirectionAngleRange;
     [Range(.1f, 20f)] [SerializeField] float radius;
-    [Range(0, 20f)] [SerializeField] float distanceAheadToCheck;
-    [Range(0, 20f)] [SerializeField] float minDirectionTimeInterval;
-    [Range(0, 20f)] [SerializeField] float maxDirectionTimeInterval;
-    [Range(1, 10)] [SerializeField] int numberOfDirectionChanges;
+    //[Range(0, 20f)] [SerializeField] float distanceAheadToCheck;
+    [Space(10)]
+
+
+    [Header("Wander time info:")]
+    [Range(0, 20f)] [SerializeField] float minWanderTimeInterval;
+    [Range(0, 20f)] [SerializeField] float maxWanderTimeInterval;
+    [Range(0, 20f)] [SerializeField] float minDistanceAhead;
+    [Range(0, 20f)] [SerializeField] float maxDistanceAhead;
+    [Space(10)]
+
+    [Header("Arriving behaviour details:")]
+    [Range(0, 20f)] [SerializeField] float distancePointToStop;
+    [Range(0, 1)] [SerializeField] float thresholdToZeroVelocity;
+    [Space(10)]
+
+    [Header("SpawnPoin details:")]
+    [SerializeField] Vector3 spawnPoint;
+    [Range(0, 2)] [SerializeField] float stayNearWeight;
+    [Range(0, 20)] [SerializeField] float minDistanceFromSpawnPoint;
+    [Range(0, 20)] [SerializeField] float maxDistanceFromSpawnPoint;
+
 
 
     private float _time;
     private Vector3 _direction;
     private Vector3 _wanderPoint;
     private float _wanderIntervalTime;
-    private int _directionChangeCount;
+    private float _distanceAhead;
+    private float _distanceFromSpawnPoint;
+    //private float _idleIntervalTime;
+    //private float _idleTime;
+    //private int _directionChangeCount;
+    //private int _directionChangeInterval;
 
     public IAiState Execute(IAiStateMachine stateMachine, float deltaTime)
     {
         _time += deltaTime;
+        _distanceFromSpawnPoint = Vector3.Distance(spawnPoint, stateMachine.MoverComponent.CurrentPosition);
 
 
         var enemies = CheckForEnemies(stateMachine);
@@ -35,22 +60,38 @@ public class WanderStateBehaviourComponent : IAiState
                 return stateMachine.EngagedState;
         }
 
-        //Wandering
-        //if (_directionChangeCount < numberOfDirectionChanges)
-        //{
-        _direction += Wander(stateMachine.MoverComponent, _wanderIntervalTime) * deltaTime;
-        stateMachine.MoverComponent.MoveDirection(_direction);
+        _direction += Wander(stateMachine.MoverComponent, _wanderIntervalTime) * deltaTime * ComputeWanderWeight(1);
+        _direction += SteeringBehaviour.Seek(spawnPoint,_direction, stateMachine.MoverComponent) * deltaTime * ComputeSeekSpawnPointWeight(stayNearWeight);
+        _direction = SteeringBehaviour.Arriving(stateMachine.MoverComponent, 
+                                                _direction, 
+                                                _wanderPoint, 
+                                                distancePointToStop, 
+                                                thresholdToZeroVelocity);
 
-            //return this;
-        //}
-        //else
-        //{
-        //    //_directionChangeCount = 0;
-        //    //return idle state
-        //}
+        stateMachine.MoverComponent.MoveDirection(_direction);
 
         return this;
     }
+
+    #region Weighting
+
+    private float ComputeSeekSpawnPointWeight(float weight)
+    {
+        float seekWeight = SteeringBehaviour.ComputeWeightByDistanceFurtherHigher(_distanceFromSpawnPoint, weight, maxDistanceFromSpawnPoint, minDistanceFromSpawnPoint);
+        //float seekWeight = weight * multiplier;
+        Debug.Log($"seek weight {seekWeight}");
+        return seekWeight;
+    }
+
+    private float ComputeWanderWeight(float weight)
+    {
+        float wanderWeight = SteeringBehaviour.ComputeWeightByDistanceFurtherLower(_distanceFromSpawnPoint, weight,maxDistanceFromSpawnPoint, minDistanceFromSpawnPoint);
+        //float wanderWeight = weight * multiplier;
+        Debug.Log($"wander weight {wanderWeight}");
+        return wanderWeight;
+    }
+
+    #endregion
 
     #region Wander
 
@@ -59,13 +100,17 @@ public class WanderStateBehaviourComponent : IAiState
         if (_time > interval)
         {
             _time = 0;
-            _directionChangeCount++;
+            //_directionChangeCount++;
 
-            _wanderIntervalTime = UnityEngine.Random.Range(minDirectionTimeInterval, maxDirectionTimeInterval);
-            _wanderPoint = PickAPointInFront(mover, distanceAheadToCheck, radius, maxDirectionAngleRange);
+            Debug.Log($"wandering");
+            //Debug.Log($"change direction {_directionChangeCount}");
+
+            _wanderIntervalTime = UnityEngine.Random.Range(minWanderTimeInterval, maxWanderTimeInterval);
+            _distanceAhead = UnityEngine.Random.Range(minDistanceAhead, maxDistanceAhead);
+            _wanderPoint = PickAPointInFront(mover, _distanceAhead, radius, maxDirectionAngleRange);
         }
 
-        return SteeringBehaviour.Seek(_wanderPoint, mover);
+        return SteeringBehaviour.Seek(_wanderPoint, _direction, mover);
     }
 
     private Vector3 PickAPointInFront(IMoverComponent mover, float distanceAhead, float radius, float angle)
@@ -85,6 +130,30 @@ public class WanderStateBehaviourComponent : IAiState
 
         return new Vector3(x, center.y, z);
     }
+    #endregion
+
+    #region Idle
+
+    //private Vector3 Idle(float deltaTime)
+    //{
+    //    _idleTime += deltaTime;
+
+    //    if (_idleTime > _idleIntervalTime)
+    //    {
+    //        Debug.Log("idle done");
+
+    //        _directionChangeCount = 0;
+    //        _idleTime = 0;
+
+    //        _idleIntervalTime = UnityEngine.Random.Range(minWanderTimeInterval, maxWanderTimeInterval);
+    //        _directionChangeInterval = UnityEngine.Random.Range(minNumberOfDirectionChanges, maxNumberOfDirectionChanges);
+
+    //        //return _direction;
+    //    }
+
+    //    return Vector3.zero;
+    //}
+
     #endregion
 
     #region Check For Enemies

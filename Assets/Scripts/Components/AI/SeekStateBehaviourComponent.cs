@@ -6,40 +6,71 @@ using UnityEngine;
 [System.Serializable]
 public class SeekStateBehaviourComponent : IAiState
 {
-    public Vector3 TargetPosition;
-    public GameObject TargetObject;
+    [SerializeField] float minDistanceToMaintain;
+    [SerializeField] float maxDistanceToMaintain;
+
+    private Vector3 TargetPosition;
+    private GameObject TargetObject;
 
     Vector3 _direction = Vector3.zero;
 
     public IAiState Execute(IAiStateMachine stateMachine, float deltaTime)
     {
 
-        var enemies = CheckForEnemies(stateMachine);
-
-        //go to position and arrive first if there are no enemies before returning to wander state.
-
-        if (enemies == null)
-            return stateMachine.WanderState;
-
-        if (enemies.Length == 0)
-            return stateMachine.WanderState;
-
-        TargetObject = enemies[0];
-        TargetPosition = TargetObject.transform.position;
-
-        if(TargetObject != null)
+        if (TargetObject == null)
         {
-            _direction += SteeringBehaviour.Seek(TargetPosition, stateMachine.MoverComponent);
+            var enemies = CheckForEnemies(stateMachine);
 
-            //arrival behaviour
-            stateMachine.MoverComponent.MoveDirection(_direction);
+            //go to position and arrive first if there are no enemies before returning to wander state.
+
+            if (enemies == null)
+                return stateMachine.WanderState;
+
+            if (enemies.Length == 0)
+                return stateMachine.WanderState;
+
+            TargetObject = enemies[0];
+            Reposition(TargetObject, stateMachine, deltaTime);
         }
         else
         {
-            stateMachine.MoverComponent.MoveDirection(Vector3.zero);
+            Reposition(TargetObject, stateMachine, deltaTime);
         }
 
+        stateMachine.MoverComponent.MoveDirection(_direction);
+
+
         return this;
+    }
+
+    private void Reposition(GameObject targetObject, IAiStateMachine stateMachine, float deltaTime)
+    {
+        
+        var targetPosition = targetObject.transform.position;
+        float distance = Vector3.Distance(targetPosition, stateMachine.MoverComponent.CurrentPosition);
+
+        bool isClose = distance < minDistanceToMaintain;
+        bool isFar = distance > maxDistanceToMaintain;
+        bool isTooFar = distance > stateMachine.FieldOfViewComponent.Radius;
+
+        if (isTooFar)
+            TargetObject = null;
+
+        if (isClose)
+            _direction += SteeringBehaviour.Flee(targetPosition, _direction, stateMachine.MoverComponent) * deltaTime;
+        else if (isFar)
+            _direction += SteeringBehaviour.Seek(targetPosition, _direction, stateMachine.MoverComponent) * deltaTime;
+        else
+        {
+            Debug.Log("attack mode");
+            var direction = SteeringBehaviour.Seek(targetPosition, _direction, stateMachine.MoverComponent).normalized;
+            stateMachine.MoverComponent.MoveDirection(direction);
+            _direction = SteeringBehaviour.Arriving(stateMachine.MoverComponent, _direction, targetPosition, maxDistanceToMaintain, .05f);
+        }
+        //arrival behaviour
+        //attack
+        //roam around
+
     }
 
     private GameObject[] CheckForEnemies(IAiStateMachine stateMachine)

@@ -1549,7 +1549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ab0c4af38eb214ca3d4da460084d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  viewRadius: 0
   viewAngle: 90
   mask:
     serializedVersion: 2
@@ -2500,7 +2500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ab0c4af38eb214ca3d4da460084d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  viewRadius: 0
   viewAngle: 60
   mask:
     serializedVersion: 2
@@ -10968,7 +10968,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17924
+  m_Name: pb_Mesh17922
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11668,7 +11668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ab0c4af38eb214ca3d4da460084d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  viewRadius: 0
   viewAngle: 90
   mask:
     serializedVersion: 2
@@ -13497,7 +13497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ab0c4af38eb214ca3d4da460084d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  viewRadius: 0
   viewAngle: 90
   mask:
     serializedVersion: 2
@@ -37873,7 +37873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ab0c4af38eb214ca3d4da460084d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  viewRadius: 0
   viewAngle: 90
   mask:
     serializedVersion: 2
@@ -40474,7 +40474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ab0c4af38eb214ca3d4da460084d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  viewRadius: 6
   viewAngle: 90
   mask:
     serializedVersion: 2
@@ -40492,8 +40492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 1
-  _maxSteering: 1
+  _maxSpeed: 2
+  _maxSteering: 2
   ignoreYAxisDirection: 1
   rotateForwardToDirection: 1
 --- !u!54 &2146996150
@@ -40527,13 +40527,19 @@ MonoBehaviour:
   wanderState:
     maxDirectionAngleRange: 360
     radius: 5
-    distanceAheadToCheck: 2
-    minDirectionTimeInterval: 1
-    maxDirectionTimeInterval: 4
-    numberOfDirectionChanges: 0
+    minWanderTimeInterval: 2
+    maxWanderTimeInterval: 10
+    minDistanceAhead: 0
+    maxDistanceAhead: 0
+    distancePointToStop: 0
+    thresholdToZeroVelocity: 0.05
+    spawnPoint: {x: 2.65, y: 0.5, z: -31.45}
+    stayNearWeight: 0.5
+    minDistanceFromSpawnPoint: 10
+    maxDistanceFromSpawnPoint: 20
   engagedState:
-    TargetPosition: {x: 0, y: 0, z: 0}
-    TargetObject: {fileID: 0}
+    minDistanceToMaintain: 5
+    maxDistanceToMaintain: 5
   enemyTags:
   - Enemy
   neutralTags: []
@@ -40651,7 +40657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993251, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: _maxSpeed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993251, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: _maxSteering
@@ -40659,7 +40665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993254, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8
+      value: 18.34
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993254, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -40667,7 +40673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993254, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.03
+      value: -21.91
       objectReference: {fileID: 0}
     - target: {fileID: 3025669645617993254, guid: 2686186b78847694590d28843abfec7e, type: 3}
       propertyPath: m_LocalRotation.x
