@@ -40538,8 +40538,10 @@ MonoBehaviour:
     minDistanceFromSpawnPoint: 10
     maxDistanceFromSpawnPoint: 20
   engagedState:
-    minDistanceToMaintain: 5
-    maxDistanceToMaintain: 5
+    attackDistance: 2
+    attackInterval: 3
+    minDistanceToMaintain: 1
+    maxDistanceToMaintain: 2
   enemyTags:
   - Enemy
   neutralTags: []

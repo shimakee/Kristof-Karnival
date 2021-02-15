@@ -22,7 +22,6 @@ public class AIStateMachineComponent : MonoBehaviour, IAiStateMachine
     private IFieldOfView _fieldOfView;
 
     [SerializeField] private IAiState _attackState;
-    //[SerializeField] private WanderStateBehaviourComponent _wanderState;
     public WanderStateBehaviourComponent wanderState;
     public SeekStateBehaviourComponent engagedState;
     [SerializeField] private IAiState _fleeState;

@@ -6,16 +6,20 @@ using UnityEngine;
 [System.Serializable]
 public class SeekStateBehaviourComponent : IAiState
 {
+    [SerializeField] float attackDistance;
+    [SerializeField] float attackInterval;
     [SerializeField] float minDistanceToMaintain;
     [SerializeField] float maxDistanceToMaintain;
 
     private Vector3 TargetPosition;
     private GameObject TargetObject;
+    private float _attackTimer;
 
     Vector3 _direction = Vector3.zero;
 
     public IAiState Execute(IAiStateMachine stateMachine, float deltaTime)
     {
+        _attackTimer += deltaTime;
 
         if (TargetObject == null)
         {
@@ -49,6 +53,8 @@ public class SeekStateBehaviourComponent : IAiState
         var targetPosition = targetObject.transform.position;
         float distance = Vector3.Distance(targetPosition, stateMachine.MoverComponent.CurrentPosition);
 
+        bool isInAttackRange = distance <= attackDistance;
+        bool canAttack = _attackTimer > attackInterval;
         bool isClose = distance < minDistanceToMaintain;
         bool isFar = distance > maxDistanceToMaintain;
         bool isTooFar = distance > stateMachine.FieldOfViewComponent.Radius;
@@ -56,13 +62,18 @@ public class SeekStateBehaviourComponent : IAiState
         if (isTooFar)
             TargetObject = null;
 
+        if(canAttack && isInAttackRange)
+        {
+            //go to attack state
+            Attack(TargetObject);
+        }
+
         if (isClose)
             _direction += SteeringBehaviour.Flee(targetPosition, _direction, stateMachine.MoverComponent) * deltaTime;
         else if (isFar)
             _direction += SteeringBehaviour.Seek(targetPosition, _direction, stateMachine.MoverComponent) * deltaTime;
         else
         {
-            Debug.Log("attack mode");
             var direction = SteeringBehaviour.Seek(targetPosition, _direction, stateMachine.MoverComponent).normalized;
             stateMachine.MoverComponent.MoveDirection(direction);
             _direction = SteeringBehaviour.Arriving(stateMachine.MoverComponent, _direction, targetPosition, maxDistanceToMaintain, .05f);
@@ -71,6 +82,11 @@ public class SeekStateBehaviourComponent : IAiState
         //attack
         //roam around
 
+    }
+
+    private void Attack(GameObject target)
+    {
+        _attackTimer = 0;Debug.Log($"attacked {target.name}");
     }
 
     private GameObject[] CheckForEnemies(IAiStateMachine stateMachine)
