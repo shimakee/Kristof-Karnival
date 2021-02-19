@@ -44,6 +44,8 @@ public class InputHandlerMoveByDirectionComponent : InputHandlerComponent, IInpu
             _mover.MoveDirection(_inputDirection);
 
         }
+
+        Debug.Log($"direction from input {_inputDirection} magnitude {_inputDirection.magnitude}");
     }
 }
 

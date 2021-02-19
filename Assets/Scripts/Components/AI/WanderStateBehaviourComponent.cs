@@ -79,7 +79,6 @@ public class WanderStateBehaviourComponent : IAiState
     {
         float seekWeight = SteeringBehaviour.ComputeWeightByDistanceFurtherHigher(_distanceFromSpawnPoint, weight, maxDistanceFromSpawnPoint, minDistanceFromSpawnPoint);
         //float seekWeight = weight * multiplier;
-        Debug.Log($"seek weight {seekWeight}");
         return seekWeight;
     }
 
@@ -87,7 +86,6 @@ public class WanderStateBehaviourComponent : IAiState
     {
         float wanderWeight = SteeringBehaviour.ComputeWeightByDistanceFurtherLower(_distanceFromSpawnPoint, weight,maxDistanceFromSpawnPoint, minDistanceFromSpawnPoint);
         //float wanderWeight = weight * multiplier;
-        Debug.Log($"wander weight {wanderWeight}");
         return wanderWeight;
     }
 
@@ -102,7 +100,6 @@ public class WanderStateBehaviourComponent : IAiState
             _time = 0;
             //_directionChangeCount++;
 
-            Debug.Log($"wandering");
             //Debug.Log($"change direction {_directionChangeCount}");
 
             _wanderIntervalTime = UnityEngine.Random.Range(minWanderTimeInterval, maxWanderTimeInterval);

@@ -1,0 +1,697 @@
+fileFormatVersion: 2
+guid: 4f4639caec8c22847b66182a60e6c0a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5858049434572681510
+    second: isometric stick walk-sheet 2t_0
+  - first:
+      213: 5513942882873109088
+    second: isometric stick walk-sheet 2t_1
+  - first:
+      213: -1208013527644067390
+    second: isometric stick walk-sheet 2t_2
+  - first:
+      213: 1384825131283183307
+    second: isometric stick walk-sheet 2t_3
+  - first:
+      213: -7026366938933410468
+    second: isometric stick walk-sheet 2t_4
+  - first:
+      213: 4574071263790044031
+    second: isometric stick walk-sheet 2t_5
+  - first:
+      213: -376612152756961600
+    second: isometric stick walk-sheet 2t_6
+  - first:
+      213: -1708837479191288405
+    second: isometric stick walk-sheet 2t_7
+  - first:
+      213: -6896221362913990877
+    second: isometric stick walk-sheet 2t_8
+  - first:
+      213: 1785422571303159505
+    second: isometric stick walk-sheet 2t_9
+  - first:
+      213: 6081273366875234230
+    second: isometric stick walk-sheet 2t_10
+  - first:
+      213: 9140482856323882697
+    second: isometric stick walk-sheet 2t_11
+  - first:
+      213: -6626616225698823614
+    second: isometric stick walk-sheet 2t_12
+  - first:
+      213: 5708433373563904501
+    second: isometric stick walk-sheet 2t_13
+  - first:
+      213: -8374452202438723535
+    second: isometric stick walk-sheet 2t_14
+  - first:
+      213: 5364668041000050786
+    second: isometric stick walk-sheet 2t_15
+  - first:
+      213: -4392677376901135588
+    second: isometric stick walk-sheet 2t_16
+  - first:
+      213: -3307575998189345986
+    second: isometric stick walk-sheet 2t_17
+  - first:
+      213: 2566651870475625427
+    second: isometric stick walk-sheet 2t_18
+  - first:
+      213: -9212616418751242206
+    second: isometric stick walk-sheet 2t_19
+  - first:
+      213: -8111128896827397229
+    second: isometric stick walk-sheet 2t_20
+  - first:
+      213: -4927903911818422390
+    second: isometric stick walk-sheet 2t_21
+  - first:
+      213: -7382424939439113499
+    second: isometric stick walk-sheet 2t_22
+  - first:
+      213: -2095133009673831910
+    second: isometric stick walk-sheet 2t_23
+  - first:
+      213: 1393186958589214403
+    second: isometric stick walk-sheet 2t_24
+  - first:
+      213: 8021109425969301946
+    second: isometric stick walk-sheet 2t_25
+  - first:
+      213: 3154545109667578396
+    second: isometric stick walk-sheet 2t_26
+  - first:
+      213: -2910954845986840949
+    second: isometric stick walk-sheet 2t_27
+  - first:
+      213: 8207724311132980151
+    second: isometric stick walk-sheet 2t_28
+  - first:
+      213: 8668866257183937463
+    second: isometric stick walk-sheet 2t_29
+  - first:
+      213: 6030671487781014514
+    second: isometric stick walk-sheet 2t_30
+  - first:
+      213: -4950479914109105580
+    second: isometric stick walk-sheet 2t_31
+  - first:
+      213: 1895109663243027361
+    second: isometric stick walk-sheet 2t_32
+  - first:
+      213: 7488602183752663419
+    second: isometric stick walk-sheet 2t_33
+  - first:
+      213: -322219938921795356
+    second: isometric stick walk-sheet 2t_34
+  - first:
+      213: -1367250992239327768
+    second: isometric stick walk-sheet 2t_35
+  - first:
+      213: 7739029904332334352
+    second: isometric stick walk-sheet 2t_36
+  - first:
+      213: -1735752105065993766
+    second: isometric stick walk-sheet 2t_37
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_1
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 3411
+        width: 118
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ae17d76d5758c40800000000000000
+      internalID: 5513942882873109088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_3
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 3366
+        width: 130
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6fa2aae13e73310800000000000000
+      internalID: 1384825131283183307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_4
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 3377
+        width: 117
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55435f0f745d7e90800000000000000
+      internalID: -7026366938933410468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_5
+      rect:
+        serializedVersion: 2
+        x: 2734
+        y: 3415
+        width: 121
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f731787749d5a7f30800000000000000
+      internalID: 4574071263790044031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_10
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 2560
+        width: 131
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf54ae38e5056450800000000000000
+      internalID: 6081273366875234230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_11
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 2579
+        width: 123
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce9bbebab489de70800000000000000
+      internalID: 9140482856323882697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_13
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 2568
+        width: 134
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1e24f98ed683f40800000000000000
+      internalID: 5708433373563904501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_14
+      rect:
+        serializedVersion: 2
+        x: 2726
+        y: 2595
+        width: 125
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138f6257718f7cb80800000000000000
+      internalID: -8374452202438723535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_15
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1759
+        width: 209
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260e2b9f821237a40800000000000000
+      internalID: 5364668041000050786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_16
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 1756
+        width: 159
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13c9e8f2331a03c0800000000000000
+      internalID: -4392677376901135588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_17
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 1757
+        width: 203
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33e05867212912d0800000000000000
+      internalID: -3307575998189345986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_18
+      rect:
+        serializedVersion: 2
+        x: 2738
+        y: 1793
+        width: 141
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3aac907449e9320800000000000000
+      internalID: 2566651870475625427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_19
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 941
+        width: 224
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220a66c7d26362080800000000000000
+      internalID: -9212616418751242206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_21
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 976
+        width: 177
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a871ec850819c9bb0800000000000000
+      internalID: -4927903911818422390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_22
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 983
+        width: 247
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea3fbf91ab5c8990800000000000000
+      internalID: -7382424939439113499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_23
+      rect:
+        serializedVersion: 2
+        x: 2705
+        y: 1017
+        width: 146
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a3231d0a79ce2e0800000000000000
+      internalID: -2095133009673831910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_27
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 208
+        width: 166
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e90cf8df53a97d0800000000000000
+      internalID: -2910954845986840949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_30
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 143
+        width: 221
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb834a24cf31b350800000000000000
+      internalID: 6030671487781014514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_32
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 163
+        width: 219
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3c200b238cc4a10800000000000000
+      internalID: 1895109663243027361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_34
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 425
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0b4093cae378bf0800000000000000
+      internalID: -322219938921795356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isometric stick walk-sheet 2t_35
+      rect:
+        serializedVersion: 2
+        x: 2709
+        y: 181
+        width: 144
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e546c0777c860de0800000000000000
+      internalID: -1367250992239327768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

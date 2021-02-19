@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(IMoverComponent))]
 public class GetAngleBetweenCamCharFaceDirectionAnimatorComponent : MonoBehaviour
 {
+    public float AngledSigned;
+
     [SerializeField] Camera cameraToGetAngle;
-    [SerializeField] Animator animator;
-    [SerializeField] string animatorParameterName;
     [SerializeField] bool inputAsReferenceDirection;
     [SerializeField] bool ignoreYAxis;
 
@@ -18,14 +18,15 @@ public class GetAngleBetweenCamCharFaceDirectionAnimatorComponent : MonoBehaviou
         _mover = GetComponent<IMoverComponent>();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (inputAsReferenceDirection)
             _directionFacing = _mover.LastDirectionFacing;
         else
             _directionFacing = transform.forward;
 
-        var currentPosition = transform.position;
+        //var currentPosition = transform.position;
+        var currentPosition = _mover.CurrentPosition;
         var directionToCam = cameraToGetAngle.transform.position - currentPosition;
 
         if (ignoreYAxis)
@@ -34,8 +35,9 @@ public class GetAngleBetweenCamCharFaceDirectionAnimatorComponent : MonoBehaviou
             directionToCam.y = 0;
         }
 
-        var angleSigned = Vector3.SignedAngle(directionToCam, _directionFacing, currentPosition);
+        //var angleSigned = Vector3.SignedAngle(directionToCam, _directionFacing, currentPosition);
+        AngledSigned = Vector3.SignedAngle(directionToCam, _directionFacing, currentPosition);
 
-        animator.SetFloat(animatorParameterName, angleSigned);
+        //animator.SetFloat(animatorParameterName, angleSigned);
     }
 }

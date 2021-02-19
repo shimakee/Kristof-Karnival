@@ -62,6 +62,8 @@ public class SeekStateBehaviourComponent : IAiState
         if (isTooFar)
             TargetObject = null;
 
+        //if low on life go to flee state
+
         if(canAttack && isInAttackRange)
         {
             //go to attack state

@@ -50,7 +50,7 @@ public class InputHandlerMoveToTargetComponent : InputHandlerComponent, IInputHa
                 Vector3 farRay = Camera.main.ScreenToWorldPoint(farPosition);
 
                 RaycastHit hitInfo;
-                bool hasHit = Physics.Raycast(nearRay, farRay, out hitInfo, Mathf.Infinity, maskRaycast, QueryTriggerInteraction.Ignore);
+                bool hasHit = Physics.Raycast(nearRay, farRay, out hitInfo, maskRaycast);
 
                 if (hasHit)
                 {
