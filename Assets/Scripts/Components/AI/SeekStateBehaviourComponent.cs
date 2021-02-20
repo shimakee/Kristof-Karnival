@@ -26,6 +26,7 @@ public class SeekStateBehaviourComponent : IAiState
             var enemies = CheckForEnemies(stateMachine);
 
             //go to position and arrive first if there are no enemies before returning to wander state.
+            //check distance from target Position is close before checking other things;
 
             if (enemies == null)
                 return stateMachine.WanderState;
@@ -58,8 +59,9 @@ public class SeekStateBehaviourComponent : IAiState
         bool isClose = distance < minDistanceToMaintain;
         bool isFar = distance > maxDistanceToMaintain;
         bool isTooFar = distance > stateMachine.FieldOfViewComponent.Radius;
+        bool canSeeTarget = stateMachine.FieldOfViewComponent.GameObjectsInView.Contains(TargetObject);
 
-        if (isTooFar)
+        if (isTooFar || !canSeeTarget)
             TargetObject = null;
 
         //if low on life go to flee state
