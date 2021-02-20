@@ -7,7 +7,13 @@ public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverCompo
 {
     //[SerializeField] float _maxSpeed = 1;
     [SerializeField] bool ignoreYAxisDirection;
+    [Space(10)]
+
+    [Header("RigidBody rotation details:")]
     [SerializeField] bool rotateForwardToDirection;
+    [SerializeField] bool lockRotationX;
+    [SerializeField] bool lockRotationY;
+    [SerializeField] bool lockRotationZ;
 
     bool IsTargetSet;
 
@@ -39,14 +45,28 @@ public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverCompo
         {
             Direction += SteeringBehaviour.Seek(TargetPosition, _rb.velocity, this) * Time.deltaTime;
             Direction = SteeringBehaviour.Arriving(this, Direction, TargetPosition, 0, 0.1f);
+            //_movement.MoveTowards(_rb, TargetPosition, Time.deltaTime);
         }
 
         _movement.AssignVelocity(_rb, Vector3.ClampMagnitude(Direction, _maxSpeed));
 
         if (rotateForwardToDirection)
+        {
+            //var rotation = Quaternion.identity;
             _rb.transform.LookAt(_movement.LastDirectionFacing + _rb.position, Vector3.up);
+            var newRotation = _rb.transform.rotation;
+            if(lockRotationX)
+                newRotation.x = 0;
+            if(lockRotationY)
+                newRotation.y = 0;
+            if (lockRotationZ)
+                newRotation.z = 0;
 
-            Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
+            _rb.transform.rotation = newRotation;
+        }
+
+        Debug.DrawLine(_rb.transform.position, _movement.LastDirectionFacing + _rb.transform.position, Color.blue);
+
     }
 
     public void MoveDirection(Vector3 direction)
@@ -64,7 +84,7 @@ public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverCompo
         IsTargetSet = true;
 
         if (ignoreYAxisDirection)
-            target.y = _rb.position.y;
+            target.y = target.y + _rb.position.y;
 
         TargetPosition = target;
         var direction = (target - _rb.position);

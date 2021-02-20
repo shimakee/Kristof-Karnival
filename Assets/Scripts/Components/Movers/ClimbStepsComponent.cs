@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ICastCollisionChecker), typeof(Rigidbody))]
-public class StepHeightComponent : MonoBehaviour
+public class ClimbStepsComponent : MonoBehaviour
 {
-    [Range(0, 20)][SerializeField] float upForceToStep = 15;
+    [Range(0, 200)][SerializeField] float upForceToStep = 15;
 
     ICastCollisionChecker _castCollisionCheck;
     Rigidbody _rb;
@@ -14,10 +14,10 @@ public class StepHeightComponent : MonoBehaviour
         _castCollisionCheck = GetComponent<ICastCollisionChecker>();
         _rb = GetComponent<Rigidbody>();
     }
-    void FixedUpdate()
+    void Update()
     {
         if (!_castCollisionCheck.TopChecker && _castCollisionCheck.BottomChecker)
             _rb.AddForce(Vector3.up * upForceToStep);
-
+            //_rb.velocity += Vector3.up * upForceToStep;
     }
 }

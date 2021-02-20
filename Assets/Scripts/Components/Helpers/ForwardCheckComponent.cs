@@ -51,11 +51,6 @@ public class ForwardCheckComponent : MonoBehaviour, ICastCollisionChecker
 
         //Debug.Log(TopChecker);
         //Debug.Log(BottomChecker);
-
-        //if (!TopChecker && BottomChecker)
-        //    _rb.AddForce(Vector3.up * scale); //15
-        ////_rb.velocity += Vector3.up * scale; //.5
-
     }
 
     private void CastTopChecker()
