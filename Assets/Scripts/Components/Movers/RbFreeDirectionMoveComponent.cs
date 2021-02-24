@@ -6,7 +6,9 @@ using UnityEngine;
 public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverComponent, ITargetMoverComponent
 {
     //[SerializeField] float _maxSpeed = 1;
+    [Header("RigidBody movement details:")]
     [SerializeField] bool ignoreYAxisDirection;
+    [SerializeField] float distanceToArriveAtTargetLocation;
     [Space(10)]
 
     [Header("RigidBody rotation details:")]
@@ -44,7 +46,7 @@ public class RbFreeDirectionMoveComponent : MoverComponent, IDirectionMoverCompo
         if (IsTargetSet)
         {
             Direction += SteeringBehaviour.Seek(TargetPosition, _rb.velocity, this) * Time.deltaTime;
-            Direction = SteeringBehaviour.Arriving(this, Direction, TargetPosition, 0, 0.1f);
+            Direction = SteeringBehaviour.Arriving(this, Direction, TargetPosition, distanceToArriveAtTargetLocation, 0.6f);
             //_movement.MoveTowards(_rb, TargetPosition, Time.deltaTime);
         }
 
