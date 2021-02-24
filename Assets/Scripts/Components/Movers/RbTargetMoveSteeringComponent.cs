@@ -7,6 +7,8 @@ public class RbTargetMoveSteeringComponent : MoverComponent, ITargetMoverCompone
 {
     public Vector3 TargetPosition { get { return _movement.DesiredPosition; } private set { _movement.DesiredPosition = value; } }
 
+    //public bool hasArrived { get; private set; }
+
     //[SerializeField] float _maxSpeed = 1;
     [Header("RigidBody movement details:")]
     [SerializeField] bool ignoreYAxisDirection;

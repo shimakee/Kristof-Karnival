@@ -16,6 +16,25 @@ public interface IFieldOfView
     List<GameObject> GameObjectsInSurroundings { get; }
 }
 
+public interface IPlayerStateMachine
+{
+    //float ArrivingDistance { get; }
+    PlayerStates CurrentState { get; set; }
+    GameObject TargetObject { get; }
+    Vector3 TargetLocation { get;}
+
+    void SetTargetObject(GameObject gameObject);
+    void SetTargetLocation(Vector3 target);
+
+
+    //TODO
+    //CharacterInfo
+    //attackSpd
+    //attackDamage
+    //attackRange
+    //movespeed
+}
+
 public interface IAiStateMachine
 {
     IAiState CurrentState { get; }

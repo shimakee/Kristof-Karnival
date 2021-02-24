@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 3610992921011392624}
   - component: {fileID: 7174074513750877271}
   - component: {fileID: 8976474580599112160}
-  - component: {fileID: 2707978406012481124}
+  - component: {fileID: 7697104111805635716}
   - component: {fileID: 5696645204080506443}
   - component: {fileID: 6686078222688984942}
   m_Layer: 15
@@ -340,11 +340,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Interact
   ZasY: 1
-  isOrthographic: 0
   maskRaycast:
     serializedVersion: 2
     m_Bits: 2048
   enableDraw: 1
+  useAsStateMachine: 0
 --- !u!114 &8976474580599112160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: MouseMove
   ZasY: 0
---- !u!114 &2707978406012481124
+--- !u!114 &7697104111805635716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2144519133588568916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b77fd8a11b7f8b4abebe059e6b252b3, type: 3}
+  m_Script: {fileID: 11500000, guid: a8c440911218de64381111123b443653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSpeed: 2

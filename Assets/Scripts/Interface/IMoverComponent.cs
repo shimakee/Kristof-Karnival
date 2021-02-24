@@ -38,6 +38,7 @@ public interface IDirectionMoverComponent : IMoverComponent
 
 public interface ITargetMoverComponent : IMoverComponent
 {
+    //bool hasArrived { get; }
     Vector3 TargetPosition { get;}
     void SetTargetPosition(Vector3 target);
 }

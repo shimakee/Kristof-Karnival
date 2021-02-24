@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(IMoverComponent), typeof(GetAngleBetweenCamCharFaceDirectionAnimatorComponent))]
+[RequireComponent(typeof(IPlayerStateMachine), typeof(GetAngleBetweenCamCharFaceDirectionAnimatorComponent))]
 public class AnimationHandlerComponent : MonoBehaviour
 {
 
     [SerializeField] Animator animator;
 
-    IMoverComponent mover;
+    IPlayerStateMachine playerStateMachine;
     GetAngleBetweenCamCharFaceDirectionAnimatorComponent angleToCamComponent;
 
     private void Awake()
     {
-        mover = GetComponent<IMoverComponent>();
+        playerStateMachine = GetComponent<IPlayerStateMachine>();
         angleToCamComponent = GetComponent<GetAngleBetweenCamCharFaceDirectionAnimatorComponent>();
     }
     void LateUpdate()
     {
-        animator.SetFloat("Magnitude", mover.CurrentVelocity.magnitude);
         animator.SetFloat("angleToCam", angleToCamComponent.AngledSigned);
+        animator.SetInteger("State", (int)playerStateMachine.CurrentState);
     }
 }
 
